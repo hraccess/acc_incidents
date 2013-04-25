@@ -1,12 +1,13 @@
-
 name = Access Incidents
 description = Provide the Content Type and Views for Access Incidents
 core = 7.x
 package = Humanitarian Access
 php = 5.2.4
+dependencies[] = acc_constraints
 dependencies[] = acc_impacts
 dependencies[] = field_collection
 dependencies[] = humanitarianresponse_clusters
+dependencies[] = humanitarianresponse_locations
 dependencies[] = number
 dependencies[] = openlayers
 dependencies[] = openlayers_views
@@ -58,6 +59,7 @@ features[variable][] = menu_parent_access_incident
 features[variable][] = node_options_access_incident
 features[variable][] = node_preview_access_incident
 features[variable][] = node_submitted_access_incident
+features[views_view][] = incident_map
 features[views_view][] = incidents
 features_exclude[dependencies][acc_restrictions] = acc_restrictions
 features_exclude[dependencies][ctools] = ctools

@@ -71,7 +71,6 @@ function acc_incidents_openlayers_maps() {
     'layers' => array(
       'mapquest_osm' => 'mapquest_osm',
       'mapquest_openaerial' => 'mapquest_openaerial',
-      'incidents_openlayers_1' => 'incidents_openlayers_1',
     ),
     'layer_weight' => array(
       'incidents_openlayers_1' => '0',
@@ -92,7 +91,7 @@ function acc_incidents_openlayers_maps() {
       'incidents_openlayers_1' => '0',
     ),
     'layer_activated' => array(
-      'incidents_openlayers_1' => 'incidents_openlayers_1',
+      'incidents_openlayers_1' => 0,
       'geofield_formatter' => 0,
       'openlayers_geojson_picture_this' => 0,
       'openlayers_kml_example' => 0,
