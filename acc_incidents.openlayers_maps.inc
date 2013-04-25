@@ -61,7 +61,7 @@ function acc_incidents_openlayers_maps() {
       'openlayers_behavior_panzoom' => array(),
       'openlayers_behavior_popup' => array(
         'layers' => array(
-          'incident_map_openlayers_1' => 0,
+          'incident_map_openlayers_1' => 'incident_map_openlayers_1',
         ),
         'panMapIfOutOfView' => 1,
         'keepInMap' => 1,

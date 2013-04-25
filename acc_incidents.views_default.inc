@@ -2181,11 +2181,11 @@ function acc_incidents_views_default_views() {
     ),
     'field_date_1' => array(
       'enabled' => 1,
-      'sort' => 'ASC',
+      'sort' => '0',
     ),
   );
   $handler->display->display_options['style_options']['yAxis'] = array(
-    'title' => 'Number of incidents',
+    'title' => '',
   );
   $handler->display->display_options['style_options']['xAxis'] = array(
     'labelField' => 'field_date',
@@ -2214,6 +2214,11 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_date_1']['group_type'] = 'count';
   $handler->display->display_options['fields']['field_date_1']['label'] = 'Number of Incidents';
   $handler->display->display_options['fields']['field_date_1']['separator'] = ', ';
+  $handler->display->display_options['defaults']['sorts'] = FALSE;
+  /* Sort criterion: Content: Date (field_date) */
+  $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
+  $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
