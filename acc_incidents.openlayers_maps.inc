@@ -36,7 +36,7 @@ function acc_incidents_openlayers_maps() {
     'behaviors' => array(
       'openlayers_behavior_cluster' => array(
         'clusterlayer' => array(
-          'incidents_openlayers_1' => 'incidents_openlayers_1',
+          'incident_map_openlayers_1' => 'incident_map_openlayers_1',
         ),
         'distance' => '50',
         'threshold' => '',
@@ -61,7 +61,7 @@ function acc_incidents_openlayers_maps() {
       'openlayers_behavior_panzoom' => array(),
       'openlayers_behavior_popup' => array(
         'layers' => array(
-          'incidents_openlayers_1' => 'incidents_openlayers_1',
+          'incident_map_openlayers_1' => 0,
         ),
         'panMapIfOutOfView' => 1,
         'keepInMap' => 1,
@@ -71,9 +71,10 @@ function acc_incidents_openlayers_maps() {
     'layers' => array(
       'mapquest_osm' => 'mapquest_osm',
       'mapquest_openaerial' => 'mapquest_openaerial',
+      'incident_map_openlayers_1' => 'incident_map_openlayers_1',
     ),
     'layer_weight' => array(
-      'incidents_openlayers_1' => '0',
+      'incident_map_openlayers_1' => '0',
       'openlayers_kml_example' => '0',
       'openlayers_geojson_picture_this' => '0',
       'geofield_formatter' => '0',
@@ -82,28 +83,28 @@ function acc_incidents_openlayers_maps() {
       'geofield_formatter' => '0',
       'openlayers_geojson_picture_this' => '0',
       'openlayers_kml_example' => '0',
-      'incidents_openlayers_1' => '0',
+      'incident_map_openlayers_1' => '0',
     ),
     'layer_styles_select' => array(
       'geofield_formatter' => '0',
       'openlayers_geojson_picture_this' => '0',
       'openlayers_kml_example' => '0',
-      'incidents_openlayers_1' => '0',
+      'incident_map_openlayers_1' => '0',
     ),
     'layer_activated' => array(
-      'incidents_openlayers_1' => 0,
+      'incident_map_openlayers_1' => 'incident_map_openlayers_1',
       'geofield_formatter' => 0,
       'openlayers_geojson_picture_this' => 0,
       'openlayers_kml_example' => 0,
     ),
     'layer_switcher' => array(
-      'incidents_openlayers_1' => 0,
+      'incident_map_openlayers_1' => 0,
       'geofield_formatter' => 0,
       'openlayers_geojson_picture_this' => 0,
       'openlayers_kml_example' => 0,
     ),
-    'projection' => 'EPSG:3857',
-    'displayProjection' => 'EPSG:4326',
+    'projection' => 'EPSG:900913',
+    'displayProjection' => 'EPSG:900913',
     'styles' => array(
       'default' => 'default',
       'select' => 'default_select',

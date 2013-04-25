@@ -37,7 +37,6 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'default';
   /* Relationship: Content: Geographical Location (Origin) (field_admin1_2) */
   $handler->display->display_options['relationships']['field_admin1_2_tid']['id'] = 'field_admin1_2_tid';
   $handler->display->display_options['relationships']['field_admin1_2_tid']['table'] = 'field_data_field_admin1_2';
