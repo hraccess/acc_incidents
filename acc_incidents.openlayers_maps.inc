@@ -58,6 +58,11 @@ function acc_incidents_openlayers_maps() {
         'roundedCornerColor' => '#222222',
         'maximizeDefault' => 0,
       ),
+      'openlayers_behavior_navigation' => array(
+        'zoomWheelEnabled' => 0,
+        'zoomBoxEnabled' => 0,
+        'documentDrag' => 1,
+      ),
       'openlayers_behavior_panzoom' => array(),
       'openlayers_behavior_popup' => array(
         'layers' => array(
