@@ -549,7 +549,7 @@ function acc_incidents_views_default_views() {
   /* Display: Chart Incidents By Access Constraints */
   $handler = $view->new_display('block', 'Chart Incidents By Access Constraints', 'block_1');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Chart Access Incidents by Access Constraints';
+  $handler->display->display_options['title'] = 'Access Incidents by Access Constraints';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -624,22 +624,23 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
 
   /* Display: Chart Access Incident By Incident Type */
   $handler = $view->new_display('block', 'Chart Access Incident By Incident Type', 'block_2');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Chart Access Incident By Incident Type';
+  $handler->display->display_options['title'] = 'Access Incident By Incident Type';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -711,15 +712,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Chart Access Incident By Incident Type';
@@ -727,7 +729,7 @@ function acc_incidents_views_default_views() {
   /* Display: Chart Access Incident By Location */
   $handler = $view->new_display('block', 'Chart Access Incident By Location', 'block_3');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Chart Access Incidents by Locations';
+  $handler->display->display_options['title'] = 'Access Incidents by Locations';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -797,15 +799,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Chart Access Incidents by Location';
@@ -813,7 +816,7 @@ function acc_incidents_views_default_views() {
   /* Display: Chart Access Incident By Resposible Actors */
   $handler = $view->new_display('block', 'Chart Access Incident By Resposible Actors', 'block_4');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Chart Access Incidents by Responsible Actor';
+  $handler->display->display_options['title'] = 'Access Incidents by Responsible Actor';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -886,15 +889,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Chart Access Incidents by Responsible Actor';
@@ -902,7 +906,7 @@ function acc_incidents_views_default_views() {
   /* Display: Chart Access Incident By Sectors */
   $handler = $view->new_display('block', 'Chart Access Incident By Sectors', 'block_5');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Chart Access Incidents by Sectors';
+  $handler->display->display_options['title'] = 'Access Incidents by Affected Sectors';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -974,22 +978,23 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
 
   /* Display: Chart Access Incident By Affected Organizations */
   $handler = $view->new_display('block', 'Chart Access Incident By Affected Organizations', 'block_6');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Chart Access Incidents by Affected Organizations';
+  $handler->display->display_options['title'] = 'Access Incidents by Affected Organizations';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1062,15 +1067,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Chart Access Incidents by Affected Organizations';
@@ -1155,15 +1161,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Access Incidents by Access Constraints';
@@ -1251,15 +1258,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Access Incident By Incident Type';
@@ -1344,15 +1352,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Access Incidents by Location';
@@ -1441,15 +1450,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Access Incidents by Responsible Actor';
@@ -1536,15 +1546,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Access Incidents by Sectors';
@@ -1632,15 +1643,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['field_date_value']['group'] = 1;
   $handler->display->display_options['filters']['field_date_value']['exposed'] = TRUE;
   $handler->display->display_options['filters']['field_date_value']['expose']['operator_id'] = 'field_date_value_op';
-  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date (field_date)';
+  $handler->display->display_options['filters']['field_date_value']['expose']['label'] = 'Incident Date';
   $handler->display->display_options['filters']['field_date_value']['expose']['operator'] = 'field_date_value_op';
   $handler->display->display_options['filters']['field_date_value']['expose']['identifier'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['expose']['remember_roles'] = array(
     2 => '2',
     1 => 0,
-    5 => 0,
-    4 => 0,
-    3 => 0,
+    218860149 => 0,
+    200153887 => 0,
+    52310416 => 0,
+    30037204 => 0,
   );
   $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['block_description'] = 'Access Incidents by Affected Organizations';
@@ -2456,34 +2468,33 @@ function acc_incidents_views_default_views() {
     t('Data export'),
     t('CSV'),
     t('Chart Incidents By Access Constraints'),
-    t('Chart Access Incidents by Access Constraints'),
+    t('Access Incidents by Access Constraints'),
     t('Access Constraints'),
     t('Number of Reports'),
+    t('Incident Date'),
     t('Chart Access Incident By Incident Type'),
+    t('Access Incident By Incident Type'),
     t('Number of Incidents'),
     t('Chart Access Incident By Location'),
-    t('Chart Access Incidents by Locations'),
+    t('Access Incidents by Locations'),
     t('Chart Access Incidents by Location'),
     t('Chart Access Incident By Resposible Actors'),
+    t('Access Incidents by Responsible Actor'),
     t('Chart Access Incidents by Responsible Actor'),
     t('Chart Access Incident By Sectors'),
-    t('Chart Access Incidents by Sectors'),
+    t('Access Incidents by Affected Sectors'),
     t('Sector/Cluster'),
     t('Chart Access Incident By Affected Organizations'),
+    t('Access Incidents by Affected Organizations'),
     t('Chart Access Incidents by Affected Organizations'),
     t('Access Incidents By Access Constraints'),
-    t('Access Incidents by Access Constraints'),
-    t('Access Incident By Incident Type'),
     t('Access Incident By Location'),
-    t('Access Incidents by Locations'),
     t('Access Incidents by Location'),
     t('Access Incident By Resposible Actors'),
-    t('Access Incidents by Responsible Actor'),
     t('Access Incident By Sectors'),
     t('Access Incidents by Sectors'),
     t('Access Incident By Affected Organizations'),
     t('Access Incidents by Affected Organization'),
-    t('Access Incidents by Affected Organizations'),
     t('XLS Access Incidents By Access Constraints'),
     t('XLS Access Incidents by Access Constraints'),
     t('XLS Access Incident By Incident Type'),
