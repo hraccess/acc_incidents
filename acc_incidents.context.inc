@@ -104,6 +104,30 @@ function acc_incidents_context_default_contexts() {
           'region' => 'content',
           'weight' => '2',
         ),
+        'views-incidents-block_16' => array(
+          'module' => 'views',
+          'delta' => 'incidents-block_16',
+          'region' => 'content',
+          'weight' => '3',
+        ),
+        'views-incidents-block_18' => array(
+          'module' => 'views',
+          'delta' => 'incidents-block_18',
+          'region' => 'content',
+          'weight' => '4',
+        ),
+        'views-incidents-block_17' => array(
+          'module' => 'views',
+          'delta' => 'incidents-block_17',
+          'region' => 'content',
+          'weight' => '5',
+        ),
+        'views-incidents-block_19' => array(
+          'module' => 'views',
+          'delta' => 'incidents-block_19',
+          'region' => 'content',
+          'weight' => '6',
+        ),
       ),
     ),
   );
