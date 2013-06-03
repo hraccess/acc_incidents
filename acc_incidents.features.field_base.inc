@@ -10,72 +10,20 @@
 function acc_incidents_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_incident_impact'
-  $field_bases['field_incident_impact'] = array(
-    'active' => 1,
-    'cardinality' => 1,
-    'deleted' => 0,
-    'entity_types' => array(),
-    'field_name' => 'field_incident_impact',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
-    'foreign keys' => array(
-      'taxonomy_term_data' => array(
-        'columns' => array(
-          'target_id' => 'tid',
-        ),
-        'table' => 'taxonomy_term_data',
-      ),
-    ),
-    'indexes' => array(
-      'target_id' => array(
-        0 => 'target_id',
-      ),
-    ),
-    'locked' => 0,
-    'module' => 'entityreference',
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'handler' => 'views',
-      'handler_settings' => array(
-        'behaviors' => array(
-          'test_field_behavior' => array(
-            'status' => 0,
-          ),
-          'views-select-list' => array(
-            'status' => 0,
-          ),
-        ),
-        'view' => array(
-          'args' => array(),
-          'display_name' => 'entityreference_1',
-          'view_name' => 'impact',
-        ),
-      ),
-      'target_type' => 'taxonomy_term',
-    ),
-    'translatable' => 0,
-    'type' => 'entityreference',
-  );
-
-  // Exported field_base: 'field_incident_impact_new'
-  $field_bases['field_incident_impact_new'] = array(
+  // Exported field_base: 'field_acc_incident_impact_'
+  $field_bases['field_acc_incident_impact_'] = array(
     'active' => 1,
     'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_incident_impact_new',
-    'field_permissions' => array(
-      'type' => 0,
-    ),
+    'field_name' => 'field_acc_incident_impact_',
     'foreign keys' => array(),
     'indexes' => array(),
     'locked' => 0,
     'module' => 'field_collection',
     'settings' => array(
       'entity_translation_sync' => FALSE,
-      'hide_blank_items' => TRUE,
+      'hide_blank_items' => 1,
       'path' => '',
     ),
     'translatable' => 0,

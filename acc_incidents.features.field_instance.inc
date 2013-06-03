@@ -10,117 +10,6 @@
 function acc_incidents_field_default_field_instances() {
   $field_instances = array();
 
-  // Exported field_instance: 'field_collection_item-field_incident_impact_new-field_incident_impact'
-  $field_instances['field_collection_item-field_incident_impact_new-field_incident_impact'] = array(
-    'bundle' => 'field_incident_impact_new',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'entityreference',
-        'settings' => array(
-          'link' => FALSE,
-        ),
-        'type' => 'entityreference_label',
-        'weight' => 2,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_incident_impact',
-    'label' => 'Impact',
-    'required' => 0,
-    'settings' => array(
-      'behaviors' => array(
-        'taxonomy-index' => array(
-          'status' => TRUE,
-        ),
-        'test_instance_behavior' => array(
-          'status' => 0,
-        ),
-      ),
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 0,
-    ),
-  );
-
-  // Exported field_instance: 'field_collection_item-field_incident_impact_new-field_value'
-  $field_instances['field_collection_item-field_incident_impact_new-field_value'] = array(
-    'bundle' => 'field_incident_impact_new',
-    'default_value' => array(
-      0 => array(
-        'value' => 0,
-      ),
-    ),
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'number',
-        'settings' => array(
-          'decimal_separator' => '.',
-          'prefix_suffix' => 1,
-          'scale' => 0,
-          'thousand_separator' => ',',
-        ),
-        'type' => 'number_integer',
-        'weight' => 1,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'field_collection_item',
-    'field_name' => 'field_value',
-    'label' => 'Value',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'max' => '',
-      'min' => '',
-      'prefix' => '',
-      'suffix' => '',
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'number',
-      'settings' => array(),
-      'type' => 'number',
-      'weight' => 1,
-    ),
-  );
-
   // Exported field_instance: 'node-access_incident-body'
   $field_instances['node-access_incident-body'] = array(
     'bundle' => 'access_incident',
@@ -205,31 +94,25 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-access_incident-field_admin1_2'
-  $field_instances['node-access_incident-field_admin1_2'] = array(
+  // Exported field_instance: 'node-access_incident-field_acc_incident_impact_'
+  $field_instances['node-access_incident-field_acc_incident_impact_'] = array(
     'bundle' => 'access_incident',
     'default_value' => NULL,
     'deleted' => 0,
-    'description' => 'Please also mark place on map.',
+    'description' => '',
     'display' => array(
       'default' => array(
         'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 12,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 21,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -239,8 +122,46 @@ function acc_incidents_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_admin1_2',
-    'label' => 'Location',
+    'field_name' => 'field_acc_incident_impact_',
+    'label' => 'Impact',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 9,
+    ),
+  );
+
+  // Exported field_instance: 'node-access_incident-field_access_constraint'
+  $field_instances['node-access_incident-field_access_constraint'] = array(
+    'bundle' => 'access_incident',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 18,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_access_constraint',
+    'label' => 'Access Constraint',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -248,10 +169,48 @@ function acc_incidents_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'hs_taxonomy',
+      'module' => 'options',
       'settings' => array(),
-      'type' => 'taxonomy_hs',
-      'weight' => 4,
+      'type' => 'options_select',
+      'weight' => 2,
+    ),
+  );
+
+  // Exported field_instance: 'node-access_incident-field_clusters'
+  $field_instances['node-access_incident-field_clusters'] = array(
+    'bundle' => 'access_incident',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 20,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_clusters',
+    'label' => 'Sector(s)/Cluster(s)',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_buttons',
+      'weight' => 7,
     ),
   );
 
@@ -324,100 +283,6 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-access_incident-field_field_access_constraint_ac'
-  $field_instances['node-access_incident-field_field_access_constraint_ac'] = array(
-    'bundle' => 'access_incident',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 16,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_field_access_constraint_ac',
-    'label' => 'Access Constraints',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_select',
-      'weight' => 2,
-    ),
-  );
-
-  // Exported field_instance: 'node-access_incident-field_incident_impact_new'
-  $field_instances['node-access_incident-field_incident_impact_new'] = array(
-    'bundle' => 'access_incident',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'field_collection',
-        'settings' => array(
-          'add' => 'Add',
-          'delete' => 'Delete',
-          'description' => TRUE,
-          'edit' => 'Edit',
-          'view_mode' => 'full',
-        ),
-        'type' => 'field_collection_view',
-        'weight' => 9,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_incident_impact_new',
-    'label' => 'Incident Impact',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 0,
-      'module' => 'field_collection',
-      'settings' => array(),
-      'type' => 'field_collection_embed',
-      'weight' => 9,
-    ),
-  );
-
   // Exported field_instance: 'node-access_incident-field_incident_type_acc_incident'
   $field_instances['node-access_incident-field_incident_type_acc_incident'] = array(
     'bundle' => 'access_incident',
@@ -460,6 +325,44 @@ function acc_incidents_field_default_field_instances() {
       'settings' => array(),
       'type' => 'options_select',
       'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'node-access_incident-field_locations'
+  $field_instances['node-access_incident-field_locations'] = array(
+    'bundle' => 'access_incident',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 22,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_locations',
+    'label' => 'Location',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'hs_taxonomy',
+      'settings' => array(),
+      'type' => 'taxonomy_hs',
+      'weight' => 6,
     ),
   );
 
@@ -530,7 +433,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'geocoder',
       'settings' => array(
         'delta_handling' => 'default',
-        'geocoder_field' => 'field_admin1_2',
+        'geocoder_field' => 'field_locations',
         'geocoder_handler' => 'google',
         'handler_settings' => array(
           'google' => array(
@@ -591,57 +494,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 5,
-    ),
-  );
-
-  // Exported field_instance: 'node-access_incident-field_sectors'
-  $field_instances['node-access_incident-field_sectors'] = array(
-    'bundle' => 'access_incident',
-    'default_value' => NULL,
-    'deleted' => 0,
-    'description' => '',
-    'display' => array(
-      'default' => array(
-        'label' => 'above',
-        'module' => 'taxonomy',
-        'settings' => array(),
-        'type' => 'taxonomy_term_reference_link',
-        'weight' => 4,
-      ),
-      'entityreference_view_widget' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'ical' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-      'teaser' => array(
-        'label' => 'above',
-        'settings' => array(),
-        'type' => 'hidden',
-        'weight' => 0,
-      ),
-    ),
-    'entity_type' => 'node',
-    'field_name' => 'field_sectors',
-    'label' => 'Sector(s)/Cluster(s)',
-    'required' => 0,
-    'settings' => array(
-      'entity_translation_sync' => FALSE,
-      'user_register_form' => FALSE,
-    ),
-    'widget' => array(
-      'active' => 1,
-      'module' => 'options',
-      'settings' => array(),
-      'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 4,
     ),
   );
 
@@ -702,7 +555,7 @@ function acc_incidents_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -791,20 +644,17 @@ function acc_incidents_field_default_field_instances() {
   // Translatables
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
-  t('Access Constraints');
+  t('Access Constraint');
   t('Description');
   t('Impact');
   t('Incident Date');
-  t('Incident Impact');
   t('Incident Type');
   t('Location');
   t('Mark on Map');
-  t('Please also mark place on map.');
   t('Resposible Actor');
   t('Sector(s)/Cluster(s)');
   t('Targetted Organization');
   t('Title');
-  t('Value');
 
   return $field_instances;
 }
