@@ -10,6 +10,81 @@
 function acc_incidents_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_acc_incident_impact_-field_acc_incident_impact_title'
+  $field_instances['field_collection_item-field_acc_incident_impact_-field_acc_incident_impact_title'] = array(
+    'bundle' => 'field_acc_incident_impact_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_acc_incident_impact_title',
+    'label' => 'Impact',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_acc_incident_impact_-field_value'
+  $field_instances['field_collection_item-field_acc_incident_impact_-field_value'] = array(
+    'bundle' => 'field_acc_incident_impact_',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'number',
+        'settings' => array(
+          'decimal_separator' => '.',
+          'prefix_suffix' => TRUE,
+          'scale' => 0,
+          'thousand_separator' => ' ',
+        ),
+        'type' => 'number_integer',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_value',
+    'label' => 'Value',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'max' => '',
+      'min' => '',
+      'prefix' => '',
+      'suffix' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'number',
+      'settings' => array(),
+      'type' => 'number',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'node-access_incident-body'
   $field_instances['node-access_incident-body'] = array(
     'bundle' => 'access_incident',
@@ -655,6 +730,7 @@ function acc_incidents_field_default_field_instances() {
   t('Sector(s)/Cluster(s)');
   t('Targetted Organization');
   t('Title');
+  t('Value');
 
   return $field_instances;
 }
