@@ -165,7 +165,7 @@ function acc_incidents_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -209,7 +209,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -251,6 +251,73 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-access_incident-field_below_admin_2_level'
+  $field_instances['node-access_incident-field_below_admin_2_level'] = array(
+    'bundle' => 'access_incident',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_below_admin_2_level',
+    'label' => 'Below Admin 2 Level',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'plain_text' => 'plain_text',
+          'simple' => 'simple',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simple' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => 7,
+    ),
+  );
+
   // Exported field_instance: 'node-access_incident-field_clusters'
   $field_instances['node-access_incident-field_clusters'] = array(
     'bundle' => 'access_incident',
@@ -285,7 +352,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -524,7 +591,7 @@ function acc_incidents_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -720,6 +787,7 @@ function acc_incidents_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
   t('Access Constraint');
+  t('Below Admin 2 Level');
   t('Description');
   t('Impact');
   t('Incident Date');
