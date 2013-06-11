@@ -17,7 +17,7 @@ function acc_incidents_openlayers_maps() {
   $openlayers_maps->title = 'Map to show access incidents';
   $openlayers_maps->description = 'This is the default map that will be the basis for all maps, unless you have changed the <a href="/admin/structure/openlayers">OpenLayers main settings</a>.  This is also a good example of a basic map.';
   $openlayers_maps->data = array(
-    'width' => '750px',
+    'width' => 'auto',
     'height' => '400px',
     'image_path' => 'sites/all/modules/contrib/openlayers/themes/default_dark/img/',
     'css_path' => 'sites/all/modules/contrib/openlayers/themes/default_dark/style.css',
@@ -57,6 +57,7 @@ function acc_incidents_openlayers_maps() {
         'roundedCorner' => 1,
         'roundedCornerColor' => '#222222',
         'maximizeDefault' => 0,
+        'div' => '',
       ),
       'openlayers_behavior_navigation' => array(
         'zoomWheelEnabled' => 0,
@@ -80,33 +81,45 @@ function acc_incidents_openlayers_maps() {
     ),
     'layer_weight' => array(
       'incident_map_openlayers_1' => '0',
-      'openlayers_kml_example' => '0',
+      'access_reports_openlayers_1' => '0',
       'openlayers_geojson_picture_this' => '0',
+      'openlayers_kml_example' => '0',
       'geofield_formatter' => '0',
     ),
     'layer_styles' => array(
       'geofield_formatter' => '0',
-      'openlayers_geojson_picture_this' => '0',
       'openlayers_kml_example' => '0',
+      'openlayers_geojson_picture_this' => '0',
+      'access_reports_openlayers_1' => '0',
       'incident_map_openlayers_1' => '0',
     ),
     'layer_styles_select' => array(
       'geofield_formatter' => '0',
-      'openlayers_geojson_picture_this' => '0',
       'openlayers_kml_example' => '0',
+      'openlayers_geojson_picture_this' => '0',
+      'access_reports_openlayers_1' => '0',
+      'incident_map_openlayers_1' => '0',
+    ),
+    'layer_styles_temporary' => array(
+      'geofield_formatter' => '0',
+      'openlayers_kml_example' => '0',
+      'openlayers_geojson_picture_this' => '0',
+      'access_reports_openlayers_1' => '0',
       'incident_map_openlayers_1' => '0',
     ),
     'layer_activated' => array(
       'incident_map_openlayers_1' => 'incident_map_openlayers_1',
       'geofield_formatter' => 0,
-      'openlayers_geojson_picture_this' => 0,
       'openlayers_kml_example' => 0,
+      'openlayers_geojson_picture_this' => 0,
+      'access_reports_openlayers_1' => 0,
     ),
     'layer_switcher' => array(
       'incident_map_openlayers_1' => 0,
       'geofield_formatter' => 0,
-      'openlayers_geojson_picture_this' => 0,
       'openlayers_kml_example' => 0,
+      'openlayers_geojson_picture_this' => 0,
+      'access_reports_openlayers_1' => 0,
     ),
     'projection' => 'EPSG:900913',
     'displayProjection' => 'EPSG:900913',

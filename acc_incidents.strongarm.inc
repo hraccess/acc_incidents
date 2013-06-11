@@ -114,7 +114,7 @@ function acc_incidents_strongarm() {
           'weight' => '0',
         ),
         'path' => array(
-          'weight' => '12',
+          'weight' => '11',
         ),
       ),
       'display' => array(),
