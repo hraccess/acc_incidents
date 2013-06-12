@@ -478,9 +478,8 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['path'] = 'access/incidents.xls';
   $handler->display->display_options['displays'] = array(
-    'block_15' => 'block_15',
+    'page' => 'page',
     'default' => 0,
-    'page' => 0,
     'block_1' => 0,
     'block_2' => 0,
     'block_3' => 0,
@@ -495,6 +494,10 @@ function acc_incidents_views_default_views() {
     'block_12' => 0,
     'block_14' => 0,
     'block_13' => 0,
+    'block_15' => 0,
+    'block_16' => 0,
+    'block_17' => 0,
+    'block_18' => 0,
   );
 
   /* Display: CSV */
