@@ -165,7 +165,7 @@ function acc_incidents_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -209,7 +209,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -314,7 +314,7 @@ function acc_incidents_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -352,7 +352,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -504,7 +504,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -591,7 +591,7 @@ function acc_incidents_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -636,7 +636,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -697,7 +697,44 @@ function acc_incidents_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 5,
+      'weight' => 6,
+    ),
+  );
+
+  // Exported field_instance: 'node-access_incident-field_type_of_aid_workers'
+  $field_instances['node-access_incident-field_type_of_aid_workers'] = array(
+    'bundle' => 'access_incident',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_type_of_aid_workers',
+    'label' => 'Type of aid workers',
+    'required' => FALSE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'options',
+      'settings' => array(),
+      'type' => 'options_select',
+      'weight' => 4,
     ),
   );
 
@@ -798,6 +835,7 @@ function acc_incidents_field_default_field_instances() {
   t('Sector(s)/Cluster(s)');
   t('Targetted Organization');
   t('Title');
+  t('Type of aid workers');
   t('Value');
 
   return $field_instances;
