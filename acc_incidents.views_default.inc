@@ -38,6 +38,10 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
   $handler->display->display_options['style_options']['map'] = 'clone_of_default';
+  /* Relationship: Field: Location (field_locations) */
+  $handler->display->display_options['relationships']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['relationships']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['relationships']['field_locations_tid']['field'] = 'field_locations_tid';
   /* Field: Content: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'node';
@@ -151,6 +155,7 @@ function acc_incidents_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
+    t('term from field_locations'),
     t('Title'),
     t('Mark on map'),
     t('Location'),
