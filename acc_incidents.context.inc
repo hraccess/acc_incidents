@@ -19,7 +19,7 @@ function acc_incidents_context_default_contexts() {
   $context->conditions = array(
     'path' => array(
       'values' => array(
-        'dashboard/factsheet-access-incidents' => 'dashboard/factsheet-access-incidents',
+        'access/dashboard/factsheet-access-incidents' => 'access/dashboard/factsheet-access-incidents',
       ),
     ),
   );
@@ -121,12 +121,6 @@ function acc_incidents_context_default_contexts() {
           'delta' => 'incidents-block_17',
           'region' => 'content',
           'weight' => '5',
-        ),
-        'views-incidents-block_19' => array(
-          'module' => 'views',
-          'delta' => 'incidents-block_19',
-          'region' => 'content',
-          'weight' => '6',
         ),
       ),
     ),

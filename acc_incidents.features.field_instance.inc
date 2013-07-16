@@ -38,7 +38,9 @@ function acc_incidents_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 1,
     ),
@@ -245,7 +247,9 @@ function acc_incidents_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 2,
     ),
@@ -400,10 +404,10 @@ function acc_incidents_field_default_field_instances() {
     'label' => 'Incident Date',
     'required' => 1,
     'settings' => array(
-      'default_value' => 'now',
-      'default_value2' => 'same',
-      'default_value_code' => '',
-      'default_value_code2' => '',
+      'default_value' => 'strtotime',
+      'default_value2' => 'strtotime',
+      'default_value_code' => '-90 day',
+      'default_value_code2' => '+90 day',
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
@@ -464,7 +468,9 @@ function acc_incidents_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 3,
     ),
@@ -634,7 +640,9 @@ function acc_incidents_field_default_field_instances() {
     'widget' => array(
       'active' => 1,
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 5,
     ),
@@ -732,7 +740,9 @@ function acc_incidents_field_default_field_instances() {
     ),
     'widget' => array(
       'module' => 'options',
-      'settings' => array(),
+      'settings' => array(
+        'apply_chosen' => 0,
+      ),
       'type' => 'options_select',
       'weight' => 4,
     ),

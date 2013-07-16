@@ -69,6 +69,7 @@ features[variable][] = comment_form_location_access_incident
 features[variable][] = comment_preview_access_incident
 features[variable][] = comment_subject_field_access_incident
 features[variable][] = field_bundle_settings_node__access_incident
+features[variable][] = global_filters
 features[variable][] = language_content_type_access_incident
 features[variable][] = menu_options_access_incident
 features[variable][] = menu_parent_access_incident
