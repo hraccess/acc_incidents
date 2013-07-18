@@ -64,7 +64,7 @@ function acc_incidents_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'entityreference_1',
-          'view_name' => 'impact',
+          'view_name' => 'acc_impacts',
         ),
       ),
       'target_type' => 'taxonomy_term',
