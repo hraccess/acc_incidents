@@ -13,7 +13,7 @@ function acc_incidents_openlayers_maps() {
   $openlayers_maps = new stdClass();
   $openlayers_maps->disabled = FALSE; /* Edit this to true to make a default openlayers_maps disabled initially */
   $openlayers_maps->api_version = 1;
-  $openlayers_maps->name = 'clone_of_default';
+  $openlayers_maps->name = 'acc_incidents_map';
   $openlayers_maps->title = 'Map to show access incidents';
   $openlayers_maps->description = 'This is the default map that will be the basis for all maps, unless you have changed the <a href="/admin/structure/openlayers">OpenLayers main settings</a>.  This is also a good example of a basic map.';
   $openlayers_maps->data = array(
@@ -36,7 +36,7 @@ function acc_incidents_openlayers_maps() {
     'behaviors' => array(
       'openlayers_behavior_cluster' => array(
         'clusterlayer' => array(
-          'incident_map_openlayers_1' => 'incident_map_openlayers_1',
+          'acc_incident_map_openlayers_1' => 'acc_incident_map_openlayers_1',
         ),
         'distance' => '50',
         'threshold' => '',
@@ -67,7 +67,7 @@ function acc_incidents_openlayers_maps() {
       'openlayers_behavior_panzoom' => array(),
       'openlayers_behavior_popup' => array(
         'layers' => array(
-          'incident_map_openlayers_1' => 'incident_map_openlayers_1',
+          'acc_incident_map_openlayers_1' => 'acc_incident_map_openlayers_1',
         ),
         'panMapIfOutOfView' => 1,
         'keepInMap' => 1,
@@ -77,10 +77,10 @@ function acc_incidents_openlayers_maps() {
     'layers' => array(
       'mapquest_osm' => 'mapquest_osm',
       'mapquest_openaerial' => 'mapquest_openaerial',
-      'incident_map_openlayers_1' => 'incident_map_openlayers_1',
+      'acc_incident_map_openlayers_1' => 'acc_incident_map_openlayers_1',
     ),
     'layer_weight' => array(
-      'incident_map_openlayers_1' => '0',
+      'acc_incident_map_openlayers_1' => '0',
       'access_reports_openlayers_1' => '0',
       'openlayers_geojson_picture_this' => '0',
       'openlayers_kml_example' => '0',
@@ -91,31 +91,31 @@ function acc_incidents_openlayers_maps() {
       'openlayers_kml_example' => '0',
       'openlayers_geojson_picture_this' => '0',
       'access_reports_openlayers_1' => '0',
-      'incident_map_openlayers_1' => '0',
+      'acc_incident_map_openlayers_1' => '0',
     ),
     'layer_styles_select' => array(
       'geofield_formatter' => '0',
       'openlayers_kml_example' => '0',
       'openlayers_geojson_picture_this' => '0',
       'access_reports_openlayers_1' => '0',
-      'incident_map_openlayers_1' => '0',
+      'acc_incident_map_openlayers_1' => '0',
     ),
     'layer_styles_temporary' => array(
       'geofield_formatter' => '0',
       'openlayers_kml_example' => '0',
       'openlayers_geojson_picture_this' => '0',
       'access_reports_openlayers_1' => '0',
-      'incident_map_openlayers_1' => '0',
+      'acc_incident_map_openlayers_1' => '0',
     ),
     'layer_activated' => array(
-      'incident_map_openlayers_1' => 'incident_map_openlayers_1',
+      'acc_incident_map_openlayers_1' => 'acc_incident_map_openlayers_1',
       'geofield_formatter' => 0,
       'openlayers_kml_example' => 0,
       'openlayers_geojson_picture_this' => 0,
       'access_reports_openlayers_1' => 0,
     ),
     'layer_switcher' => array(
-      'incident_map_openlayers_1' => 0,
+      'acc_incident_map_openlayers_1' => 0,
       'geofield_formatter' => 0,
       'openlayers_kml_example' => 0,
       'openlayers_geojson_picture_this' => 0,
@@ -129,12 +129,12 @@ function acc_incidents_openlayers_maps() {
       'temporary' => 'default',
     ),
   );
-  $export['clone_of_default'] = $openlayers_maps;
+  $export['acc_incidents_map'] = $openlayers_maps;
 
   $openlayers_maps = new stdClass();
   $openlayers_maps->disabled = FALSE; /* Edit this to true to make a default openlayers_maps disabled initially */
   $openlayers_maps->api_version = 1;
-  $openlayers_maps->name = 'geofield_formatter_map_zoomed';
+  $openlayers_maps->name = 'acc_geofield_formatter_map_zoomed';
   $openlayers_maps->title = 'Geofield Formatter Map Zoomed';
   $openlayers_maps->description = 'A Map Used for Geofield Output';
   $openlayers_maps->data = array(
@@ -204,12 +204,12 @@ function acc_incidents_openlayers_maps() {
       'temporary' => 'default',
     ),
   );
-  $export['geofield_formatter_map_zoomed'] = $openlayers_maps;
+  $export['acc_geofield_formatter_map_zoomed'] = $openlayers_maps;
 
   $openlayers_maps = new stdClass();
   $openlayers_maps->disabled = FALSE; /* Edit this to true to make a default openlayers_maps disabled initially */
   $openlayers_maps->api_version = 1;
-  $openlayers_maps->name = 'geofield_widget_map_zoomed';
+  $openlayers_maps->name = 'acc_geofield_widget_map_zoomed';
   $openlayers_maps->title = 'Geofield Widget Map Zoomed';
   $openlayers_maps->description = 'A Map Used for Geofield Input';
   $openlayers_maps->data = array(
@@ -286,7 +286,7 @@ function acc_incidents_openlayers_maps() {
       'temporary' => 'default',
     ),
   );
-  $export['geofield_widget_map_zoomed'] = $openlayers_maps;
+  $export['acc_geofield_widget_map_zoomed'] = $openlayers_maps;
 
   return $export;
 }

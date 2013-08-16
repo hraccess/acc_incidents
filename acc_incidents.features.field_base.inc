@@ -180,7 +180,7 @@ function acc_incidents_field_default_field_bases() {
         'view' => array(
           'args' => array(),
           'display_name' => 'entityreference_2',
-          'view_name' => 'organizations_affected',
+          'view_name' => 'acc_organizations_affected',
         ),
       ),
       'target_type' => 'taxonomy_term',
@@ -189,13 +189,13 @@ function acc_incidents_field_default_field_bases() {
     'type' => 'entityreference',
   );
 
-  // Exported field_base: 'field_type_of_aid_workers'
-  $field_bases['field_type_of_aid_workers'] = array(
+  // Exported field_base: 'field_acc_type_of_aid_workers'
+  $field_bases['field_acc_type_of_aid_workers'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_type_of_aid_workers',
+    'field_name' => 'field_acc_type_of_aid_workers',
     'foreign keys' => array(
       'tid' => array(
         'columns' => array(
@@ -214,7 +214,7 @@ function acc_incidents_field_default_field_bases() {
     'settings' => array(
       'allowed_values' => array(
         0 => array(
-          'vocabulary' => 'type_of_aid_workers',
+          'vocabulary' => 'acc_type_of_aid_workers',
           'parent' => 0,
         ),
       ),

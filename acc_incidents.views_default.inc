@@ -11,7 +11,7 @@ function acc_incidents_views_default_views() {
   $export = array();
 
   $view = new view();
-  $view->name = 'incident_map';
+  $view->name = 'acc_incident_map';
   $view->description = '';
   $view->tag = 'Access';
   $view->base_table = 'node';
@@ -37,7 +37,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'clone_of_default';
+  $handler->display->display_options['style_options']['map'] = 'acc_incidents_map';
   /* Relationship: Field: Location (field_locations) */
   $handler->display->display_options['relationships']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['relationships']['field_locations_tid']['table'] = 'field_data_field_locations';
@@ -146,7 +146,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
-  $translatables['incident_map'] = array(
+  $translatables['acc_incident_map'] = array(
     t('Master'),
     t('Incident Map'),
     t('more'),
@@ -162,10 +162,10 @@ function acc_incidents_views_default_views() {
     t('All'),
     t('Incidents Layer'),
   );
-  $export['incident_map'] = $view;
+  $export['acc_incident_map'] = $view;
 
   $view = new view();
-  $view->name = 'incidents';
+  $view->name = 'acc_incidents';
   $view->description = '';
   $view->tag = 'Access';
   $view->base_table = 'node';

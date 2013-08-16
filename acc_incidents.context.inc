@@ -13,7 +13,7 @@ function acc_incidents_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
-  $context->name = 'access_incidents';
+  $context->name = 'acc_access_incidents';
   $context->description = '';
   $context->tag = '';
   $context->conditions = array(
@@ -126,7 +126,7 @@ function acc_incidents_context_default_contexts() {
     ),
   );
   $context->condition_mode = 0;
-  $export['access_incidents'] = $context;
+  $export['acc_access_incidents'] = $context;
 
   return $export;
 }

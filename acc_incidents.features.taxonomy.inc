@@ -9,9 +9,9 @@
  */
 function acc_incidents_taxonomy_default_vocabularies() {
   return array(
-    'type_of_aid_workers' => array(
+    'acc_type_of_aid_workers' => array(
       'name' => 'Type of aid workers',
-      'machine_name' => 'type_of_aid_workers',
+      'machine_name' => 'acc_type_of_aid_workers',
       'description' => '',
       'hierarchy' => 0,
       'module' => 'taxonomy',
