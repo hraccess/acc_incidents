@@ -429,8 +429,8 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-access_incident-field_incident_type_acc_incident'
-  $field_instances['node-access_incident-field_incident_type_acc_incident'] = array(
+  // Exported field_instance: 'node-access_incident-field_incident_types_acc_incident'
+  $field_instances['node-access_incident-field_incident_types_acc_incident'] = array(
     'bundle' => 'access_incident',
     'default_value' => NULL,
     'deleted' => 0,
@@ -453,7 +453,7 @@ function acc_incidents_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_incident_type_acc_incident',
+    'field_name' => 'field_incident_types_acc_incident',
     'label' => 'Incident Type',
     'required' => 0,
     'settings' => array(
