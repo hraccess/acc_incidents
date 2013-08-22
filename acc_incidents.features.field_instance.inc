@@ -709,8 +709,8 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
-  // Exported field_instance: 'node-access_incident-field_acc_type_of_aid_workers'
-  $field_instances['node-access_incident-field_acc_type_of_aid_workers'] = array(
+  // Exported field_instance: 'node-access_incident-field_type_of_aid_workers'
+  $field_instances['node-access_incident-field_type_of_aid_workers'] = array(
     'bundle' => 'access_incident',
     'default_value' => NULL,
     'deleted' => 0,
@@ -731,7 +731,7 @@ function acc_incidents_field_default_field_instances() {
       ),
     ),
     'entity_type' => 'node',
-    'field_name' => 'field_acc_type_of_aid_workers',
+    'field_name' => 'field_type_of_aid_workers',
     'label' => 'Type of aid workers',
     'required' => FALSE,
     'settings' => array(
