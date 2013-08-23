@@ -37,7 +37,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'acc_incidents_map';
+  $handler->display->display_options['style_options']['map'] = 'acc_incident_map';
   /* Relationship: Field: Location (field_locations) */
   $handler->display->display_options['relationships']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['relationships']['field_locations_tid']['table'] = 'field_data_field_locations';
@@ -2511,7 +2511,7 @@ function acc_incidents_views_default_views() {
     'block_17' => 0,
   );
   $handler->display->display_options['sitename_title'] = 0;
-  $translatables['incidents'] = array(
+  $translatables['acc_incidents'] = array(
     t('Master'),
     t('Access Incidents'),
     t('more'),
@@ -2606,7 +2606,7 @@ function acc_incidents_views_default_views() {
     t('Person Affected'),
     t('XLS Impact Trends'),
   );
-  $export['incidents'] = $view;
+  $export['acc_incidents'] = $view;
 
   return $export;
 }
