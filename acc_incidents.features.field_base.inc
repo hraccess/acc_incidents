@@ -38,11 +38,11 @@ function acc_incidents_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_acc_incident_impact_title',
     'foreign keys' => array(
-      'node' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'target_id' => 'nid',
+          'target_id' => 'tid',
         ),
-        'table' => 'node',
+        'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
@@ -111,11 +111,11 @@ function acc_incidents_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_incident_type_acc_incident',
     'foreign keys' => array(
-      'node' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'target_id' => 'nid',
+          'target_id' => 'tid',
         ),
-        'table' => 'node',
+        'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
@@ -154,11 +154,11 @@ function acc_incidents_field_default_field_bases() {
     'entity_types' => array(),
     'field_name' => 'field_responsible_actor',
     'foreign keys' => array(
-      'node' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'target_id' => 'nid',
+          'target_id' => 'tid',
         ),
-        'table' => 'node',
+        'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(

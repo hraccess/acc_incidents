@@ -85,7 +85,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Date -  start date (field_date) */
+  /* Contextual filter: Content: Date (field_date) */
   $handler->display->display_options['arguments']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['arguments']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['arguments']['field_date_value']['field'] = 'field_date_value';
@@ -276,7 +276,7 @@ function acc_incidents_views_default_views() {
     'view_mode' => 'full',
   );
   $handler->display->display_options['fields']['field_acc_incident_impact_']['delta_offset'] = '0';
-  /* Field: Content: Body */
+  /* Field: Content: Description */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'field_data_body';
   $handler->display->display_options['fields']['body']['field'] = 'body';
@@ -295,7 +295,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Date -  start date (field_date) */
+  /* Contextual filter: Content: Date (field_date) */
   $handler->display->display_options['arguments']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['arguments']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['arguments']['field_date_value']['field'] = 'field_date_value';
@@ -1440,7 +1440,7 @@ function acc_incidents_views_default_views() {
     'access_incident' => 'access_incident',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_date) */
+  /* Filter criterion: Content: Date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -1458,7 +1458,6 @@ function acc_incidents_views_default_views() {
     4 => 0,
     3 => 0,
   );
-  $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['path'] = 'access/reports/by_access_constraints.xls';
   $handler->display->display_options['displays'] = array(
     'block_8' => 'block_8',
@@ -2008,7 +2007,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_date_1']['label'] = 'Number of Incidents';
   $handler->display->display_options['fields']['field_date_1']['separator'] = ', ';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date -  start date (field_date) */
+  /* Sort criterion: Content: Date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -2468,7 +2467,7 @@ function acc_incidents_views_default_views() {
     'access_incident' => 'access_incident',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date -  start date (field_date) */
+  /* Filter criterion: Content: Date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -2486,7 +2485,6 @@ function acc_incidents_views_default_views() {
     4 => 0,
     3 => 0,
   );
-  $handler->display->display_options['filters']['field_date_value']['form_type'] = 'date_popup';
   $handler->display->display_options['path'] = 'reports/impact_trends.xls';
   $handler->display->display_options['displays'] = array(
     'block_18' => 'block_18',
@@ -2532,7 +2530,7 @@ function acc_incidents_views_default_views() {
     t('Sectors/Cluster Affected'),
     t('Mark on map'),
     t('Impact'),
-    t('Body'),
+    t('Description'),
     t('All'),
     t('Access Incident'),
     t('Items per page'),

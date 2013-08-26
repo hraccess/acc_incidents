@@ -363,6 +363,7 @@ function acc_incidents_field_default_field_instances() {
   // Exported field_instance: 'node-access_incident-field_date'
   $field_instances['node-access_incident-field_date'] = array(
     'bundle' => 'access_incident',
+    'default_value' => NULL,
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -424,7 +425,7 @@ function acc_incidents_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_popup',
+      'type' => 'date_select',
       'weight' => 1,
     ),
   );
