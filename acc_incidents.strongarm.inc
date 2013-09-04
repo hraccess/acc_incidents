@@ -223,6 +223,13 @@ function acc_incidents_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'global_filter_num_filters';
+  $strongarm->value = '6';
+  $export['global_filter_num_filters'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'language_content_type_access_incident';
   $strongarm->value = '0';
   $export['language_content_type_access_incident'] = $strongarm;
