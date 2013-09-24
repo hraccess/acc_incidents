@@ -2,6 +2,7 @@ name = Access Incidents
 description = Provide the Content Type and Views for Access Incidents
 core = 7.x
 package = Humanitarian Access
+php = 5.2.4
 dependencies[] = acc_constraints
 dependencies[] = acc_impacts
 dependencies[] = context

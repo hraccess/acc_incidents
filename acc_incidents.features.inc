@@ -7,13 +7,16 @@
 /**
  * Implements hook_ctools_plugin_api().
  */
-function acc_incidents_ctools_plugin_api($module = NULL, $api = NULL) {
+function acc_incidents_ctools_plugin_api() {
+  list($module, $api) = func_get_args();
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
+  list($module, $api) = func_get_args();
   if ($module == "openlayers" && $api == "openlayers_maps") {
     return array("version" => "1");
   }
+  list($module, $api) = func_get_args();
   if ($module == "strongarm" && $api == "strongarm") {
     return array("version" => "1");
   }
@@ -22,7 +25,7 @@ function acc_incidents_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function acc_incidents_views_api($module = NULL, $api = NULL) {
+function acc_incidents_views_api() {
   return array("api" => "3.0");
 }
 

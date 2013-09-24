@@ -26,101 +26,95 @@ function acc_incidents_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views-incidents-block_1' => array(
+        'views-acc_incidents-block_1' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_1',
+          'delta' => 'acc_incidents-block_1',
           'region' => 'content',
           'weight' => '-10',
         ),
-        'views-incidents-block_8' => array(
+        'views-acc_incidents-block_8' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_8',
+          'delta' => 'acc_incidents-block_8',
           'region' => 'content',
           'weight' => '-9',
         ),
-        'views-incidents-block_2' => array(
+        'views-acc_incidents-block_2' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_2',
+          'delta' => 'acc_incidents-block_2',
           'region' => 'content',
           'weight' => '-8',
         ),
-        'views-incidents-block_7' => array(
+        'views-acc_incidents-block_7' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_7',
+          'delta' => 'acc_incidents-block_7',
           'region' => 'content',
           'weight' => '-7',
         ),
-        'views-incidents-block_3' => array(
+        'views-acc_incidents-block_3' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_3',
+          'delta' => 'acc_incidents-block_3',
           'region' => 'content',
           'weight' => '-6',
         ),
-        'views-incidents-block_9' => array(
+        'views-acc_incidents-block_9' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_9',
+          'delta' => 'acc_incidents-block_9',
           'region' => 'content',
           'weight' => '-5',
         ),
-        'views-incidents-block_4' => array(
+        'views-acc_incidents-block_4' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_4',
+          'delta' => 'acc_incidents-block_4',
           'region' => 'content',
           'weight' => '-4',
         ),
-        'views-incidents-block_10' => array(
+        'views-acc_incidents-block_10' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_10',
+          'delta' => 'acc_incidents-block_10',
           'region' => 'content',
           'weight' => '-3',
         ),
-        'views-incidents-block_5' => array(
+        'views-acc_incidents-block_5' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_5',
+          'delta' => 'acc_incidents-block_5',
           'region' => 'content',
           'weight' => '-2',
         ),
-        'views-incidents-block_11' => array(
+        'views-acc_incidents-block_11' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_11',
+          'delta' => 'acc_incidents-block_11',
           'region' => 'content',
           'weight' => '-1',
         ),
-        'views-incidents-block_6' => array(
+        'views-acc_incidents-block_6' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_6',
+          'delta' => 'acc_incidents-block_6',
           'region' => 'content',
           'weight' => '0',
         ),
-        'views-incidents-block_12' => array(
+        'views-acc_incidents-block_12' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_12',
+          'delta' => 'acc_incidents-block_12',
           'region' => 'content',
           'weight' => '1',
         ),
-        'views-incidents-block_13' => array(
+        'views-acc_incidents-block_16' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_13',
+          'delta' => 'acc_incidents-block_16',
           'region' => 'content',
           'weight' => '2',
         ),
-        'views-incidents-block_16' => array(
+        'views-acc_incidents-block_18' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_16',
+          'delta' => 'acc_incidents-block_18',
           'region' => 'content',
           'weight' => '3',
         ),
-        'views-incidents-block_18' => array(
+        'views-acc_incidents-block_17' => array(
           'module' => 'views',
-          'delta' => 'incidents-block_18',
+          'delta' => 'acc_incidents-block_17',
           'region' => 'content',
           'weight' => '4',
-        ),
-        'views-incidents-block_17' => array(
-          'module' => 'views',
-          'delta' => 'incidents-block_17',
-          'region' => 'content',
-          'weight' => '5',
         ),
       ),
     ),
