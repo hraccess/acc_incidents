@@ -37,7 +37,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
-  $handler->display->display_options['style_options']['map'] = 'acc_incident_map';
+  $handler->display->display_options['style_options']['map'] = 'acc_incidents_map';
   /* Relationship: Field: Location (field_locations) */
   $handler->display->display_options['relationships']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['relationships']['field_locations_tid']['table'] = 'field_data_field_locations';
@@ -62,6 +62,16 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_locations']['table'] = 'field_data_field_locations';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
+  /* Field: Taxonomy term: Location */
+  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['table'] = 'field_data_field_location';
+  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
+  $handler->display->display_options['fields']['field_location']['relationship'] = 'field_locations_tid';
+  $handler->display->display_options['fields']['field_location']['label'] = 'wkt';
+  $handler->display->display_options['fields']['field_location']['click_sort_column'] = 'geom';
+  $handler->display->display_options['fields']['field_location']['settings'] = array(
+    'data' => 'full',
+  );
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
   $handler->display->display_options['sorts']['created']['table'] = 'node';
@@ -85,15 +95,6 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Date (field_date) */
-  $handler->display->display_options['arguments']['field_date_value']['id'] = 'field_date_value';
-  $handler->display->display_options['arguments']['field_date_value']['table'] = 'field_data_field_date';
-  $handler->display->display_options['arguments']['field_date_value']['field'] = 'field_date_value';
-  $handler->display->display_options['arguments']['field_date_value']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_date_value']['default_argument_type'] = 'global_filter_field';
-  $handler->display->display_options['arguments']['field_date_value']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_date_value']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_date_value']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Field: Location (field_locations) */
   $handler->display->display_options['arguments']['field_locations_tid']['id'] = 'field_locations_tid';
   $handler->display->display_options['arguments']['field_locations_tid']['table'] = 'field_data_field_locations';
@@ -103,6 +104,15 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['arguments']['field_locations_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_locations_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_locations_tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Date -  start date (field_date) */
+  $handler->display->display_options['arguments']['field_date_value']['id'] = 'field_date_value';
+  $handler->display->display_options['arguments']['field_date_value']['table'] = 'field_data_field_date';
+  $handler->display->display_options['arguments']['field_date_value']['field'] = 'field_date_value';
+  $handler->display->display_options['arguments']['field_date_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_date_value']['default_argument_type'] = 'global_filter_field';
+  $handler->display->display_options['arguments']['field_date_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_date_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_date_value']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -132,7 +142,7 @@ function acc_incidents_views_default_views() {
     'value' => 'wkt',
     'other_lat' => 'title',
     'other_lon' => 'title',
-    'wkt' => 'field_point_location',
+    'wkt' => 'field_location',
     'other_top' => 'title',
     'other_right' => 'title',
     'other_bottom' => 'title',
@@ -159,6 +169,7 @@ function acc_incidents_views_default_views() {
     t('Title'),
     t('Mark on map'),
     t('Location'),
+    t('wkt'),
     t('All'),
     t('Incidents Layer'),
   );
@@ -231,7 +242,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_responsible_actor']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Administrative request submitted by */
   $handler->display->display_options['fields']['field_targetted_actor']['id'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['field'] = 'field_targetted_actor';
@@ -295,15 +306,6 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_clusters_tid']['summary_options']['items_per_page'] = '25';
-  /* Contextual filter: Content: Date (field_date) */
-  $handler->display->display_options['arguments']['field_date_value']['id'] = 'field_date_value';
-  $handler->display->display_options['arguments']['field_date_value']['table'] = 'field_data_field_date';
-  $handler->display->display_options['arguments']['field_date_value']['field'] = 'field_date_value';
-  $handler->display->display_options['arguments']['field_date_value']['default_action'] = 'default';
-  $handler->display->display_options['arguments']['field_date_value']['default_argument_type'] = 'global_filter_field';
-  $handler->display->display_options['arguments']['field_date_value']['summary']['number_of_records'] = '0';
-  $handler->display->display_options['arguments']['field_date_value']['summary']['format'] = 'default_summary';
-  $handler->display->display_options['arguments']['field_date_value']['summary_options']['items_per_page'] = '25';
   /* Contextual filter: Field: Access Constraint (field_access_constraint) */
   $handler->display->display_options['arguments']['field_access_constraint_tid']['id'] = 'field_access_constraint_tid';
   $handler->display->display_options['arguments']['field_access_constraint_tid']['table'] = 'field_data_field_access_constraint';
@@ -322,6 +324,15 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['arguments']['field_locations_tid']['summary']['number_of_records'] = '0';
   $handler->display->display_options['arguments']['field_locations_tid']['summary']['format'] = 'default_summary';
   $handler->display->display_options['arguments']['field_locations_tid']['summary_options']['items_per_page'] = '25';
+  /* Contextual filter: Content: Date -  start date (field_date) */
+  $handler->display->display_options['arguments']['field_date_value']['id'] = 'field_date_value';
+  $handler->display->display_options['arguments']['field_date_value']['table'] = 'field_data_field_date';
+  $handler->display->display_options['arguments']['field_date_value']['field'] = 'field_date_value';
+  $handler->display->display_options['arguments']['field_date_value']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['field_date_value']['default_argument_type'] = 'global_filter_field';
+  $handler->display->display_options['arguments']['field_date_value']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['field_date_value']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['field_date_value']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -456,7 +467,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_responsible_actor']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Administrative request submitted by */
   $handler->display->display_options['fields']['field_targetted_actor']['id'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['field'] = 'field_targetted_actor';
@@ -911,7 +922,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['relationships']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['relationships']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Administrative request submitted by */
   $handler->display->display_options['fields']['field_targetted_actor_1']['id'] = 'field_targetted_actor_1';
   $handler->display->display_options['fields']['field_targetted_actor_1']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor_1']['field'] = 'field_targetted_actor';
@@ -1351,7 +1362,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['relationships']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['relationships']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Administrative request submitted by */
   $handler->display->display_options['fields']['field_targetted_actor']['id'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['field'] = 'field_targetted_actor';
@@ -1360,7 +1371,7 @@ function acc_incidents_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_targetted_actor']['delta_offset'] = '0';
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Administrative request submitted by */
   $handler->display->display_options['fields']['field_targetted_actor_1']['id'] = 'field_targetted_actor_1';
   $handler->display->display_options['fields']['field_targetted_actor_1']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor_1']['field'] = 'field_targetted_actor';
@@ -1374,7 +1385,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['fields']['field_organization_type']['label'] = 'Organization Type';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Administrative request submited by (field_targetted_actor) */
+  /* Sort criterion: Content: Administrative request submitted by (field_targetted_actor) */
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['id'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
@@ -1440,7 +1451,7 @@ function acc_incidents_views_default_views() {
     'access_incident' => 'access_incident',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date (field_date) */
+  /* Filter criterion: Content: Date -  start date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';
@@ -1769,7 +1780,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['relationships']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['relationships']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Administrative request submitted by */
   $handler->display->display_options['fields']['field_targetted_actor']['id'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['field'] = 'field_targetted_actor';
@@ -1778,7 +1789,7 @@ function acc_incidents_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_targetted_actor']['delta_offset'] = '0';
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Administrative request submitted by */
   $handler->display->display_options['fields']['field_targetted_actor_1']['id'] = 'field_targetted_actor_1';
   $handler->display->display_options['fields']['field_targetted_actor_1']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor_1']['field'] = 'field_targetted_actor';
@@ -1792,7 +1803,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_organization_type']['relationship'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['fields']['field_organization_type']['label'] = 'Organization Type';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Administrative request submited by (field_targetted_actor) */
+  /* Sort criterion: Content: Administrative request submitted by (field_targetted_actor) */
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['id'] = 'field_targetted_actor_target_id';
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['sorts']['field_targetted_actor_target_id']['field'] = 'field_targetted_actor_target_id';
@@ -1924,12 +1935,11 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['title_field']['field'] = 'title_field';
   $handler->display->display_options['fields']['title_field']['link_to_entity'] = 1;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Post date */
-  $handler->display->display_options['sorts']['created']['id'] = 'created';
-  $handler->display->display_options['sorts']['created']['table'] = 'node';
-  $handler->display->display_options['sorts']['created']['field'] = 'created';
-  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
-  $handler->display->display_options['sorts']['created']['granularity'] = 'day';
+  /* Sort criterion: Content: Date -  start date (field_date) */
+  $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
+  $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
+  $handler->display->display_options['sorts']['field_date_value']['order'] = 'DESC';
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
   /* Filter criterion: Content: Published */
@@ -2001,7 +2011,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_date_1']['label'] = 'Number of Incidents';
   $handler->display->display_options['fields']['field_date_1']['separator'] = ', ';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
-  /* Sort criterion: Content: Date (field_date) */
+  /* Sort criterion: Content: Date -  start date (field_date) */
   $handler->display->display_options['sorts']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['sorts']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['sorts']['field_date_value']['field'] = 'field_date_value';
@@ -2142,7 +2152,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_responsible_actor']['settings'] = array(
     'link' => 0,
   );
-  /* Field: Content: Administrative request submited by */
+  /* Field: Content: Administrative request submitted by */
   $handler->display->display_options['fields']['field_targetted_actor']['id'] = 'field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['table'] = 'field_data_field_targetted_actor';
   $handler->display->display_options['fields']['field_targetted_actor']['field'] = 'field_targetted_actor';
@@ -2461,7 +2471,7 @@ function acc_incidents_views_default_views() {
     'access_incident' => 'access_incident',
   );
   $handler->display->display_options['filters']['type']['group'] = 1;
-  /* Filter criterion: Content: Date (field_date) */
+  /* Filter criterion: Content: Date -  start date (field_date) */
   $handler->display->display_options['filters']['field_date_value']['id'] = 'field_date_value';
   $handler->display->display_options['filters']['field_date_value']['table'] = 'field_data_field_date';
   $handler->display->display_options['filters']['field_date_value']['field'] = 'field_date_value';

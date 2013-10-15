@@ -167,7 +167,7 @@ function acc_incidents_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 12,
+      'weight' => 13,
     ),
   );
 
@@ -211,7 +211,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 11,
+      'weight' => 12,
     ),
   );
 
@@ -251,7 +251,7 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 2,
+      'weight' => 3,
     ),
   );
 
@@ -318,7 +318,7 @@ function acc_incidents_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -356,14 +356,14 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
   // Exported field_instance: 'node-access_incident-field_date'
   $field_instances['node-access_incident-field_date'] = array(
     'bundle' => 'access_incident',
-    'default_value' => NULL,
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -426,7 +426,7 @@ function acc_incidents_field_default_field_instances() {
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),
-      'type' => 'date_select',
+      'type' => 'date_popup',
       'weight' => 1,
     ),
   );
@@ -474,7 +474,7 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -512,7 +512,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -599,7 +599,7 @@ function acc_incidents_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 10,
+      'weight' => 11,
     ),
   );
 
@@ -628,7 +628,7 @@ function acc_incidents_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_responsible_actor',
-    'label' => 'Resposible Actor',
+    'label' => 'Responsible Actor',
     'required' => 0,
     'settings' => array(
       'behaviors' => array(
@@ -646,7 +646,7 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -687,7 +687,7 @@ function acc_incidents_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_targetted_actor',
-    'label' => 'Targetted Organization',
+    'label' => 'Targeted Organization',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
@@ -707,7 +707,7 @@ function acc_incidents_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -746,7 +746,7 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
     ),
   );
 
@@ -843,9 +843,9 @@ function acc_incidents_field_default_field_instances() {
   t('Incident Type');
   t('Location');
   t('Mark on Map');
-  t('Resposible Actor');
+  t('Responsible Actor');
   t('Sector(s)/Cluster(s)');
-  t('Targetted Organization');
+  t('Targeted Organization');
   t('Title');
   t('Type of aid workers');
   t('Value');
