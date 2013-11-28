@@ -10,6 +10,151 @@
 function acc_incidents_field_default_field_instances() {
   $field_instances = array();
 
+  // Exported field_instance: 'field_collection_item-field_acc_action_taken-field_action_taken_date'
+  $field_instances['field_collection_item-field_acc_action_taken-field_action_taken_date'] = array(
+    'bundle' => 'field_acc_action_taken',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'date',
+        'settings' => array(
+          'format_type' => 'long',
+          'fromto' => 'both',
+          'multiple_from' => '',
+          'multiple_number' => '',
+          'multiple_to' => '',
+        ),
+        'type' => 'date_default',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_action_taken_date',
+    'label' => 'Action taken date',
+    'required' => 0,
+    'settings' => array(
+      'default_value' => 'now',
+      'default_value2' => 'same',
+      'default_value_code' => '',
+      'default_value_code2' => '',
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'date',
+      'settings' => array(
+        'increment' => 15,
+        'input_format' => 'm/d/Y - H:i:s',
+        'input_format_custom' => '',
+        'label_position' => 'above',
+        'text_parts' => array(),
+        'year_range' => '-3:+3',
+      ),
+      'type' => 'date_popup',
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_acc_action_taken-field_action_taken_description'
+  $field_instances['field_collection_item-field_acc_action_taken-field_action_taken_description'] = array(
+    'bundle' => 'field_acc_action_taken',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'text',
+        'settings' => array(),
+        'type' => 'text_default',
+        'weight' => 2,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_action_taken_description',
+    'label' => 'Action taken description',
+    'required' => 0,
+    'settings' => array(
+      'better_formats' => array(
+        'allowed_formats' => array(
+          'filtered_html' => 'filtered_html',
+          'full_html' => 'full_html',
+          'php_code' => 'php_code',
+          'plain_text' => 'plain_text',
+          'simple' => 'simple',
+        ),
+        'allowed_formats_toggle' => 0,
+        'default_order_toggle' => 0,
+        'default_order_wrapper' => array(
+          'formats' => array(
+            'filtered_html' => array(
+              'weight' => 0,
+            ),
+            'full_html' => array(
+              'weight' => 0,
+            ),
+            'php_code' => array(
+              'weight' => 11,
+            ),
+            'plain_text' => array(
+              'weight' => 10,
+            ),
+            'simple' => array(
+              'weight' => 0,
+            ),
+          ),
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'text',
+      'settings' => array(
+        'rows' => 5,
+      ),
+      'type' => 'text_textarea',
+      'weight' => 3,
+    ),
+  );
+
+  // Exported field_instance: 'field_collection_item-field_acc_action_taken-field_action_taken_type'
+  $field_instances['field_collection_item-field_acc_action_taken-field_action_taken_type'] = array(
+    'bundle' => 'field_acc_action_taken',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_link',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'field_collection_item',
+    'field_name' => 'field_action_taken_type',
+    'label' => 'Action taken type',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'hs_taxonomy',
+      'settings' => array(),
+      'type' => 'taxonomy_hs',
+      'weight' => 2,
+    ),
+  );
+
   // Exported field_instance: 'field_collection_item-field_acc_incident_impact_-field_acc_incident_impact_title'
   $field_instances['field_collection_item-field_acc_incident_impact_-field_acc_incident_impact_title'] = array(
     'bundle' => 'field_acc_incident_impact_',
@@ -167,6 +312,50 @@ function acc_incidents_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
+      'weight' => 12,
+    ),
+  );
+
+  // Exported field_instance: 'node-access_incident-field_acc_action_taken'
+  $field_instances['node-access_incident-field_acc_action_taken'] = array(
+    'bundle' => 'access_incident',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 25,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_acc_action_taken',
+    'label' => 'Action Taken Access Incidents',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
       'weight' => 13,
     ),
   );
@@ -200,7 +389,7 @@ function acc_incidents_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_acc_incident_impact_',
-    'label' => 'Impact',
+    'label' => 'Impact of access incident',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -211,7 +400,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 12,
+      'weight' => 11,
     ),
   );
 
@@ -227,7 +416,7 @@ function acc_incidents_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 18,
+        'weight' => 26,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -251,7 +440,70 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 3,
+      'weight' => 1,
+    ),
+  );
+
+  // Exported field_instance: 'node-access_incident-field_attach_file'
+  $field_instances['node-access_incident-field_attach_file'] = array(
+    'bundle' => 'access_incident',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 28,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_attach_file',
+    'label' => 'Attach File',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => '',
+      'file_extensions' => 'txt',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'reference' => 0,
+            'remote' => 0,
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 16,
     ),
   );
 
@@ -278,13 +530,14 @@ function acc_incidents_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_below_admin_2_level',
-    'label' => 'Below Admin 2 Level',
+    'label' => 'Name of Village/point where incident occurred',
     'required' => 0,
     'settings' => array(
       'better_formats' => array(
         'allowed_formats' => array(
           'filtered_html' => 'filtered_html',
           'full_html' => 'full_html',
+          'php_code' => 0,
           'plain_text' => 'plain_text',
           'simple' => 'simple',
         ),
@@ -297,6 +550,9 @@ function acc_incidents_field_default_field_instances() {
             ),
             'full_html' => array(
               'weight' => 0,
+            ),
+            'php_code' => array(
+              'weight' => 11,
             ),
             'plain_text' => array(
               'weight' => 10,
@@ -318,7 +574,7 @@ function acc_incidents_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'text_textfield',
-      'weight' => 9,
+      'weight' => 8,
     ),
   );
 
@@ -356,7 +612,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'options',
       'settings' => array(),
       'type' => 'options_buttons',
-      'weight' => 10,
+      'weight' => 9,
     ),
   );
 
@@ -427,7 +683,7 @@ function acc_incidents_field_default_field_instances() {
         'year_range' => '-3:+3',
       ),
       'type' => 'date_popup',
-      'weight' => 1,
+      'weight' => 2,
     ),
   );
 
@@ -474,7 +730,7 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 3,
     ),
   );
 
@@ -512,7 +768,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 8,
+      'weight' => 7,
     ),
   );
 
@@ -599,7 +855,7 @@ function acc_incidents_field_default_field_instances() {
         ),
       ),
       'type' => 'geocoder',
-      'weight' => 11,
+      'weight' => 10,
     ),
   );
 
@@ -646,7 +902,7 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 5,
     ),
   );
 
@@ -707,7 +963,7 @@ function acc_incidents_field_default_field_instances() {
         'size' => 60,
       ),
       'type' => 'entityreference_autocomplete',
-      'weight' => 7,
+      'weight' => 6,
     ),
   );
 
@@ -723,7 +979,7 @@ function acc_incidents_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 24,
+        'weight' => 27,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -735,18 +991,19 @@ function acc_incidents_field_default_field_instances() {
     'entity_type' => 'node',
     'field_name' => 'field_type_of_aid_workers',
     'label' => 'Type of aid workers',
-    'required' => FALSE,
+    'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
       'user_register_form' => FALSE,
     ),
     'widget' => array(
+      'active' => 1,
       'module' => 'options',
       'settings' => array(
         'apply_chosen' => 0,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 4,
     ),
   );
 
@@ -836,13 +1093,19 @@ function acc_incidents_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
   t('Access Constraint');
-  t('Below Admin 2 Level');
+  t('Action Taken Access Incidents');
+  t('Action taken date');
+  t('Action taken description');
+  t('Action taken type');
+  t('Attach File');
   t('Description');
   t('Impact');
+  t('Impact of access incident');
   t('Incident Date');
   t('Incident Type');
   t('Location');
   t('Mark on Map');
+  t('Name of Village/point where incident occurred');
   t('Responsible Actor');
   t('Sector(s)/Cluster(s)');
   t('Targeted Organization');
