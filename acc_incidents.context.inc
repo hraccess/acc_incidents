@@ -110,12 +110,6 @@ function acc_incidents_context_default_contexts() {
           'region' => 'content',
           'weight' => '5',
         ),
-        'views-acc_incidents-block_19' => array(
-          'module' => 'views',
-          'delta' => 'acc_incidents-block_19',
-          'region' => 'content',
-          'weight' => '6',
-        ),
         'views-acc_incidents-block_20' => array(
           'module' => 'views',
           'delta' => 'acc_incidents-block_20',
