@@ -76,7 +76,7 @@ function acc_incidents_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Incidents');
+  t('Access Incidents');
   $export['acc_incidents'] = $context;
 
   $context = new stdClass();
@@ -132,8 +132,8 @@ function acc_incidents_context_default_contexts() {
 
   // Translatables
   // Included for use with string extractors like potx.
-  t('Incidents');
-  $export['incidents_graphs'] = $context;
+  t('Access Incidents');
+  $export['acc_incidents_graphs'] = $context;
 
   return $export;
 }
