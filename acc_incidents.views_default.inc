@@ -176,7 +176,7 @@ function acc_incidents_views_default_views() {
       'enabled' => 1,
       'sort' => 'DESC',
     ),
-    'field_incident_type' => array(
+    'field_acc_incident_type' => array(
       'enabled' => 0,
       'sort' => '0',
     ),
@@ -185,7 +185,7 @@ function acc_incidents_views_default_views() {
     'title' => '',
   );
   $handler->display->display_options['style_options']['xAxis'] = array(
-    'labelField' => 'field_incident_type',
+    'labelField' => 'field_acc_incident_type',
     'invert' => 0,
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
@@ -201,13 +201,13 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
   $handler->display->display_options['fields']['nid']['separator'] = '';
   /* Field: Content: Type */
-  $handler->display->display_options['fields']['field_incident_type']['id'] = 'field_incident_type';
-  $handler->display->display_options['fields']['field_incident_type']['table'] = 'field_data_field_incident_type';
-  $handler->display->display_options['fields']['field_incident_type']['field'] = 'field_incident_type';
-  $handler->display->display_options['fields']['field_incident_type']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['field_incident_type']['alter']['text'] = '[field_incident_type] ([nid])';
-  $handler->display->display_options['fields']['field_incident_type']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_incident_type']['type'] = 'hs_taxonomy_term_reference_last_text_only';
+  $handler->display->display_options['fields']['field_acc_incident_type']['id'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['table'] = 'field_data_field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['field'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['field_acc_incident_type']['alter']['text'] = '[field_acc_incident_type] ([nid])';
+  $handler->display->display_options['fields']['field_acc_incident_type']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['field_acc_incident_type']['type'] = 'hs_taxonomy_term_reference_last_text_only';
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -225,13 +225,13 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'acc_incident' => 'acc_incident',
   );
-  /* Filter criterion: Content: Type (field_incident_type) */
-  $handler->display->display_options['filters']['field_incident_type_tid']['id'] = 'field_incident_type_tid';
-  $handler->display->display_options['filters']['field_incident_type_tid']['table'] = 'field_data_field_incident_type';
-  $handler->display->display_options['filters']['field_incident_type_tid']['field'] = 'field_incident_type_tid';
-  $handler->display->display_options['filters']['field_incident_type_tid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_incident_type_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_incident_type_tid']['vocabulary'] = 'incident_types';
+  /* Filter criterion: Content: Type (field_acc_incident_type) */
+  $handler->display->display_options['filters']['field_acc_incident_type_tid']['id'] = 'field_acc_incident_type_tid';
+  $handler->display->display_options['filters']['field_acc_incident_type_tid']['table'] = 'field_data_field_acc_incident_type';
+  $handler->display->display_options['filters']['field_acc_incident_type_tid']['field'] = 'field_acc_incident_type_tid';
+  $handler->display->display_options['filters']['field_acc_incident_type_tid']['operator'] = 'not empty';
+  $handler->display->display_options['filters']['field_acc_incident_type_tid']['type'] = 'select';
+  $handler->display->display_options['filters']['field_acc_incident_type_tid']['vocabulary'] = 'acc_incident_types';
   $handler->display->display_options['block_description'] = 'Incidents Graph by Type';
 
   /* Display: XLS By Type */
@@ -252,10 +252,10 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
   $handler->display->display_options['fields']['nid']['separator'] = '';
   /* Field: Content: Type */
-  $handler->display->display_options['fields']['field_incident_type']['id'] = 'field_incident_type';
-  $handler->display->display_options['fields']['field_incident_type']['table'] = 'field_data_field_incident_type';
-  $handler->display->display_options['fields']['field_incident_type']['field'] = 'field_incident_type';
-  $handler->display->display_options['fields']['field_incident_type']['type'] = 'hs_taxonomy_term_reference_last_link_only';
+  $handler->display->display_options['fields']['field_acc_incident_type']['id'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['table'] = 'field_data_field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['field'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['type'] = 'hs_taxonomy_term_reference_last_link_only';
   $handler->display->display_options['path'] = 'access/incidents_by_type/xls';
   $handler->display->display_options['displays'] = array(
     'graph_by_type' => 'graph_by_type',
@@ -299,15 +299,15 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Type (field_incident_type) */
-  $handler->display->display_options['relationships']['field_incident_type_tid']['id'] = 'field_incident_type_tid';
-  $handler->display->display_options['relationships']['field_incident_type_tid']['table'] = 'field_data_field_incident_type';
-  $handler->display->display_options['relationships']['field_incident_type_tid']['field'] = 'field_incident_type_tid';
+  /* Relationship: Content: Type (field_acc_incident_type) */
+  $handler->display->display_options['relationships']['field_acc_incident_type_tid']['id'] = 'field_acc_incident_type_tid';
+  $handler->display->display_options['relationships']['field_acc_incident_type_tid']['table'] = 'field_data_field_acc_incident_type';
+  $handler->display->display_options['relationships']['field_acc_incident_type_tid']['field'] = 'field_acc_incident_type_tid';
   /* Relationship: Taxonomy term: Parent term */
   $handler->display->display_options['relationships']['parent']['id'] = 'parent';
   $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
   $handler->display->display_options['relationships']['parent']['field'] = 'parent';
-  $handler->display->display_options['relationships']['parent']['relationship'] = 'field_incident_type_tid';
+  $handler->display->display_options['relationships']['parent']['relationship'] = 'field_acc_incident_type_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
@@ -358,15 +358,15 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Type (field_incident_type) */
-  $handler->display->display_options['relationships']['field_incident_type_tid']['id'] = 'field_incident_type_tid';
-  $handler->display->display_options['relationships']['field_incident_type_tid']['table'] = 'field_data_field_incident_type';
-  $handler->display->display_options['relationships']['field_incident_type_tid']['field'] = 'field_incident_type_tid';
+  /* Relationship: Content: Type (field_acc_incident_type) */
+  $handler->display->display_options['relationships']['field_acc_incident_type_tid']['id'] = 'field_acc_incident_type_tid';
+  $handler->display->display_options['relationships']['field_acc_incident_type_tid']['table'] = 'field_data_field_acc_incident_type';
+  $handler->display->display_options['relationships']['field_acc_incident_type_tid']['field'] = 'field_acc_incident_type_tid';
   /* Relationship: Taxonomy term: Parent term */
   $handler->display->display_options['relationships']['parent']['id'] = 'parent';
   $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
   $handler->display->display_options['relationships']['parent']['field'] = 'parent';
-  $handler->display->display_options['relationships']['parent']['relationship'] = 'field_incident_type_tid';
+  $handler->display->display_options['relationships']['parent']['relationship'] = 'field_acc_incident_type_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Taxonomy term: Name */
   $handler->display->display_options['fields']['name']['id'] = 'name';
@@ -906,12 +906,12 @@ function acc_incidents_views_default_views() {
     t('Incidents by Type'),
     t('Number of incidents'),
     t('Type'),
-    t('[field_incident_type] ([nid])'),
+    t('[field_acc_incident_type] ([nid])'),
     t('Incidents Graph by Type'),
     t('XLS By Type'),
     t('Graph By Main Type'),
     t('Incidents by Main Type'),
-    t('term from field_incident_type'),
+    t('term from field_acc_incident_type'),
     t('Parent'),
     t('[name] ([nid])'),
     t('Graph by Main Type'),
