@@ -35,6 +35,7 @@ features[field_base][] = field_acc_incident_date
 features[field_base][] = field_acc_incident_type
 features[field_base][] = field_affected_organizations
 features[field_base][] = field_responsible_actors
+features[field_instance][] = node-acc_incident-body
 features[field_instance][] = node-acc_incident-field_acc_incident_date
 features[field_instance][] = node-acc_incident-field_acc_incident_type
 features[field_instance][] = node-acc_incident-field_affected_organizations

@@ -21,7 +21,7 @@ function acc_incidents_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_pattern_node_acc_incident';
-  $strongarm->value = '[node:field_incident_date] [node:field-incident-type] [node:field-locations]';
+  $strongarm->value = '[node:field_acc_incident_date] [node:field-acc-incident-type] [node:field-locations]';
   $export['auto_entitylabel_pattern_node_acc_incident'] = $strongarm;
 
   $strongarm = new stdClass();

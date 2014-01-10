@@ -44,8 +44,13 @@ function acc_incidents_feeds_importer_default() {
             'unique' => 1,
           ),
           1 => array(
-            'source' => 'Access Constraint',
+            'source' => 'Parent',
             'target' => 'parent',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'GUID',
+            'target' => 'guid',
             'unique' => FALSE,
           ),
         ),
@@ -141,6 +146,16 @@ function acc_incidents_feeds_importer_default() {
           8 => array(
             'source' => 'Sectors',
             'target' => 'field_clusters',
+            'unique' => FALSE,
+          ),
+          9 => array(
+            'source' => 'Description',
+            'target' => 'body:et:und',
+            'unique' => FALSE,
+          ),
+          10 => array(
+            'source' => 'Description',
+            'target' => 'body:et:en',
             'unique' => FALSE,
           ),
         ),

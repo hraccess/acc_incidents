@@ -27,45 +27,45 @@ function acc_incidents_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-acc-incidents-list' => array(
+        'views--exp-acc_incidents-list' => array(
           'module' => 'views',
-          'delta' => '-exp-acc-incidents-list',
+          'delta' => '-exp-acc_incidents-list',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
-        'facetapi-Doo4L0wF0S0VqmLw9L0qLGpqmhYJZbeQ' => array(
+        'facetapi-5BBA78evOCBcvX5xyUAJKUpwSuJ4Xlhd' => array(
           'module' => 'facetapi',
-          'delta' => 'Doo4L0wF0S0VqmLw9L0qLGpqmhYJZbeQ',
+          'delta' => '5BBA78evOCBcvX5xyUAJKUpwSuJ4Xlhd',
           'region' => 'sidebar_first',
           'weight' => '-9',
         ),
-        'facetapi-V6K0Fi0GFxe5oJI0fGNRT1jmdztjdbb6' => array(
+        'facetapi-LMp6pljOgavG86Bli1wANx1T9y6GZP3T' => array(
           'module' => 'facetapi',
-          'delta' => 'V6K0Fi0GFxe5oJI0fGNRT1jmdztjdbb6',
+          'delta' => 'LMp6pljOgavG86Bli1wANx1T9y6GZP3T',
           'region' => 'sidebar_first',
           'weight' => '-8',
         ),
-        'facetapi-ne3uJ06pueCixGIbyQS51nZWZ22PlVMM' => array(
+        'facetapi-UB180i8VlpBIoeKhyiFoRbvumb1zWxeX' => array(
           'module' => 'facetapi',
-          'delta' => 'ne3uJ06pueCixGIbyQS51nZWZ22PlVMM',
+          'delta' => 'UB180i8VlpBIoeKhyiFoRbvumb1zWxeX',
           'region' => 'sidebar_first',
           'weight' => '-7',
         ),
-        'facetapi-seY79gLu807VUsyd02zo74uVMyFNDLgi' => array(
+        'facetapi-60a95va1KLIPSiw8z1w6OvH0ovd1NulW' => array(
           'module' => 'facetapi',
-          'delta' => 'seY79gLu807VUsyd02zo74uVMyFNDLgi',
+          'delta' => '60a95va1KLIPSiw8z1w6OvH0ovd1NulW',
           'region' => 'sidebar_first',
           'weight' => '-6',
         ),
-        'facetapi-SFtnqYWx1xaDwlCDijMzVIxVVXwkkWk8' => array(
+        'facetapi-UA7MhPZ0nb2NI8kgFzmaHnI4Y9iTOUM0' => array(
           'module' => 'facetapi',
-          'delta' => 'SFtnqYWx1xaDwlCDijMzVIxVVXwkkWk8',
+          'delta' => 'UA7MhPZ0nb2NI8kgFzmaHnI4Y9iTOUM0',
           'region' => 'sidebar_first',
           'weight' => '-5',
         ),
-        'facetapi-ZN5ve81z9Z14q79eta6NyubbmmBNM3k3' => array(
+        'facetapi-IJmnbuu4mkmMNS4bDN3oexHiPBqOG2qJ' => array(
           'module' => 'facetapi',
-          'delta' => 'ZN5ve81z9Z14q79eta6NyubbmmBNM3k3',
+          'delta' => 'IJmnbuu4mkmMNS4bDN3oexHiPBqOG2qJ',
           'region' => 'sidebar_first',
           'weight' => '-4',
         ),

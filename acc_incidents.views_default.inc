@@ -33,11 +33,11 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
   $handler->display->display_options['row_options']['view_mode'] = 'teaser';
-  /* Field: Broken/missing handler */
+  /* Field: Indexed Node: Node ID */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'search_api_index_acc_incidents';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
-  /* Filter criterion: Broken/missing handler */
+  /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
   $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
@@ -103,7 +103,9 @@ function acc_incidents_views_default_views() {
     t('‹ previous'),
     t('next ›'),
     t('last »'),
-    t('Broken handler search_api_index_acc_incidents.nid'),
+    t('Node ID'),
+    t('.'),
+    t(','),
     t('Search'),
     t('List'),
     t('Graphs'),
