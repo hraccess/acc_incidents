@@ -241,6 +241,69 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-acc_incident-field_attachments'
+  $field_instances['node-acc_incident-field_attachments'] = array(
+    'bundle' => 'acc_incident',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'file',
+        'settings' => array(),
+        'type' => 'file_default',
+        'weight' => 23,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_attachments',
+    'label' => 'Attach a file',
+    'required' => 0,
+    'settings' => array(
+      'description_field' => 0,
+      'entity_translation_sync' => FALSE,
+      'file_directory' => 'acc_incidents/attachments',
+      'file_extensions' => 'pdf jpg jpeg gif png',
+      'max_filesize' => '',
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'file',
+      'settings' => array(
+        'filefield_sources' => array(
+          'filefield_sources' => array(
+            'attach' => 0,
+            'clipboard' => 0,
+            'reference' => 'reference',
+            'remote' => 'remote',
+            'upload' => 'upload',
+          ),
+          'source_attach' => array(
+            'absolute' => 0,
+            'attach_mode' => 'move',
+            'path' => 'file_attach',
+          ),
+          'source_imce' => array(
+            'imce_mode' => 0,
+          ),
+          'source_reference' => array(
+            'autocomplete' => 0,
+          ),
+        ),
+        'progress_indicator' => 'throbber',
+      ),
+      'type' => 'file_generic',
+      'weight' => 8,
+    ),
+  );
+
   // Exported field_instance: 'node-acc_incident-field_clusters'
   $field_instances['node-acc_incident-field_clusters'] = array(
     'bundle' => 'acc_incident',
@@ -462,6 +525,7 @@ function acc_incidents_field_default_field_instances() {
   // Included for use with string extractors like potx.
   t('A field replacing node title.');
   t('Affected organizations');
+  t('Attach a file');
   t('Date');
   t('Description');
   t('Location');

@@ -114,7 +114,7 @@ function acc_incidents_strongarm() {
     'extra_fields' => array(
       'form' => array(
         'path' => array(
-          'weight' => '18',
+          'weight' => '9',
         ),
       ),
       'display' => array(),
