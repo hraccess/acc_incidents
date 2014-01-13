@@ -83,6 +83,50 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'node-acc_incident-field_acc_impacts'
+  $field_instances['node-acc_incident-field_acc_impacts'] = array(
+    'bundle' => 'acc_incident',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'field_collection',
+        'settings' => array(
+          'add' => 'Add',
+          'delete' => 'Delete',
+          'description' => TRUE,
+          'edit' => 'Edit',
+          'view_mode' => 'full',
+        ),
+        'type' => 'field_collection_view',
+        'weight' => 24,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_acc_impacts',
+    'label' => 'Impacts of access incident',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 0,
+      'module' => 'field_collection',
+      'settings' => array(),
+      'type' => 'field_collection_embed',
+      'weight' => 9,
+    ),
+  );
+
   // Exported field_instance: 'node-acc_incident-field_acc_incident_date'
   $field_instances['node-acc_incident-field_acc_incident_date'] = array(
     'bundle' => 'acc_incident',
@@ -281,7 +325,7 @@ function acc_incidents_field_default_field_instances() {
           'filefield_sources' => array(
             'attach' => 0,
             'clipboard' => 0,
-            'reference' => 'reference',
+            'reference' => 0,
             'remote' => 'remote',
             'upload' => 'upload',
           ),
@@ -528,6 +572,7 @@ function acc_incidents_field_default_field_instances() {
   t('Attach a file');
   t('Date');
   t('Description');
+  t('Impacts of access incident');
   t('Location');
   t('Name');
   t('Responsible Actors');

@@ -284,10 +284,11 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_affected_organizations']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_affected_organizations']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_affected_organizations']['bypass_access'] = 0;
-  /* Field: Indexed Node: Sectors */
+  /* Field: Indexed Node: Cluster */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'search_api_index_acc_incidents';
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
+  $handler->display->display_options['fields']['field_clusters']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_clusters']['list']['separator'] = ';';
   $handler->display->display_options['fields']['field_clusters']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_clusters']['view_mode'] = 'full';
@@ -377,10 +378,11 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_affected_organizations']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_affected_organizations']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_affected_organizations']['bypass_access'] = 0;
-  /* Field: Indexed Node: Sectors */
+  /* Field: Indexed Node: Cluster */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'search_api_index_acc_incidents';
   $handler->display->display_options['fields']['field_clusters']['field'] = 'field_clusters';
+  $handler->display->display_options['fields']['field_clusters']['label'] = 'Sectors';
   $handler->display->display_options['fields']['field_clusters']['list']['separator'] = ';';
   $handler->display->display_options['fields']['field_clusters']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_clusters']['view_mode'] = 'full';
