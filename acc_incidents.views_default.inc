@@ -1217,6 +1217,108 @@ function acc_incidents_views_default_views() {
     'acc_incident' => 'acc_incident',
   );
   $handler->display->display_options['block_description'] = 'Incidents Graph by Affected Organizations';
+
+  /* Display: Graph Impacts */
+  $handler = $view->new_display('block', 'Graph Impacts', 'graph_impacts');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Access Incident Impacts';
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '15';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'visualization';
+  $handler->display->display_options['style_options']['type'] = 'column';
+  $handler->display->display_options['style_options']['fields'] = array(
+    'field_acc_impact_type' => array(
+      'enabled' => 0,
+      'sort' => '0',
+    ),
+    'field_acc_impact_value' => array(
+      'enabled' => 1,
+      'sort' => '0',
+    ),
+  );
+  $handler->display->display_options['style_options']['yAxis'] = array(
+    'title' => '',
+  );
+  $handler->display->display_options['style_options']['xAxis'] = array(
+    'labelField' => 'field_acc_impact_type',
+    'invert' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Impacts of access incident (field_acc_impacts) */
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['delta'] = '-1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Type of impact */
+  $handler->display->display_options['fields']['field_acc_impact_type']['id'] = 'field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['table'] = 'field_data_field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['field'] = 'field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['relationship'] = 'field_acc_impacts_value';
+  /* Field: Field collection item: Value */
+  $handler->display->display_options['fields']['field_acc_impact_value']['id'] = 'field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['table'] = 'field_data_field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['field'] = 'field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['relationship'] = 'field_acc_impacts_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_acc_impact_value']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['block_description'] = 'Access Incident Impacts';
+
+  /* Display: XLS Impacts */
+  $handler = $view->new_display('views_data_export', 'XLS Impacts', 'xls_impacts');
+  $handler->display->display_options['defaults']['group_by'] = FALSE;
+  $handler->display->display_options['group_by'] = TRUE;
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Impacts of access incident (field_acc_impacts) */
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['delta'] = '-1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Type of impact */
+  $handler->display->display_options['fields']['field_acc_impact_type']['id'] = 'field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['table'] = 'field_data_field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['field'] = 'field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['relationship'] = 'field_acc_impacts_value';
+  /* Field: Field collection item: Value */
+  $handler->display->display_options['fields']['field_acc_impact_value']['id'] = 'field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['table'] = 'field_data_field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['field'] = 'field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['relationship'] = 'field_acc_impacts_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['group_type'] = 'sum';
+  $handler->display->display_options['fields']['field_acc_impact_value']['settings'] = array(
+    'thousand_separator' => '',
+    'prefix_suffix' => 0,
+  );
+  $handler->display->display_options['path'] = 'access/incidents_impacts/xls';
+  $handler->display->display_options['displays'] = array(
+    'graph_impacts' => 'graph_impacts',
+    'default' => 0,
+    'graph_by_type' => 0,
+    'graph_by_main_type' => 0,
+    'graph_by_sector' => 0,
+    'graph_by_date' => 0,
+    'graph_by_location' => 0,
+    'graph_by_responsible_actor' => 0,
+    'block_1' => 0,
+  );
   $translatables['acc_incidents_graphs'] = array(
     t('Master'),
     t('more'),
@@ -1271,6 +1373,12 @@ function acc_incidents_views_default_views() {
     t('Taxonomy term entity referenced from field_affected_organizations'),
     t('Affected organizations'),
     t('Incidents Graph by Affected Organizations'),
+    t('Graph Impacts'),
+    t('Access Incident Impacts'),
+    t('field collection item from field_acc_impacts'),
+    t('Type of impact'),
+    t('Value'),
+    t('XLS Impacts'),
   );
   $export['acc_incidents_graphs'] = $view;
 

@@ -91,6 +91,12 @@ function acc_incidents_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
+        'views-acc_incidents_graphs-block_1' => array(
+          'module' => 'views',
+          'delta' => 'acc_incidents_graphs-block_1',
+          'region' => 'content',
+          'weight' => '-67',
+        ),
         'views-5f7317aeb0e74c85abcc1c76050d3095' => array(
           'module' => 'views',
           'delta' => '5f7317aeb0e74c85abcc1c76050d3095',
@@ -121,17 +127,17 @@ function acc_incidents_context_default_contexts() {
           'region' => 'content',
           'weight' => '-5',
         ),
-        'views-acc_incidents_graphs-block_1' => array(
-          'module' => 'views',
-          'delta' => 'acc_incidents_graphs-block_1',
-          'region' => 'content',
-          'weight' => '-67',
-        ),
         'views-a911264ed4ec29a2d397552630aecaa3' => array(
           'module' => 'views',
           'delta' => 'a911264ed4ec29a2d397552630aecaa3',
           'region' => 'content',
           'weight' => '-4',
+        ),
+        'views-43a77ae8e557abb5fd69dc0ea6cfc653' => array(
+          'module' => 'views',
+          'delta' => '43a77ae8e557abb5fd69dc0ea6cfc653',
+          'region' => 'content',
+          'weight' => '-3',
         ),
       ),
     ),
