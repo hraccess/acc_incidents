@@ -20,19 +20,15 @@ function acc_incidents_context_default_contexts() {
     'views' => array(
       'values' => array(
         'acc_incidents:list' => 'acc_incidents:list',
+        'acc_incidents:map' => 'acc_incidents:map',
         'acc_incidents:master' => 'acc_incidents:master',
+        'acc_incidents:table' => 'acc_incidents:table',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'views--exp-acc_incidents-list' => array(
-          'module' => 'views',
-          'delta' => '-exp-acc_incidents-list',
-          'region' => 'sidebar_first',
-          'weight' => '-10',
-        ),
         'facetapi-5BBA78evOCBcvX5xyUAJKUpwSuJ4Xlhd' => array(
           'module' => 'facetapi',
           'delta' => '5BBA78evOCBcvX5xyUAJKUpwSuJ4Xlhd',
