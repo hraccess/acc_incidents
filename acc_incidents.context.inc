@@ -149,5 +149,102 @@ function acc_incidents_context_default_contexts() {
   t('Access Incidents');
   $export['acc_incidents_graphs'] = $context;
 
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'acc_incidents_list';
+  $context->description = '';
+  $context->tag = 'Access Incidents';
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'acc_incidents:list' => 'acc_incidents:list',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-acc_incidents-list' => array(
+          'module' => 'views',
+          'delta' => '-exp-acc_incidents-list',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Access Incidents');
+  $export['acc_incidents_list'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'acc_incidents_map';
+  $context->description = '';
+  $context->tag = 'Access Incidents';
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'acc_incidents:map' => 'acc_incidents:map',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-acc_incidents-map' => array(
+          'module' => 'views',
+          'delta' => '-exp-acc_incidents-map',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Access Incidents');
+  $export['acc_incidents_map'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
+  $context->name = 'acc_incidents_table';
+  $context->description = '';
+  $context->tag = 'Access Incidents';
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'acc_incidents:master' => 'acc_incidents:master',
+        'acc_incidents:table' => 'acc_incidents:table',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views--exp-acc_incidents-table' => array(
+          'module' => 'views',
+          'delta' => '-exp-acc_incidents-table',
+          'region' => 'sidebar_first',
+          'weight' => '-10',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Access Incidents');
+  $export['acc_incidents_table'] = $context;
+
   return $export;
 }
