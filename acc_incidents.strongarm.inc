@@ -83,6 +83,25 @@ function acc_incidents_strongarm() {
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
+  $strongarm->name = 'content_access_acc_incident';
+  $strongarm->value = array(
+    'view_own' => array(
+      0 => 147444660,
+      1 => 229782242,
+      2 => 52310416,
+      3 => 30037204,
+    ),
+    'view' => array(
+      0 => 147444660,
+      1 => 52310416,
+      2 => 30037204,
+    ),
+  );
+  $export['content_access_acc_incident'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
   $strongarm->name = 'field_bundle_settings_node__acc_incident';
   $strongarm->value = array(
     'view_modes' => array(
