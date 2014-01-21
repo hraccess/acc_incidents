@@ -5,3 +5,11 @@
  */
 
 include_once 'acc_incidents.features.inc';
+
+/**
+ * Implements hook_cron()
+ */
+function acc_incidents_cron() {
+    humanitarianresponse_core_feeds_check('acc_incident_types', 'http://terms.humanitarianresponse.info/access-incident-types.csv');
+}
+
