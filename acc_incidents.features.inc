@@ -71,11 +71,17 @@ function acc_incidents_default_search_api_index() {
         "author" : { "type" : "integer", "entity_type" : "user" },
         "field_clusters" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_locations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_acc_impacts" : {
+          "type" : "list\\u003Cinteger\\u003E",
+          "entity_type" : "field_collection_item"
+        },
         "field_acc_incident_type" : { "type" : "integer", "entity_type" : "taxonomy_term" },
-        "field_responsible_actors" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_affected_organizations" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_responsible_actors" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_type_of_affectee" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "search_api_language" : { "type" : "string" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_incident_date:value" : { "type" : "date" },
         "field_acc_incident_date:value2" : { "type" : "date" }
       },

@@ -22,7 +22,7 @@ function acc_incidents_field_default_field_instances() {
         'module' => 'text',
         'settings' => array(),
         'type' => 'text_default',
-        'weight' => 22,
+        'weight' => 7,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -79,7 +79,7 @@ function acc_incidents_field_default_field_instances() {
         'summary_rows' => 5,
       ),
       'type' => 'text_textarea_with_summary',
-      'weight' => 7,
+      'weight' => 8,
     ),
   );
 
@@ -101,7 +101,7 @@ function acc_incidents_field_default_field_instances() {
           'view_mode' => 'full',
         ),
         'type' => 'field_collection_view',
-        'weight' => 24,
+        'weight' => 9,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -112,7 +112,7 @@ function acc_incidents_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'field_acc_impacts',
-    'label' => 'Impacts of access incident',
+    'label' => 'Impacts',
     'required' => 0,
     'settings' => array(
       'entity_translation_sync' => FALSE,
@@ -123,7 +123,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'field_collection',
       'settings' => array(),
       'type' => 'field_collection_embed',
-      'weight' => 9,
+      'weight' => 10,
     ),
   );
 
@@ -143,10 +143,9 @@ function acc_incidents_field_default_field_instances() {
           'multiple_from' => '',
           'multiple_number' => '',
           'multiple_to' => '',
-          'show_repeat_rule' => 'show',
         ),
         'type' => 'date_default',
-        'weight' => 2,
+        'weight' => 0,
       ),
       'ical' => array(
         'label' => 'above',
@@ -212,7 +211,7 @@ function acc_incidents_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 19,
+        'weight' => 4,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -252,7 +251,7 @@ function acc_incidents_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 21,
+        'weight' => 6,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -281,7 +280,7 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 5,
+      'weight' => 6,
     ),
   );
 
@@ -296,7 +295,7 @@ function acc_incidents_field_default_field_instances() {
         'module' => 'file',
         'settings' => array(),
         'type' => 'file_default',
-        'weight' => 23,
+        'weight' => 8,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -344,7 +343,7 @@ function acc_incidents_field_default_field_instances() {
         'progress_indicator' => 'throbber',
       ),
       'type' => 'file_generic',
-      'weight' => 8,
+      'weight' => 9,
     ),
   );
 
@@ -360,7 +359,7 @@ function acc_incidents_field_default_field_instances() {
         'module' => 'taxonomy',
         'settings' => array(),
         'type' => 'taxonomy_term_reference_link',
-        'weight' => 16,
+        'weight' => 2,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -384,7 +383,7 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 6,
+      'weight' => 7,
     ),
   );
 
@@ -400,7 +399,7 @@ function acc_incidents_field_default_field_instances() {
         'module' => 'hs_taxonomy',
         'settings' => array(),
         'type' => 'hs_taxonomy_term_reference_hierarchical_text',
-        'weight' => 4,
+        'weight' => 1,
       ),
       'ical' => array(
         'label' => 'above',
@@ -428,7 +427,7 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'hs_taxonomy',
       'settings' => array(),
       'type' => 'taxonomy_hs',
-      'weight' => 3,
+      'weight' => 4,
     ),
   );
 
@@ -446,7 +445,7 @@ function acc_incidents_field_default_field_instances() {
           'link' => FALSE,
         ),
         'type' => 'entityreference_label',
-        'weight' => 20,
+        'weight' => 5,
       ),
       'teaser' => array(
         'label' => 'above',
@@ -475,7 +474,47 @@ function acc_incidents_field_default_field_instances() {
         'apply_chosen' => 1,
       ),
       'type' => 'options_select',
-      'weight' => 4,
+      'weight' => 5,
+    ),
+  );
+
+  // Exported field_instance: 'node-acc_incident-field_type_of_affectee'
+  $field_instances['node-acc_incident-field_type_of_affectee'] = array(
+    'bundle' => 'acc_incident',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'taxonomy',
+        'settings' => array(),
+        'type' => 'taxonomy_term_reference_plain',
+        'weight' => 3,
+      ),
+      'teaser' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'node',
+    'field_name' => 'field_type_of_affectee',
+    'label' => 'Type of affectee',
+    'required' => 0,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => 1,
+      ),
+      'type' => 'options_select',
+      'weight' => 3,
     ),
   );
 
@@ -490,7 +529,7 @@ function acc_incidents_field_default_field_instances() {
         'label' => 'above',
         'settings' => array(),
         'type' => 'hidden',
-        'weight' => 1,
+        'weight' => 10,
       ),
       'ical' => array(
         'label' => 'above',
@@ -572,13 +611,14 @@ function acc_incidents_field_default_field_instances() {
   t('Attach a file');
   t('Date');
   t('Description');
-  t('Impacts of access incident');
+  t('Impacts');
   t('Location');
   t('Name');
   t('Responsible Actors');
   t('Sectors');
   t('Title');
   t('Type');
+  t('Type of affectee');
 
   return $field_instances;
 }

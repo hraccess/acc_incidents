@@ -83,6 +83,11 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['url']['alter']['text'] = '<a href="[url]">view</a>';
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
+  /* Sort criterion: Indexed Node: Date created */
+  $handler->display->display_options['sorts']['created']['id'] = 'created';
+  $handler->display->display_options['sorts']['created']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['sorts']['created']['field'] = 'created';
+  $handler->display->display_options['sorts']['created']['order'] = 'DESC';
   /* Filter criterion: Search: Fulltext search */
   $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
   $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
@@ -105,6 +110,12 @@ function acc_incidents_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('page', 'Master', 'master');
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'openlayers_map';
+  $handler->display->display_options['style_options']['map'] = 'acc_incidents';
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'access/incidents';
 
@@ -112,9 +123,9 @@ function acc_incidents_views_default_views() {
   $handler = $view->new_display('page', 'Table', 'table');
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'access/incidents/table';
-  $handler->display->display_options['menu']['type'] = 'default tab';
+  $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Table';
-  $handler->display->display_options['menu']['weight'] = '0';
+  $handler->display->display_options['menu']['weight'] = '4';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['weight'] = '0';
@@ -203,11 +214,12 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['path'] = 'access/incidents/map';
-  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Map';
-  $handler->display->display_options['menu']['weight'] = '4';
+  $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
+  $handler->display->display_options['tab_options']['weight'] = '0';
 
   /* Display: Graphs */
   $handler = $view->new_display('page', 'Graphs', 'graphs');
@@ -928,7 +940,6 @@ function acc_incidents_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  $handler->display->display_options['fields']['field_acc_incident_date']['format_date_sql'] = 1;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1258,7 +1269,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts of access incident (field_acc_impacts) */
+  /* Relationship: Content: Impacts (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
@@ -1291,7 +1302,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts of access incident (field_acc_impacts) */
+  /* Relationship: Content: Impacts (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
