@@ -158,6 +158,16 @@ function acc_incidents_feeds_importer_default() {
             'target' => 'body:et:en',
             'unique' => FALSE,
           ),
+          11 => array(
+            'source' => 'Impact Type',
+            'target' => 'field_acc_impacts:field_acc_impact_type:label',
+            'unique' => FALSE,
+          ),
+          12 => array(
+            'source' => 'Impact Value',
+            'target' => 'field_acc_impacts:field_acc_impact_value',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '2',
         'input_format' => 'full_html',

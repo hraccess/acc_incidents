@@ -83,7 +83,9 @@ function acc_incidents_default_search_api_index() {
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
         "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_incident_date:value" : { "type" : "date" },
-        "field_acc_incident_date:value2" : { "type" : "date" }
+        "field_acc_incident_date:value2" : { "type" : "date" },
+        "field_locations:field_location:lat" : { "type" : "list\\u003Cdecimal\\u003E" },
+        "field_locations:field_location:lon" : { "type" : "list\\u003Cdecimal\\u003E" }
       },
       "data_alter_callbacks" : {
         "search_api_alter_bundle_filter" : {

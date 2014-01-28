@@ -162,10 +162,10 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_data';
   $handler->display->display_options['style_options']['data_source'] = array(
-    'value' => 'wkt',
-    'other_lat' => 'title',
-    'other_lon' => 'title',
-    'wkt' => 'field_location',
+    'value' => 'other_latlon',
+    'other_lat' => 'field_locations_field_location_lat',
+    'other_lon' => 'field_locations_field_location_lon',
+    'wkt' => 'title',
     'other_top' => 'title',
     'other_right' => 'title',
     'other_bottom' => 'title',
@@ -179,27 +179,24 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Indexed Node: Location */
-  $handler->display->display_options['relationships']['field_locations']['id'] = 'field_locations';
-  $handler->display->display_options['relationships']['field_locations']['table'] = 'search_api_index_acc_incidents';
-  $handler->display->display_options['relationships']['field_locations']['field'] = 'field_locations';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Indexed Node: Title */
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_incidents';
   $handler->display->display_options['fields']['title']['field'] = 'title';
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
-  /* Field: Taxonomy term: Location */
-  $handler->display->display_options['fields']['field_location']['id'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['table'] = 'entity_taxonomy_term';
-  $handler->display->display_options['fields']['field_location']['field'] = 'field_location';
-  $handler->display->display_options['fields']['field_location']['relationship'] = 'field_locations';
-  $handler->display->display_options['fields']['field_location']['label'] = '';
-  $handler->display->display_options['fields']['field_location']['element_label_colon'] = FALSE;
-  $handler->display->display_options['fields']['field_location']['click_sort_column'] = 'geom';
-  $handler->display->display_options['fields']['field_location']['settings'] = array(
-    'data' => 'centroid',
-  );
+  /* Field: Location » Location: Latitude (indexed) */
+  $handler->display->display_options['fields']['field_locations_field_location_lat']['id'] = 'field_locations_field_location_lat';
+  $handler->display->display_options['fields']['field_locations_field_location_lat']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_locations_field_location_lat']['field'] = 'field_locations_field_location_lat';
+  $handler->display->display_options['fields']['field_locations_field_location_lat']['precision'] = '0';
+  $handler->display->display_options['fields']['field_locations_field_location_lat']['link_to_entity'] = 0;
+  /* Field: Location » Location: Longitude (indexed) */
+  $handler->display->display_options['fields']['field_locations_field_location_lon']['id'] = 'field_locations_field_location_lon';
+  $handler->display->display_options['fields']['field_locations_field_location_lon']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_locations_field_location_lon']['field'] = 'field_locations_field_location_lon';
+  $handler->display->display_options['fields']['field_locations_field_location_lon']['precision'] = '0';
+  $handler->display->display_options['fields']['field_locations_field_location_lon']['link_to_entity'] = 0;
 
   /* Display: Map */
   $handler = $view->new_display('page', 'Map', 'map');
@@ -444,6 +441,10 @@ function acc_incidents_views_default_views() {
     t('List'),
     t('Map Data'),
     t('Title'),
+    t('Latitude (indexed)'),
+    t('.'),
+    t(','),
+    t('Longitude (indexed)'),
     t('Map'),
     t('Graphs'),
     t('XLS'),
@@ -1269,7 +1270,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts (field_acc_impacts) */
+  /* Relationship: Content: Impacts of applications (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
@@ -1302,7 +1303,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts (field_acc_impacts) */
+  /* Relationship: Content: Impacts of applications (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
