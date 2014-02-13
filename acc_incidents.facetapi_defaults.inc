@@ -32,7 +32,7 @@ function acc_incidents_facetapi_default_facet_settings() {
     'query_type' => 'date',
     'default_true' => '1',
     'facet_search_ids' => array(),
-    'date_granularity' => 'MINUTE',
+    'date_granularity' => 'MONTH',
     'pretty_paths_alias' => 'created',
   );
   $export['search_api@acc_incidents::created'] = $facet;

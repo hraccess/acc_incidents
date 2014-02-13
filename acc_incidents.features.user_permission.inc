@@ -10,6 +10,28 @@
 function acc_incidents_user_default_permissions() {
   $permissions = array();
 
+  // Exported permission: 'clear acc_incident_types feeds'.
+  $permissions['clear acc_incident_types feeds'] = array(
+    'name' => 'clear acc_incident_types feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'clear acc_incidents feeds'.
+  $permissions['clear acc_incidents feeds'] = array(
+    'name' => 'clear acc_incidents feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
   // Exported permission: 'create acc_incident content'.
   $permissions['create acc_incident content'] = array(
     'name' => 'create acc_incident content',
@@ -64,6 +86,50 @@ function acc_incidents_user_default_permissions() {
       'manager' => 'manager',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'import acc_incident_types feeds'.
+  $permissions['import acc_incident_types feeds'] = array(
+    'name' => 'import acc_incident_types feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'import acc_incidents feeds'.
+  $permissions['import acc_incidents feeds'] = array(
+    'name' => 'import acc_incidents feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock acc_incident_types feeds'.
+  $permissions['unlock acc_incident_types feeds'] = array(
+    'name' => 'unlock acc_incident_types feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
+  );
+
+  // Exported permission: 'unlock acc_incidents feeds'.
+  $permissions['unlock acc_incidents feeds'] = array(
+    'name' => 'unlock acc_incidents feeds',
+    'roles' => array(
+      'access manager' => 'access manager',
+      'administrator' => 'administrator',
+      'manager' => 'manager',
+    ),
+    'module' => 'feeds',
   );
 
   return $permissions;
