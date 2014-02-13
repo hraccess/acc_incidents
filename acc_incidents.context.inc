@@ -77,6 +77,12 @@ function acc_incidents_context_default_contexts() {
           'region' => 'sidebar_first',
           'weight' => '-3',
         ),
+        'facetapi-l99as1r0pDoRtecxy4EsaAVWZ2gaSkVc' => array(
+          'module' => 'facetapi',
+          'delta' => 'l99as1r0pDoRtecxy4EsaAVWZ2gaSkVc',
+          'region' => 'sidebar_first',
+          'weight' => '-2',
+        ),
       ),
     ),
   );
@@ -203,6 +209,7 @@ function acc_incidents_context_default_contexts() {
     'views' => array(
       'values' => array(
         'acc_incidents:map' => 'acc_incidents:map',
+        'acc_incidents:master' => 'acc_incidents:master',
       ),
     ),
   );
@@ -234,7 +241,6 @@ function acc_incidents_context_default_contexts() {
   $context->conditions = array(
     'views' => array(
       'values' => array(
-        'acc_incidents:master' => 'acc_incidents:master',
         'acc_incidents:table' => 'acc_incidents:table',
       ),
     ),

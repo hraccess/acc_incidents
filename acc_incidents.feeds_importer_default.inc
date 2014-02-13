@@ -149,23 +149,23 @@ function acc_incidents_feeds_importer_default() {
             'unique' => FALSE,
           ),
           9 => array(
-            'source' => 'Description',
-            'target' => 'body:et:und',
-            'unique' => FALSE,
-          ),
-          10 => array(
-            'source' => 'Description',
-            'target' => 'body:et:en',
-            'unique' => FALSE,
-          ),
-          11 => array(
             'source' => 'Impact Type',
             'target' => 'field_acc_impacts:field_acc_impact_type:label',
             'unique' => FALSE,
           ),
-          12 => array(
+          10 => array(
             'source' => 'Impact Value',
             'target' => 'field_acc_impacts:field_acc_impact_value',
+            'unique' => FALSE,
+          ),
+          11 => array(
+            'source' => 'Description',
+            'target' => 'body:et:und',
+            'unique' => FALSE,
+          ),
+          12 => array(
+            'source' => 'Description',
+            'target' => 'body:et:en',
             'unique' => FALSE,
           ),
         ),

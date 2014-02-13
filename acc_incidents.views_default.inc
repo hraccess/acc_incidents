@@ -307,6 +307,23 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_clusters']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_clusters']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_clusters']['bypass_access'] = 0;
+  /* Field: Impacts: Type of impact (indexed) */
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['id'] = 'field_acc_impacts_field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['field'] = 'field_acc_impacts_field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['label'] = 'Type of impact';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['bypass_access'] = 0;
+  /* Field: Impacts: Value (indexed) */
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['id'] = 'field_acc_impacts_field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['field'] = 'field_acc_impacts_field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['label'] = 'Impact Value';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
   /* Field: Indexed Node: The main body text */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_incidents';
@@ -401,6 +418,23 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_clusters']['link_to_entity'] = 1;
   $handler->display->display_options['fields']['field_clusters']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_clusters']['bypass_access'] = 0;
+  /* Field: Impacts: Type of impact (indexed) */
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['id'] = 'field_acc_impacts_field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['field'] = 'field_acc_impacts_field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['label'] = 'Type of impact';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_type']['bypass_access'] = 0;
+  /* Field: Impacts: Value (indexed) */
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['id'] = 'field_acc_impacts_field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['field'] = 'field_acc_impacts_field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['label'] = 'Impact Value';
+  $handler->display->display_options['fields']['field_acc_impacts_field_acc_impact_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
   /* Field: Indexed Node: The main body text */
   $handler->display->display_options['fields']['body']['id'] = 'body';
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_acc_incidents';
@@ -453,6 +487,8 @@ function acc_incidents_views_default_views() {
     t('Responsible Actors'),
     t('Affected organizations'),
     t('Sectors'),
+    t('Type of impact'),
+    t('Impact Value'),
     t('Description'),
     t('CSV'),
   );
@@ -1136,7 +1172,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['nid']['group_type'] = 'count';
   $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
   $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Field: Content: Responsible Actors */
+  /* Field: Content: Issuing actor / agency */
   $handler->display->display_options['fields']['field_responsible_actors']['id'] = 'field_responsible_actors';
   $handler->display->display_options['fields']['field_responsible_actors']['table'] = 'field_data_field_responsible_actors';
   $handler->display->display_options['fields']['field_responsible_actors']['field'] = 'field_responsible_actors';
@@ -1270,7 +1306,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts of applications (field_acc_impacts) */
+  /* Relationship: Content: Impacts Policy (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
@@ -1303,7 +1339,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts of applications (field_acc_impacts) */
+  /* Relationship: Content: Impacts Policy (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
@@ -1383,7 +1419,7 @@ function acc_incidents_views_default_views() {
     t('Incidents Graph by Location'),
     t('Graph By Responsible Actor'),
     t('Incidents by Responsible Actor'),
-    t('Responsible Actors'),
+    t('Issuing actor / agency'),
     t('Incidents Graph by Responsible Actor'),
     t('Graph By Affected Organizations'),
     t('Incidents by Affected Organizations'),
