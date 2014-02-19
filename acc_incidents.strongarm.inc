@@ -14,7 +14,7 @@ function acc_incidents_strongarm() {
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
   $strongarm->api_version = 1;
   $strongarm->name = 'auto_entitylabel_node_acc_incident';
-  $strongarm->value = '2';
+  $strongarm->value = '1';
   $export['auto_entitylabel_node_acc_incident'] = $strongarm;
 
   $strongarm = new stdClass();
@@ -98,6 +98,13 @@ function acc_incidents_strongarm() {
     ),
   );
   $export['content_access_acc_incident'] = $strongarm;
+
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'date_format_access_short_date';
+  $strongarm->value = 'd/M/Y';
+  $export['date_format_access_short_date'] = $strongarm;
 
   $strongarm = new stdClass();
   $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */

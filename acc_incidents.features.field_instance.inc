@@ -185,12 +185,10 @@ function acc_incidents_field_default_field_instances() {
       'module' => 'date',
       'settings' => array(
         'apply_chosen' => 0,
-        'display_all_day' => 0,
         'increment' => 15,
-        'input_format' => 'd/m/Y - H:i:s',
+        'input_format' => 'j M Y - H:i:s',
         'input_format_custom' => '',
         'label_position' => 'above',
-        'repeat_collapsed' => 0,
         'text_parts' => array(),
         'year_range' => '-3:+3',
       ),

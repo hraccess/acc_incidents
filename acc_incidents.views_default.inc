@@ -248,7 +248,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_acc_incident_date']['label'] = 'Start Date';
   $handler->display->display_options['fields']['field_acc_incident_date']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_acc_incident_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'access_short_date',
     'fromto' => 'value',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -261,7 +261,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_acc_incident_date_1']['label'] = 'End Date';
   $handler->display->display_options['fields']['field_acc_incident_date_1']['type'] = 'date_plain';
   $handler->display->display_options['fields']['field_acc_incident_date_1']['settings'] = array(
-    'format_type' => 'long',
+    'format_type' => 'access_short_date',
     'fromto' => 'value2',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -1172,7 +1172,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['nid']['group_type'] = 'count';
   $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
   $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Field: Content: Issuing actor / agency */
+  /* Field: Content: Responsible Actors */
   $handler->display->display_options['fields']['field_responsible_actors']['id'] = 'field_responsible_actors';
   $handler->display->display_options['fields']['field_responsible_actors']['table'] = 'field_data_field_responsible_actors';
   $handler->display->display_options['fields']['field_responsible_actors']['field'] = 'field_responsible_actors';
@@ -1306,7 +1306,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts Policy (field_acc_impacts) */
+  /* Relationship: Content: Impacts (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
@@ -1339,7 +1339,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts Policy (field_acc_impacts) */
+  /* Relationship: Content: Impacts (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
@@ -1419,7 +1419,7 @@ function acc_incidents_views_default_views() {
     t('Incidents Graph by Location'),
     t('Graph By Responsible Actor'),
     t('Incidents by Responsible Actor'),
-    t('Issuing actor / agency'),
+    t('Responsible Actors'),
     t('Incidents Graph by Responsible Actor'),
     t('Graph By Affected Organizations'),
     t('Incidents by Affected Organizations'),

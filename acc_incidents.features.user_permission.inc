@@ -65,6 +65,24 @@ function acc_incidents_user_default_permissions() {
     'module' => 'node',
   );
 
+  // Exported permission: 'delete terms in acc_incident_types'.
+  $permissions['delete terms in acc_incident_types'] = array(
+    'name' => 'delete terms in acc_incident_types',
+    'roles' => array(
+      'access manager' => 'access manager',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'delete terms in acc_type_of_aid_workers'.
+  $permissions['delete terms in acc_type_of_aid_workers'] = array(
+    'name' => 'delete terms in acc_type_of_aid_workers',
+    'roles' => array(
+      'access manager' => 'access manager',
+    ),
+    'module' => 'taxonomy',
+  );
+
   // Exported permission: 'edit any acc_incident content'.
   $permissions['edit any acc_incident content'] = array(
     'name' => 'edit any acc_incident content',
@@ -86,6 +104,24 @@ function acc_incidents_user_default_permissions() {
       'manager' => 'manager',
     ),
     'module' => 'node',
+  );
+
+  // Exported permission: 'edit terms in acc_incident_types'.
+  $permissions['edit terms in acc_incident_types'] = array(
+    'name' => 'edit terms in acc_incident_types',
+    'roles' => array(
+      'access manager' => 'access manager',
+    ),
+    'module' => 'taxonomy',
+  );
+
+  // Exported permission: 'edit terms in acc_type_of_aid_workers'.
+  $permissions['edit terms in acc_type_of_aid_workers'] = array(
+    'name' => 'edit terms in acc_type_of_aid_workers',
+    'roles' => array(
+      'access manager' => 'access manager',
+    ),
+    'module' => 'taxonomy',
   );
 
   // Exported permission: 'import acc_incident_types feeds'.
