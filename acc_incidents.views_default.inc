@@ -652,7 +652,7 @@ function acc_incidents_views_default_views() {
   /* Display: Graph By Main Type */
   $handler = $view->new_display('block', 'Graph By Main Type', 'graph_by_main_type');
   $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Incidents by Main Type';
+  $handler->display->display_options['title'] = 'Incidents by Access Constraints';
   $handler->display->display_options['defaults']['group_by'] = FALSE;
   $handler->display->display_options['group_by'] = TRUE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
@@ -1021,35 +1021,46 @@ function acc_incidents_views_default_views() {
       'enabled' => 1,
       'sort' => 'DESC',
     ),
-    'field_locations' => array(
+    'name_field' => array(
       'enabled' => 0,
+      'sort' => '0',
     ),
   );
   $handler->display->display_options['style_options']['yAxis'] = array(
-    'title' => '',
+    'title' => 'Number of incidents',
   );
   $handler->display->display_options['style_options']['xAxis'] = array(
-    'labelField' => 'field_locations',
+    'labelField' => 'name_field',
     'invert' => 0,
   );
   $handler->display->display_options['defaults']['style_options'] = FALSE;
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Field: Location (field_locations) */
+  $handler->display->display_options['relationships']['field_locations_tid']['id'] = 'field_locations_tid';
+  $handler->display->display_options['relationships']['field_locations_tid']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['relationships']['field_locations_tid']['field'] = 'field_locations_tid';
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['relationship'] = 'field_locations_tid';
   $handler->display->display_options['defaults']['fields'] = FALSE;
   /* Field: Content: Nid */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['group_type'] = 'count';
-  $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
-  $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Field: Field: Location */
-  $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['table'] = 'field_data_field_locations';
-  $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['type'] = 'taxonomy_term_reference_plain';
-  $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
+  $handler->display->display_options['fields']['nid']['label'] = 'Incidents';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name_field']['id'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['table'] = 'field_data_name_field';
+  $handler->display->display_options['fields']['name_field']['field'] = 'name_field';
+  $handler->display->display_options['fields']['name_field']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['name_field']['label'] = 'District';
+  $handler->display->display_options['fields']['name_field']['link_to_entity'] = 0;
   $handler->display->display_options['defaults']['sorts'] = FALSE;
   $handler->display->display_options['defaults']['filter_groups'] = FALSE;
   $handler->display->display_options['defaults']['filters'] = FALSE;
@@ -1067,13 +1078,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['filters']['type']['value'] = array(
     'acc_incident' => 'acc_incident',
   );
-  /* Filter criterion: Field: Location (field_locations) */
-  $handler->display->display_options['filters']['field_locations_tid']['id'] = 'field_locations_tid';
-  $handler->display->display_options['filters']['field_locations_tid']['table'] = 'field_data_field_locations';
-  $handler->display->display_options['filters']['field_locations_tid']['field'] = 'field_locations_tid';
-  $handler->display->display_options['filters']['field_locations_tid']['operator'] = 'not empty';
-  $handler->display->display_options['filters']['field_locations_tid']['type'] = 'select';
-  $handler->display->display_options['filters']['field_locations_tid']['vocabulary'] = 'locations';
+  $handler->display->display_options['filters']['type']['group'] = 1;
   $handler->display->display_options['block_description'] = 'Incidents Graph by Location';
 
   /* Display: XLS By Sector */
@@ -1172,7 +1177,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['nid']['group_type'] = 'count';
   $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
   $handler->display->display_options['fields']['nid']['separator'] = '';
-  /* Field: Content: Responsible Actors */
+  /* Field: Content: Issuing actor / agency */
   $handler->display->display_options['fields']['field_responsible_actors']['id'] = 'field_responsible_actors';
   $handler->display->display_options['fields']['field_responsible_actors']['table'] = 'field_data_field_responsible_actors';
   $handler->display->display_options['fields']['field_responsible_actors']['field'] = 'field_responsible_actors';
@@ -1306,7 +1311,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['row_plugin'] = 'fields';
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts (field_acc_impacts) */
+  /* Relationship: Content: Impacts Policy (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
@@ -1339,7 +1344,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['relationships'] = FALSE;
-  /* Relationship: Content: Impacts (field_acc_impacts) */
+  /* Relationship: Content: Impacts Policy (field_acc_impacts) */
   $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
   $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
@@ -1395,7 +1400,7 @@ function acc_incidents_views_default_views() {
     t('Incidents Graph by Type'),
     t('XLS By Type'),
     t('Graph By Main Type'),
-    t('Incidents by Main Type'),
+    t('Incidents by Access Constraints'),
     t('term from field_acc_incident_type'),
     t('Parent'),
     t('[name] ([nid])'),
@@ -1415,11 +1420,14 @@ function acc_incidents_views_default_views() {
     t('Incidents Graph by Date'),
     t('Graph By Location'),
     t('Incidents by Location'),
-    t('Location'),
+    t('term from field_locations'),
+    t('Incidents'),
+    t('District'),
     t('Incidents Graph by Location'),
+    t('Location'),
     t('Graph By Responsible Actor'),
     t('Incidents by Responsible Actor'),
-    t('Responsible Actors'),
+    t('Issuing actor / agency'),
     t('Incidents Graph by Responsible Actor'),
     t('Graph By Affected Organizations'),
     t('Incidents by Affected Organizations'),
