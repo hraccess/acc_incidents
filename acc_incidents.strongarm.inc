@@ -92,9 +92,10 @@ function acc_incidents_strongarm() {
       3 => 30037204,
     ),
     'view' => array(
-      0 => 147444660,
-      1 => 52310416,
-      2 => 30037204,
+      0 => 1,
+      1 => 147444660,
+      2 => 52310416,
+      3 => 30037204,
     ),
   );
   $export['content_access_acc_incident'] = $strongarm;

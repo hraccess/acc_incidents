@@ -156,6 +156,14 @@ function acc_incidents_views_default_views() {
 
   /* Display: Map Data */
   $handler = $view->new_display('openlayers', 'Map Data', 'map_data');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    229782242 => '229782242',
+    147444660 => '147444660',
+    30037204 => '30037204',
+    52310416 => '52310416',
+  );
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -200,6 +208,14 @@ function acc_incidents_views_default_views() {
 
   /* Display: Map */
   $handler = $view->new_display('page', 'Map', 'map');
+  $handler->display->display_options['defaults']['access'] = FALSE;
+  $handler->display->display_options['access']['type'] = 'role';
+  $handler->display->display_options['access']['role'] = array(
+    229782242 => '229782242',
+    147444660 => '147444660',
+    30037204 => '30037204',
+    52310416 => '52310416',
+  );
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'none';
   $handler->display->display_options['pager']['options']['offset'] = '0';
@@ -241,6 +257,29 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Type */
+  $handler->display->display_options['fields']['field_acc_incident_type']['id'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_acc_incident_type']['field'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_acc_incident_type']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_incident_type']['bypass_access'] = 0;
+  /* Field: Location: Parent terms (indexed) */
+  $handler->display->display_options['fields']['field_locations_parent']['id'] = 'field_locations_parent';
+  $handler->display->display_options['fields']['field_locations_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_locations_parent']['field'] = 'field_locations_parent';
+  $handler->display->display_options['fields']['field_locations_parent']['label'] = 'Admin Level1';
+  $handler->display->display_options['fields']['field_locations_parent']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_locations_parent']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_locations_parent']['bypass_access'] = 0;
+  /* Field: Indexed Node: Location */
+  $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['list']['separator'] = ';';
+  $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
   /* Field: Indexed Node: Date */
   $handler->display->display_options['fields']['field_acc_incident_date']['id'] = 'field_acc_incident_date';
   $handler->display->display_options['fields']['field_acc_incident_date']['table'] = 'search_api_index_acc_incidents';
@@ -254,34 +293,6 @@ function acc_incidents_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Indexed Node: Date */
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['id'] = 'field_acc_incident_date_1';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['table'] = 'search_api_index_acc_incidents';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['field'] = 'field_acc_incident_date';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['label'] = 'End Date';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['type'] = 'date_plain';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['settings'] = array(
-    'format_type' => 'access_short_date',
-    'fromto' => 'value2',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Indexed Node: Location */
-  $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_incidents';
-  $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['list']['separator'] = ';';
-  $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
-  /* Field: Indexed Node: Type */
-  $handler->display->display_options['fields']['field_acc_incident_type']['id'] = 'field_acc_incident_type';
-  $handler->display->display_options['fields']['field_acc_incident_type']['table'] = 'search_api_index_acc_incidents';
-  $handler->display->display_options['fields']['field_acc_incident_type']['field'] = 'field_acc_incident_type';
-  $handler->display->display_options['fields']['field_acc_incident_type']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_acc_incident_type']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_acc_incident_type']['bypass_access'] = 0;
   /* Field: Indexed Node: Responsible Actors */
   $handler->display->display_options['fields']['field_responsible_actors']['id'] = 'field_responsible_actors';
   $handler->display->display_options['fields']['field_responsible_actors']['table'] = 'search_api_index_acc_incidents';
@@ -298,6 +309,13 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_affected_organizations']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_affected_organizations']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_affected_organizations']['bypass_access'] = 0;
+  /* Field: Indexed Node: Type of affectee */
+  $handler->display->display_options['fields']['field_type_of_affectee']['id'] = 'field_type_of_affectee';
+  $handler->display->display_options['fields']['field_type_of_affectee']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_type_of_affectee']['field'] = 'field_type_of_affectee';
+  $handler->display->display_options['fields']['field_type_of_affectee']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_type_of_affectee']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_type_of_affectee']['bypass_access'] = 0;
   /* Field: Indexed Node: Cluster */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'search_api_index_acc_incidents';
@@ -352,6 +370,29 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['header'] = 1;
   $handler->display->display_options['style_options']['keep_html'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Type */
+  $handler->display->display_options['fields']['field_acc_incident_type']['id'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_acc_incident_type']['field'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_acc_incident_type']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_incident_type']['bypass_access'] = 0;
+  /* Field: Location: Parent terms (indexed) */
+  $handler->display->display_options['fields']['field_locations_parent']['id'] = 'field_locations_parent';
+  $handler->display->display_options['fields']['field_locations_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_locations_parent']['field'] = 'field_locations_parent';
+  $handler->display->display_options['fields']['field_locations_parent']['label'] = 'Admin Level1';
+  $handler->display->display_options['fields']['field_locations_parent']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_locations_parent']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_locations_parent']['bypass_access'] = 0;
+  /* Field: Indexed Node: Location */
+  $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['list']['separator'] = ';';
+  $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
   /* Field: Indexed Node: Date */
   $handler->display->display_options['fields']['field_acc_incident_date']['id'] = 'field_acc_incident_date';
   $handler->display->display_options['fields']['field_acc_incident_date']['table'] = 'search_api_index_acc_incidents';
@@ -365,34 +406,6 @@ function acc_incidents_views_default_views() {
     'multiple_from' => '',
     'multiple_to' => '',
   );
-  /* Field: Indexed Node: Date */
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['id'] = 'field_acc_incident_date_1';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['table'] = 'search_api_index_acc_incidents';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['field'] = 'field_acc_incident_date';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['label'] = 'End Date';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['type'] = 'date_plain';
-  $handler->display->display_options['fields']['field_acc_incident_date_1']['settings'] = array(
-    'format_type' => 'long',
-    'fromto' => 'value2',
-    'multiple_number' => '',
-    'multiple_from' => '',
-    'multiple_to' => '',
-  );
-  /* Field: Indexed Node: Location */
-  $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_incidents';
-  $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['list']['separator'] = ';';
-  $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
-  /* Field: Indexed Node: Type */
-  $handler->display->display_options['fields']['field_acc_incident_type']['id'] = 'field_acc_incident_type';
-  $handler->display->display_options['fields']['field_acc_incident_type']['table'] = 'search_api_index_acc_incidents';
-  $handler->display->display_options['fields']['field_acc_incident_type']['field'] = 'field_acc_incident_type';
-  $handler->display->display_options['fields']['field_acc_incident_type']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_acc_incident_type']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_acc_incident_type']['bypass_access'] = 0;
   /* Field: Indexed Node: Responsible Actors */
   $handler->display->display_options['fields']['field_responsible_actors']['id'] = 'field_responsible_actors';
   $handler->display->display_options['fields']['field_responsible_actors']['table'] = 'search_api_index_acc_incidents';
@@ -409,6 +422,13 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_affected_organizations']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_affected_organizations']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_affected_organizations']['bypass_access'] = 0;
+  /* Field: Indexed Node: Type of affectee */
+  $handler->display->display_options['fields']['field_type_of_affectee']['id'] = 'field_type_of_affectee';
+  $handler->display->display_options['fields']['field_type_of_affectee']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_type_of_affectee']['field'] = 'field_type_of_affectee';
+  $handler->display->display_options['fields']['field_type_of_affectee']['link_to_entity'] = 1;
+  $handler->display->display_options['fields']['field_type_of_affectee']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_type_of_affectee']['bypass_access'] = 0;
   /* Field: Indexed Node: Cluster */
   $handler->display->display_options['fields']['field_clusters']['id'] = 'field_clusters';
   $handler->display->display_options['fields']['field_clusters']['table'] = 'search_api_index_acc_incidents';
@@ -482,10 +502,11 @@ function acc_incidents_views_default_views() {
     t('Map'),
     t('Graphs'),
     t('XLS'),
+    t('Admin Level1'),
     t('Start Date'),
-    t('End Date'),
     t('Responsible Actors'),
     t('Affected organizations'),
+    t('Type of affectee'),
     t('Sectors'),
     t('Type of impact'),
     t('Impact Value'),

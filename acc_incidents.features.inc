@@ -84,6 +84,10 @@ function acc_incidents_default_search_api_index() {
         "field_type_of_affectee" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "search_api_language" : { "type" : "string" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },
+        "field_locations:parent" : {
+          "type" : "list\\u003Clist\\u003Cinteger\\u003E\\u003E",
+          "entity_type" : "taxonomy_term"
+        },
         "field_acc_impacts:field_acc_impact_type" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_acc_impacts:field_acc_impact_value" : { "type" : "list\\u003Cinteger\\u003E" },
         "field_acc_incident_date:value" : { "type" : "date" },
