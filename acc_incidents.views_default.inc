@@ -117,6 +117,28 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['group'] = 1;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
   $handler->display->display_options['path'] = 'access/incidents';
 
   /* Display: Table */
@@ -352,8 +374,15 @@ function acc_incidents_views_default_views() {
     'master' => 'master',
     'table' => 'table',
     'list' => 'list',
+    'map' => 'map',
+    'active_hostilitie' => 'active_hostilitie',
+    'denial_of_need' => 'denial_of_need',
+    'interference_in_implementation' => 'interference_in_implementation',
+    'physical_environment' => 'physical_environment',
+    'presence_of_landmines' => 'presence_of_landmines',
+    'restrictions_on_movement' => 'restrictions_on_movement',
+    'violence_against' => 'violence_against',
     'default' => 0,
-    'map' => 0,
     'graphs' => 0,
   );
 
@@ -469,6 +498,258 @@ function acc_incidents_views_default_views() {
     'map' => 0,
     'graphs' => 0,
   );
+
+  /* Display: Active hostilities */
+  $handler = $view->new_display('page', 'Active hostilities', 'active_hostilitie');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Active hostilities';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  /* Filter criterion: Type: Parent terms (indexed) */
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['id'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['field'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['value'] = array(
+    261 => '261',
+  );
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['type'] = 'select';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'access/incidents/active-hostilities';
+
+  /* Display: Denial of need or entitlements */
+  $handler = $view->new_display('page', 'Denial of need or entitlements', 'denial_of_need');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Denial of need or entitlements';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  /* Filter criterion: Type: Parent terms (indexed) */
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['id'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['field'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['value'] = array(
+    273 => '273',
+  );
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['type'] = 'select';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'access/incidents/denial-of-need-or-entitlements';
+
+  /* Display: Interference in implementation */
+  $handler = $view->new_display('page', 'Interference in implementation', 'interference_in_implementation');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Interference in implementation';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  /* Filter criterion: Type: Parent terms (indexed) */
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['id'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['field'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['value'] = array(
+    274 => '274',
+  );
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['type'] = 'select';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'access/incidents/interference-in-implementation';
+
+  /* Display: Physical environment and lack of infrastructure */
+  $handler = $view->new_display('page', 'Physical environment and lack of infrastructure', 'physical_environment');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Physical environment and lack of infrastructure';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  /* Filter criterion: Type: Parent terms (indexed) */
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['id'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['field'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['value'] = array(
+    279 => '279',
+  );
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['type'] = 'select';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'access/incidents/physical-environment-and-lack-of-infrastructure';
+
+  /* Display: Presence of landmines/UXO */
+  $handler = $view->new_display('page', 'Presence of landmines/UXO', 'presence_of_landmines');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Presence of landmines/UXO';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  /* Filter criterion: Type: Parent terms (indexed) */
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['id'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['field'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['value'] = array(
+    284 => '284',
+  );
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['type'] = 'select';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'access/incidents/presence-of-landmines-uxo';
+
+  /* Display: Restrictions on movement within country */
+  $handler = $view->new_display('page', 'Restrictions on movement within country', 'restrictions_on_movement');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Restrictions on movement within country';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  /* Filter criterion: Type: Parent terms (indexed) */
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['id'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['field'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['value'] = array(
+    288 => '288',
+  );
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['type'] = 'select';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'access/incidents/restrictions-on-movement-within-country';
+
+  /* Display: Violence against personnel/assets */
+  $handler = $view->new_display('page', 'Violence against personnel/assets', 'violence_against');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'Violence against personnel/assets';
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    200153887 => 0,
+    197637936 => 0,
+    52310416 => 0,
+    30037204 => 0,
+  );
+  /* Filter criterion: Type: Parent terms (indexed) */
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['id'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['field'] = 'field_acc_incident_type_parent';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['value'] = array(
+    294 => '294',
+  );
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['type'] = 'select';
+  $handler->display->display_options['filters']['field_acc_incident_type_parent']['hierarchy'] = 1;
+  $handler->display->display_options['path'] = 'access/incidents/violence-against-personnel-assets';
   $translatables['acc_incidents'] = array(
     t('Master'),
     t('Access Incidents'),
@@ -512,6 +793,13 @@ function acc_incidents_views_default_views() {
     t('Impact Value'),
     t('Description'),
     t('CSV'),
+    t('Active hostilities'),
+    t('Denial of need or entitlements'),
+    t('Interference in implementation'),
+    t('Physical environment and lack of infrastructure'),
+    t('Presence of landmines/UXO'),
+    t('Restrictions on movement within country'),
+    t('Violence against personnel/assets'),
   );
   $export['acc_incidents'] = $view;
 
