@@ -144,6 +144,49 @@ function acc_incidents_views_default_views() {
   /* Display: Table */
   $handler = $view->new_display('page', 'Table', 'table');
   $handler->display->display_options['exposed_block'] = TRUE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: Date */
+  $handler->display->display_options['fields']['field_acc_incident_date']['id'] = 'field_acc_incident_date';
+  $handler->display->display_options['fields']['field_acc_incident_date']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_acc_incident_date']['field'] = 'field_acc_incident_date';
+  $handler->display->display_options['fields']['field_acc_incident_date']['settings'] = array(
+    'format_type' => 'short',
+    'fromto' => 'value',
+    'multiple_number' => '',
+    'multiple_from' => '',
+    'multiple_to' => '',
+  );
+  /* Field: Location: Parent terms (indexed) */
+  $handler->display->display_options['fields']['field_locations_parent']['id'] = 'field_locations_parent';
+  $handler->display->display_options['fields']['field_locations_parent']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_locations_parent']['field'] = 'field_locations_parent';
+  $handler->display->display_options['fields']['field_locations_parent']['label'] = 'Admin Level 1';
+  $handler->display->display_options['fields']['field_locations_parent']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_locations_parent']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_locations_parent']['bypass_access'] = 0;
+  /* Field: Indexed Node: Location */
+  $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['label'] = 'Admin Level 2';
+  $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
+  /* Field: Indexed Node: Type */
+  $handler->display->display_options['fields']['field_acc_incident_type']['id'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['field_acc_incident_type']['field'] = 'field_acc_incident_type';
+  $handler->display->display_options['fields']['field_acc_incident_type']['link_to_entity'] = 0;
+  $handler->display->display_options['fields']['field_acc_incident_type']['view_mode'] = 'full';
+  $handler->display->display_options['fields']['field_acc_incident_type']['bypass_access'] = 0;
+  /* Field: Indexed Node: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_acc_incidents';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = 'View';
+  $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
+  $handler->display->display_options['fields']['url']['alter']['text'] = '<a href="[url]">view</a>';
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
   $handler->display->display_options['path'] = 'access/incidents/table';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Table';
@@ -773,6 +816,8 @@ function acc_incidents_views_default_views() {
     t('<a href="[url]">view</a>'),
     t('Search'),
     t('Table'),
+    t('Admin Level 1'),
+    t('Admin Level 2'),
     t('List'),
     t('Map Data'),
     t('Title'),
