@@ -19,82 +19,68 @@ function acc_incidents_context_default_contexts() {
   $context->conditions = array(
     'views' => array(
       'values' => array(
-        'acc_incidents:active_hostilitie' => 'acc_incidents:active_hostilitie',
-        'acc_incidents:denial_of_need' => 'acc_incidents:denial_of_need',
-        'acc_incidents:interference_in_implementation' => 'acc_incidents:interference_in_implementation',
-        'acc_incidents:list' => 'acc_incidents:list',
         'acc_incidents:map' => 'acc_incidents:map',
         'acc_incidents:master' => 'acc_incidents:master',
-        'acc_incidents:physical_environment' => 'acc_incidents:physical_environment',
-        'acc_incidents:presence_of_landmines' => 'acc_incidents:presence_of_landmines',
-        'acc_incidents:restrictions_on_movement' => 'acc_incidents:restrictions_on_movement',
         'acc_incidents:table' => 'acc_incidents:table',
-        'acc_incidents:violence_against' => 'acc_incidents:violence_against',
       ),
     ),
   );
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'facetapi-oPPB77mV9kr7C0gfG9SN1wzSng7bODDf' => array(
+        'facetapi-J2JMN70I18WlrnhGNCnWM4QtA4wG6U4Y' => array(
           'module' => 'facetapi',
-          'delta' => 'oPPB77mV9kr7C0gfG9SN1wzSng7bODDf',
+          'delta' => 'J2JMN70I18WlrnhGNCnWM4QtA4wG6U4Y',
           'region' => 'sidebar_first',
-          'weight' => '1',
+          'weight' => '-10',
         ),
-        'facetapi-LMp6pljOgavG86Bli1wANx1T9y6GZP3T' => array(
+        'facetapi-9ue2gd0P70KkewXSxkuQUU1Pv0oRRaYn' => array(
           'module' => 'facetapi',
-          'delta' => 'LMp6pljOgavG86Bli1wANx1T9y6GZP3T',
+          'delta' => '9ue2gd0P70KkewXSxkuQUU1Pv0oRRaYn',
           'region' => 'sidebar_first',
-          'weight' => '2',
+          'weight' => '-9',
         ),
-        'facetapi-TgQvxHIbh2oxH10WqhJYHHFXebhsgebQ' => array(
+        'facetapi-Mr0B15bSiepOvJtZbHylJlwcGWzmSeSv' => array(
           'module' => 'facetapi',
-          'delta' => 'TgQvxHIbh2oxH10WqhJYHHFXebhsgebQ',
+          'delta' => 'Mr0B15bSiepOvJtZbHylJlwcGWzmSeSv',
           'region' => 'sidebar_first',
-          'weight' => '3',
+          'weight' => '-8',
         ),
-        'facetapi-60a95va1KLIPSiw8z1w6OvH0ovd1NulW' => array(
+        'facetapi-F1CiCc1Ry0NeapgWln06pCPPML2WugMh' => array(
           'module' => 'facetapi',
-          'delta' => '60a95va1KLIPSiw8z1w6OvH0ovd1NulW',
+          'delta' => 'F1CiCc1Ry0NeapgWln06pCPPML2WugMh',
           'region' => 'sidebar_first',
-          'weight' => '4',
+          'weight' => '-7',
         ),
-        'facetapi-UA7MhPZ0nb2NI8kgFzmaHnI4Y9iTOUM0' => array(
+        'facetapi-650OMpFHUPiv0OafiKob7TJUhRqTs1py' => array(
           'module' => 'facetapi',
-          'delta' => 'UA7MhPZ0nb2NI8kgFzmaHnI4Y9iTOUM0',
+          'delta' => '650OMpFHUPiv0OafiKob7TJUhRqTs1py',
           'region' => 'sidebar_first',
-          'weight' => '5',
+          'weight' => '-6',
         ),
-        'facetapi-UB180i8VlpBIoeKhyiFoRbvumb1zWxeX' => array(
+        'facetapi-UW8RIqVz39aDhL0I88nzx0C1tAptyJEV' => array(
           'module' => 'facetapi',
-          'delta' => 'UB180i8VlpBIoeKhyiFoRbvumb1zWxeX',
+          'delta' => 'UW8RIqVz39aDhL0I88nzx0C1tAptyJEV',
           'region' => 'sidebar_first',
-          'weight' => '6',
+          'weight' => '-5',
         ),
-        'facetapi-IJmnbuu4mkmMNS4bDN3oexHiPBqOG2qJ' => array(
+        'facetapi-U44yw0wbcDoEFHhcEhyCiC6axMYd1pBd' => array(
           'module' => 'facetapi',
-          'delta' => 'IJmnbuu4mkmMNS4bDN3oexHiPBqOG2qJ',
+          'delta' => 'U44yw0wbcDoEFHhcEhyCiC6axMYd1pBd',
           'region' => 'sidebar_first',
-          'weight' => '7',
+          'weight' => '-4',
         ),
-        'facetapi-5BBA78evOCBcvX5xyUAJKUpwSuJ4Xlhd' => array(
+        'facetapi-GUF0nsCIijJFh5JZadxAw5CLTCEDebu2' => array(
           'module' => 'facetapi',
-          'delta' => '5BBA78evOCBcvX5xyUAJKUpwSuJ4Xlhd',
+          'delta' => 'GUF0nsCIijJFh5JZadxAw5CLTCEDebu2',
           'region' => 'sidebar_first',
-          'weight' => '8',
+          'weight' => '-3',
         ),
-        'facetapi-l8bSwM5fB9aSAEx3EaM1Id7z7ZJAGm3m' => array(
+        'facetapi-xvQwI7NV9AlX2s4vcZC9WU1wi6pK6ofZ' => array(
           'module' => 'facetapi',
-          'delta' => 'l8bSwM5fB9aSAEx3EaM1Id7z7ZJAGm3m',
+          'delta' => 'xvQwI7NV9AlX2s4vcZC9WU1wi6pK6ofZ',
           'region' => 'sidebar_first',
-          'weight' => '9',
-        ),
-        'facetapi-l99as1r0pDoRtecxy4EsaAVWZ2gaSkVc' => array(
-          'module' => 'facetapi',
-          'delta' => 'l99as1r0pDoRtecxy4EsaAVWZ2gaSkVc',
-          'region' => 'sidebar_first',
-          'weight' => '10',
+          'weight' => '-2',
         ),
       ),
     ),
@@ -105,112 +91,6 @@ function acc_incidents_context_default_contexts() {
   // Included for use with string extractors like potx.
   t('Access Incidents');
   $export['acc_incidents'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'acc_incidents_graphs';
-  $context->description = '';
-  $context->tag = 'Access Incidents';
-  $context->conditions = array(
-    'views' => array(
-      'values' => array(
-        'acc_incidents:graphs' => 'acc_incidents:graphs',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views-acc_incidents_graphs-block_1' => array(
-          'module' => 'views',
-          'delta' => 'acc_incidents_graphs-block_1',
-          'region' => 'content',
-          'weight' => '-67',
-        ),
-        'views-5f7317aeb0e74c85abcc1c76050d3095' => array(
-          'module' => 'views',
-          'delta' => '5f7317aeb0e74c85abcc1c76050d3095',
-          'region' => 'content',
-          'weight' => '-10',
-        ),
-        'views-db4a368da0f1f100e80ee4db9b9a82a5' => array(
-          'module' => 'views',
-          'delta' => 'db4a368da0f1f100e80ee4db9b9a82a5',
-          'region' => 'content',
-          'weight' => '-9',
-        ),
-        'views-5ca52657a0e73185e1b51a3dfd0dbbb0' => array(
-          'module' => 'views',
-          'delta' => '5ca52657a0e73185e1b51a3dfd0dbbb0',
-          'region' => 'content',
-          'weight' => '-8',
-        ),
-        'views-be5e6832b362e7e35c6f2efb71fcad72' => array(
-          'module' => 'views',
-          'delta' => 'be5e6832b362e7e35c6f2efb71fcad72',
-          'region' => 'content',
-          'weight' => '-6',
-        ),
-        'views-76bf0758a25b2bb9ae5f2142551f5f9e' => array(
-          'module' => 'views',
-          'delta' => '76bf0758a25b2bb9ae5f2142551f5f9e',
-          'region' => 'content',
-          'weight' => '-5',
-        ),
-        'views-a911264ed4ec29a2d397552630aecaa3' => array(
-          'module' => 'views',
-          'delta' => 'a911264ed4ec29a2d397552630aecaa3',
-          'region' => 'content',
-          'weight' => '-4',
-        ),
-        'views-43a77ae8e557abb5fd69dc0ea6cfc653' => array(
-          'module' => 'views',
-          'delta' => '43a77ae8e557abb5fd69dc0ea6cfc653',
-          'region' => 'content',
-          'weight' => '-3',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Access Incidents');
-  $export['acc_incidents_graphs'] = $context;
-
-  $context = new stdClass();
-  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
-  $context->api_version = 3;
-  $context->name = 'acc_incidents_list';
-  $context->description = '';
-  $context->tag = 'Access Incidents';
-  $context->conditions = array(
-    'views' => array(
-      'values' => array(
-        'acc_incidents:list' => 'acc_incidents:list',
-      ),
-    ),
-  );
-  $context->reactions = array(
-    'block' => array(
-      'blocks' => array(
-        'views--exp-acc_incidents-list' => array(
-          'module' => 'views',
-          'delta' => '-exp-acc_incidents-list',
-          'region' => 'sidebar_first',
-          'weight' => '0',
-        ),
-      ),
-    ),
-  );
-  $context->condition_mode = 0;
-
-  // Translatables
-  // Included for use with string extractors like potx.
-  t('Access Incidents');
-  $export['acc_incidents_list'] = $context;
 
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
@@ -233,7 +113,7 @@ function acc_incidents_context_default_contexts() {
           'module' => 'views',
           'delta' => '-exp-acc_incidents-map',
           'region' => 'sidebar_first',
-          'weight' => '0',
+          'weight' => '-10',
         ),
       ),
     ),
@@ -265,7 +145,7 @@ function acc_incidents_context_default_contexts() {
           'module' => 'views',
           'delta' => '-exp-acc_incidents-table',
           'region' => 'sidebar_first',
-          'weight' => '0',
+          'weight' => '-10',
         ),
       ),
     ),

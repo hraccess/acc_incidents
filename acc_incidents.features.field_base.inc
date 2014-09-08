@@ -10,13 +10,51 @@
 function acc_incidents_field_default_field_bases() {
   $field_bases = array();
 
-  // Exported field_base: 'field_acc_incident_date'
-  $field_bases['field_acc_incident_date'] = array(
+  // Exported field_base: 'field_acc_attach_file'
+  $field_bases['field_acc_attach_file'] = array(
     'active' => 1,
-    'cardinality' => 1,
+    'cardinality' => -1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_acc_incident_date',
+    'field_name' => 'field_acc_attach_file',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'fid' => array(
+        'columns' => array(
+          'fid' => 'fid',
+        ),
+        'table' => 'file_managed',
+      ),
+    ),
+    'indexes' => array(
+      'fid' => array(
+        0 => 'fid',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'file',
+    'settings' => array(
+      'display_default' => 0,
+      'display_field' => 0,
+      'entity_translation_sync' => array(
+        0 => 'fid',
+      ),
+      'profile2_private' => FALSE,
+      'uri_scheme' => 'public',
+    ),
+    'translatable' => 0,
+    'type' => 'file',
+  );
+
+  // Exported field_base: 'field_acc_date'
+  $field_bases['field_acc_date'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_acc_date',
     'field_permissions' => array(
       'type' => 0,
     ),
@@ -37,52 +75,207 @@ function acc_incidents_field_default_field_bases() {
         'year' => 'year',
       ),
       'profile2_private' => FALSE,
-      'repeat' => 0,
+      'repeat' => 1,
       'timezone_db' => '',
-      'todate' => 'optional',
+      'todate' => '',
       'tz_handling' => 'none',
     ),
     'translatable' => 0,
     'type' => 'datetime',
   );
 
-  // Exported field_base: 'field_acc_incident_type'
-  $field_bases['field_acc_incident_type'] = array(
+  // Exported field_base: 'field_acc_impact_type'
+  $field_bases['field_acc_impact_type'] = array(
     'active' => 1,
     'cardinality' => 1,
     'deleted' => 0,
     'entity_types' => array(),
-    'field_name' => 'field_acc_incident_type',
+    'field_name' => 'field_acc_impact_type',
     'field_permissions' => array(
       'type' => 0,
     ),
     'foreign keys' => array(
-      'tid' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'tid' => 'tid',
+          'target_id' => 'tid',
         ),
         'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'acc_incident_types',
-          'parent' => 0,
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'acc_impact_types' => 'acc_impact_types',
         ),
       ),
+      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_acc_impact_value'
+  $field_bases['field_acc_impact_value'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_acc_impact_value',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(),
+    'locked' => 0,
+    'module' => 'number',
+    'settings' => array(
       'entity_translation_sync' => FALSE,
       'profile2_private' => FALSE,
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'number_integer',
+  );
+
+  // Exported field_base: 'field_acc_impacts'
+  $field_bases['field_acc_impacts'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_acc_impacts',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(),
+    'indexes' => array(
+      'revision_id' => array(
+        0 => 'revision_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'field_collection',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_blank_items' => 1,
+      'path' => '',
+      'profile2_private' => FALSE,
+    ),
+    'translatable' => 0,
+    'type' => 'field_collection',
+  );
+
+  // Exported field_base: 'field_acc_type'
+  $field_bases['field_acc_type'] = array(
+    'active' => 1,
+    'cardinality' => 1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_acc_type',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'taxonomy_term_data' => array(
+        'columns' => array(
+          'target_id' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'acc_incident_types' => 'acc_incident_types',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_affected_organization_type'
+  $field_bases['field_affected_organization_type'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_affected_organization_type',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'taxonomy_term_data' => array(
+        'columns' => array(
+          'target_id' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'hr_organization_type' => 'hr_organization_type',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
   );
 
   // Exported field_base: 'field_affected_organizations'
@@ -123,8 +316,7 @@ function acc_incidents_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'organization_types' => 'organization_types',
-          'organizations' => 'organizations',
+          'hr_organization' => 'hr_organization',
         ),
       ),
       'profile2_private' => FALSE,
@@ -172,8 +364,55 @@ function acc_incidents_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'organization_types' => 'organization_types',
-          'organizations' => 'organizations',
+          'hr_organization' => 'hr_organization',
+        ),
+      ),
+      'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
+    ),
+    'translatable' => 0,
+    'type' => 'entityreference',
+  );
+
+  // Exported field_base: 'field_responsible_organization_t'
+  $field_bases['field_responsible_organization_t'] = array(
+    'active' => 1,
+    'cardinality' => -1,
+    'deleted' => 0,
+    'entity_types' => array(),
+    'field_name' => 'field_responsible_organization_t',
+    'field_permissions' => array(
+      'type' => 0,
+    ),
+    'foreign keys' => array(
+      'taxonomy_term_data' => array(
+        'columns' => array(
+          'target_id' => 'tid',
+        ),
+        'table' => 'taxonomy_term_data',
+      ),
+    ),
+    'indexes' => array(
+      'target_id' => array(
+        0 => 'target_id',
+      ),
+    ),
+    'locked' => 0,
+    'module' => 'entityreference',
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'hr_organization_type' => 'hr_organization_type',
         ),
       ),
       'profile2_private' => FALSE,
@@ -194,32 +433,41 @@ function acc_incidents_field_default_field_bases() {
       'type' => 0,
     ),
     'foreign keys' => array(
-      'tid' => array(
+      'taxonomy_term_data' => array(
         'columns' => array(
-          'tid' => 'tid',
+          'target_id' => 'tid',
         ),
         'table' => 'taxonomy_term_data',
       ),
     ),
     'indexes' => array(
-      'tid' => array(
-        0 => 'tid',
+      'target_id' => array(
+        0 => 'target_id',
       ),
     ),
     'locked' => 0,
-    'module' => 'taxonomy',
+    'module' => 'entityreference',
     'settings' => array(
-      'allowed_values' => array(
-        0 => array(
-          'vocabulary' => 'acc_type_of_aid_workers',
-          'parent' => 0,
+      'entity_translation_sync' => FALSE,
+      'handler' => 'base',
+      'handler_settings' => array(
+        'behaviors' => array(
+          'views-select-list' => array(
+            'status' => 0,
+          ),
+        ),
+        'sort' => array(
+          'type' => 'none',
+        ),
+        'target_bundles' => array(
+          'acc_type_of_aid_workers' => 'acc_type_of_aid_workers',
         ),
       ),
-      'entity_translation_sync' => FALSE,
       'profile2_private' => FALSE,
+      'target_type' => 'taxonomy_term',
     ),
     'translatable' => 0,
-    'type' => 'taxonomy_term_reference',
+    'type' => 'entityreference',
   );
 
   return $field_bases;

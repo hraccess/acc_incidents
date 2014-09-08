@@ -13,10 +13,10 @@ function acc_incidents_feeds_importer_default() {
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
-  $feeds_importer->id = 'acc_incident_types';
+  $feeds_importer->id = 'acc_csv_impact';
   $feeds_importer->config = array(
-    'name' => 'CSV Access Incident Types',
-    'description' => 'Import access incident types from a CSV file',
+    'name' => 'CSV Access Impact',
+    'description' => 'To import Access Impact Types in csv',
     'fetcher' => array(
       'plugin_key' => 'FeedsHTTPFetcher',
       'config' => array(
@@ -41,23 +41,18 @@ function acc_incidents_feeds_importer_default() {
           0 => array(
             'source' => 'Name:en',
             'target' => 'name',
-            'unique' => 1,
+            'unique' => FALSE,
           ),
           1 => array(
             'source' => 'Parent',
             'target' => 'parent',
             'unique' => FALSE,
           ),
-          2 => array(
-            'source' => 'GUID',
-            'target' => 'guid',
-            'unique' => FALSE,
-          ),
         ),
-        'update_existing' => '2',
+        'update_existing' => '1',
         'input_format' => 'plain_text',
         'skip_hash_check' => 0,
-        'bundle' => 'acc_incident_types',
+        'bundle' => 'acc_impact_types',
       ),
     ),
     'content_type' => '',
@@ -65,17 +60,17 @@ function acc_incidents_feeds_importer_default() {
     'import_period' => '-1',
     'expire_period' => 3600,
     'import_on_create' => 1,
-    'process_in_background' => 1,
+    'process_in_background' => 0,
   );
-  $export['acc_incident_types'] = $feeds_importer;
+  $export['acc_csv_impact'] = $feeds_importer;
 
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
   $feeds_importer->api_version = 1;
-  $feeds_importer->id = 'acc_incidents';
+  $feeds_importer->id = 'acc_csv_incident';
   $feeds_importer->config = array(
-    'name' => 'CSV Access Incidents',
-    'description' => 'Import Access Incidents from a CSV file',
+    'name' => 'CSV Access Incident',
+    'description' => 'To import Access Incidents in csv',
     'fetcher' => array(
       'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
@@ -98,69 +93,68 @@ function acc_incidents_feeds_importer_default() {
     'processor' => array(
       'plugin_key' => 'FeedsNodeProcessor',
       'config' => array(
-        'bundle' => 'acc_incident',
         'expire' => '-1',
         'author' => 0,
         'authorize' => 1,
         'mappings' => array(
           0 => array(
-            'source' => 'Title',
-            'target' => 'title',
-            'unique' => 1,
+            'source' => 'Type',
+            'target' => 'field_acc_type:label',
+            'unique' => FALSE,
           ),
           1 => array(
-            'source' => 'Title',
-            'target' => 'title_field:et:und',
+            'source' => 'Location',
+            'target' => 'field_locations:label',
             'unique' => FALSE,
           ),
           2 => array(
             'source' => 'Start Date',
-            'target' => 'field_acc_incident_date:start',
+            'target' => 'field_acc_date:start',
             'unique' => FALSE,
           ),
           3 => array(
-            'source' => 'End Date',
-            'target' => 'field_acc_incident_date:end',
+            'source' => 'End date',
+            'target' => 'field_acc_date:end',
             'unique' => FALSE,
           ),
           4 => array(
-            'source' => 'Type',
-            'target' => 'field_acc_incident_type',
-            'unique' => FALSE,
-          ),
-          5 => array(
             'source' => 'Responsible Actors',
             'target' => 'field_responsible_actors:label',
             'unique' => FALSE,
           ),
-          6 => array(
-            'source' => 'Affected Organizations',
+          5 => array(
+            'source' => 'Affected organizations',
             'target' => 'field_affected_organizations:label',
             'unique' => FALSE,
           ),
+          6 => array(
+            'source' => 'Responsible Actors Type',
+            'target' => 'field_responsible_organization_t:label',
+            'unique' => FALSE,
+          ),
           7 => array(
-            'source' => 'Location',
-            'target' => 'field_locations',
+            'source' => 'Affected organization type',
+            'target' => 'field_affected_organization_type:label',
             'unique' => FALSE,
           ),
           8 => array(
-            'source' => 'Sectors',
-            'target' => 'field_clusters',
+            'source' => 'Type of affectee',
+            'target' => 'field_type_of_affectee:label',
             'unique' => FALSE,
           ),
           9 => array(
-            'source' => 'Impact Type',
-            'target' => 'field_acc_impacts:field_acc_impact_type:label',
+            'source' => 'Sectors',
+            'target' => 'field_bundles:label',
             'unique' => FALSE,
           ),
           10 => array(
-            'source' => 'Impact Value',
-            'target' => 'field_acc_impacts:field_acc_impact_value',
+            'source' => 'Type of impact',
+            'target' => 'field_acc_impacts:field_acc_impact_type:label',
             'unique' => FALSE,
           ),
           11 => array(
-            'source' => 'Description',
-            'target' => 'body:et:und',
+            'source' => 'Impact Value',
+            'target' => 'field_acc_impacts:field_acc_impact_value',
             'unique' => FALSE,
           ),
           12 => array(
@@ -169,9 +163,10 @@ function acc_incidents_feeds_importer_default() {
             'unique' => FALSE,
           ),
         ),
-        'update_existing' => '2',
-        'input_format' => 'full_html',
+        'update_existing' => '0',
+        'input_format' => 'plain_text',
         'skip_hash_check' => 0,
+        'bundle' => 'acc_incident',
       ),
     ),
     'content_type' => '',
@@ -181,7 +176,61 @@ function acc_incidents_feeds_importer_default() {
     'import_on_create' => 1,
     'process_in_background' => 0,
   );
-  $export['acc_incidents'] = $feeds_importer;
+  $export['acc_csv_incident'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'acc_csv_types';
+  $feeds_importer->config = array(
+    'name' => 'CSV Access Types',
+    'description' => 'To import Access Incident Types in csv',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsHTTPFetcher',
+      'config' => array(
+        'auto_detect_feeds' => FALSE,
+        'use_pubsubhubbub' => FALSE,
+        'designated_hub' => '',
+        'request_timeout' => NULL,
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'vocabulary' => 0,
+        'mappings' => array(
+          0 => array(
+            'source' => 'Parent',
+            'target' => 'parent',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'Name:en',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '2',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'acc_incident_types',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['acc_csv_types'] = $feeds_importer;
 
   return $export;
 }
