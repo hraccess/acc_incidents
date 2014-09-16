@@ -123,7 +123,7 @@ function acc_incident_views_default_views() {
   $handler->display->display_options['fields']['field_acc_type']['settings'] = array(
     'link' => 0,
   );
-  $handler->display->display_options['path'] = 'access/incidents_by_type/xls';
+  $handler->display->display_options['path'] = 'node/%/access/incidents_by_type/xls';
   $handler->display->display_options['displays'] = array(
     'graph_by_type' => 'graph_by_type',
     'default' => 0,
@@ -239,7 +239,7 @@ function acc_incident_views_default_views() {
   $handler->display->display_options['fields']['name']['field'] = 'name';
   $handler->display->display_options['fields']['name']['relationship'] = 'parent';
   $handler->display->display_options['fields']['name']['label'] = 'Access Constraint';
-  $handler->display->display_options['path'] = 'access/incidents_by_acc_const';
+  $handler->display->display_options['path'] = 'node/%/access/incidents_by_acc_const';
   $handler->display->display_options['displays'] = array(
     'graph_by_acc_constr' => 'graph_by_acc_constr',
     'default' => 0,
@@ -274,7 +274,7 @@ function acc_incident_views_default_views() {
     'link' => 0,
   );
   $handler->display->display_options['fields']['field_sectors']['delta_offset'] = '0';
-  $handler->display->display_options['path'] = 'access/incidents_by_sector';
+  $handler->display->display_options['path'] = 'node/%/access/incidents_by_sector';
   $handler->display->display_options['displays'] = array(
     'block_2' => 'block_2',
     'default' => 0,
@@ -559,7 +559,7 @@ function acc_incident_views_default_views() {
   $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['url']['alter']['text'] = '<a href="[url]">view</a>';
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  $handler->display->display_options['path'] = 'access/incidents';
+  $handler->display->display_options['path'] = 'node/%/access/incidents';
 
   /* Display: Table */
   $handler = $view->new_display('page', 'Table', 'table');
@@ -629,7 +629,7 @@ function acc_incident_views_default_views() {
   $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
   $handler->display->display_options['fields']['url']['alter']['text'] = '<a href="[url]">view</a>';
   $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
-  $handler->display->display_options['path'] = 'access/incidents/table';
+  $handler->display->display_options['path'] = 'node/%/access/incidents/table';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Table';
   $handler->display->display_options['menu']['weight'] = '1';
@@ -740,7 +740,7 @@ function acc_incident_views_default_views() {
   $handler->display->display_options['fields']['body']['table'] = 'search_api_index_access_incident';
   $handler->display->display_options['fields']['body']['field'] = 'body';
   $handler->display->display_options['fields']['body']['label'] = 'Description';
-  $handler->display->display_options['path'] = 'access/incidents/xls';
+  $handler->display->display_options['path'] = 'node/%/access/incidents/xls';
   $handler->display->display_options['displays'] = array(
     'default' => 'default',
     'master' => 'master',
@@ -800,13 +800,26 @@ function acc_incident_views_default_views() {
   $handler->display->display_options['defaults']['row_plugin'] = FALSE;
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
-  $handler->display->display_options['path'] = 'access/incidents/map';
+  $handler->display->display_options['path'] = 'node/%/access/incidents/map';
   $handler->display->display_options['menu']['type'] = 'default tab';
   $handler->display->display_options['menu']['title'] = 'Map';
   $handler->display->display_options['menu']['weight'] = '0';
   $handler->display->display_options['menu']['context'] = 0;
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $handler->display->display_options['tab_options']['weight'] = '0';
+
+  /* Display: Graphs */
+  $handler = $view->new_display('page', 'Graphs', 'graphs');
+  $handler->display->display_options['defaults']['pager'] = FALSE;
+  $handler->display->display_options['pager']['type'] = 'some';
+  $handler->display->display_options['pager']['options']['items_per_page'] = '0';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['path'] = 'node/%/access/incidents/graphs';
+  $handler->display->display_options['menu']['type'] = 'tab';
+  $handler->display->display_options['menu']['title'] = 'Graphs';
+  $handler->display->display_options['menu']['weight'] = '2';
+  $handler->display->display_options['menu']['context'] = 0;
+  $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['acc_incidents'] = array(
     t('Master'),
     t('Access Incidents'),
@@ -851,6 +864,7 @@ function acc_incident_views_default_views() {
     t(','),
     t('Longitude (indexed)'),
     t('Map'),
+    t('Graphs'),
   );
   $export['acc_incidents'] = $view;
 

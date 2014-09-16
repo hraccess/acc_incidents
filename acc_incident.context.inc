@@ -95,6 +95,74 @@ function acc_incident_context_default_contexts() {
   $context = new stdClass();
   $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
   $context->api_version = 3;
+  $context->name = 'acc_incidents_graphs';
+  $context->description = '';
+  $context->tag = 'Access Incidents';
+  $context->conditions = array(
+    'views' => array(
+      'values' => array(
+        'acc_incidents:graphs' => 'acc_incidents:graphs',
+      ),
+    ),
+  );
+  $context->reactions = array(
+    'block' => array(
+      'blocks' => array(
+        'views-acc_incident_graphs-block_2' => array(
+          'module' => 'views',
+          'delta' => 'acc_incident_graphs-block_2',
+          'region' => 'content',
+          'weight' => '3',
+        ),
+        'views-acc_incident_graphs-block_1' => array(
+          'module' => 'views',
+          'delta' => 'acc_incident_graphs-block_1',
+          'region' => 'content',
+          'weight' => '4',
+        ),
+        'views-acc_incident_graphs-block_3' => array(
+          'module' => 'views',
+          'delta' => 'acc_incident_graphs-block_3',
+          'region' => 'content',
+          'weight' => '5',
+        ),
+        'views-acc_incident_graphs-block_4' => array(
+          'module' => 'views',
+          'delta' => 'acc_incident_graphs-block_4',
+          'region' => 'content',
+          'weight' => '0',
+        ),
+        'views-acc_incident_graphs-block_5' => array(
+          'module' => 'views',
+          'delta' => 'acc_incident_graphs-block_5',
+          'region' => 'content',
+          'weight' => '6',
+        ),
+        'views-d9cede631cd7c771b18188cc5ee4a307' => array(
+          'module' => 'views',
+          'delta' => 'd9cede631cd7c771b18188cc5ee4a307',
+          'region' => 'content',
+          'weight' => '1',
+        ),
+        'views-698c8d70463be9d041890d880332ecb4' => array(
+          'module' => 'views',
+          'delta' => '698c8d70463be9d041890d880332ecb4',
+          'region' => 'content',
+          'weight' => '2',
+        ),
+      ),
+    ),
+  );
+  $context->condition_mode = 0;
+
+  // Translatables
+  // Included for use with string extractors like potx.
+  t('Access Incidents');
+  $export['acc_incidents_graphs'] = $context;
+
+  $context = new stdClass();
+  $context->disabled = FALSE; /* Edit this to true to make a default context disabled initially */
+  $context->api_version = 3;
   $context->name = 'acc_incidents_map';
   $context->description = '';
   $context->tag = 'Access Incidents';
