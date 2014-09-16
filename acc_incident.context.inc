@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.context.inc
+ * acc_incident.context.inc
  */
 
 /**
  * Implements hook_context_default_contexts().
  */
-function acc_incidents_context_default_contexts() {
+function acc_incident_context_default_contexts() {
   $export = array();
 
   $context = new stdClass();

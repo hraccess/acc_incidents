@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.features.field_base.inc
+ * acc_incident.features.field_base.inc
  */
 
 /**
  * Implements hook_field_default_field_bases().
  */
-function acc_incidents_field_default_field_bases() {
+function acc_incident_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_acc_attach_file'
@@ -364,7 +364,7 @@ function acc_incidents_field_default_field_bases() {
           'type' => 'none',
         ),
         'target_bundles' => array(
-          'hr_organization' => 'hr_organization',
+          'acc_responsible_actors' => 'acc_responsible_actors',
         ),
       ),
       'profile2_private' => FALSE,

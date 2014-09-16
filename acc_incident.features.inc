@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.features.inc
+ * acc_incident.features.inc
  */
 
 /**
  * Implements hook_ctools_plugin_api().
  */
-function acc_incidents_ctools_plugin_api($module = NULL, $api = NULL) {
+function acc_incident_ctools_plugin_api($module = NULL, $api = NULL) {
   if ($module == "context" && $api == "context") {
     return array("version" => "3");
   }
@@ -31,14 +31,14 @@ function acc_incidents_ctools_plugin_api($module = NULL, $api = NULL) {
 /**
  * Implements hook_views_api().
  */
-function acc_incidents_views_api($module = NULL, $api = NULL) {
+function acc_incident_views_api($module = NULL, $api = NULL) {
   return array("api" => "3.0");
 }
 
 /**
  * Implements hook_node_info().
  */
-function acc_incidents_node_info() {
+function acc_incident_node_info() {
   $items = array(
     'acc_incident' => array(
       'name' => t('Access Incident'),
@@ -56,7 +56,7 @@ function acc_incidents_node_info() {
 /**
  * Implements hook_default_search_api_index().
  */
-function acc_incidents_default_search_api_index() {
+function acc_incident_default_search_api_index() {
   $items = array();
   $items['access_incident'] = entity_import('search_api_index', '{
     "name" : "Access Incident",
@@ -96,6 +96,7 @@ function acc_incidents_default_search_api_index() {
         },
         "field_responsible_actors" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "field_responsible_organization_t" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
+        "field_sectors" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "node" },
         "field_type_of_affectee" : { "type" : "list\\u003Cinteger\\u003E", "entity_type" : "taxonomy_term" },
         "nid" : { "type" : "integer" },
         "search_api_access_node" : { "type" : "list\\u003Cstring\\u003E" },

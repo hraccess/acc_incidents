@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.feeds_importer_default.inc
+ * acc_incident.feeds_importer_default.inc
  */
 
 /**
  * Implements hook_feeds_importer_default().
  */
-function acc_incidents_feeds_importer_default() {
+function acc_incident_feeds_importer_default() {
   $export = array();
 
   $feeds_importer = new stdClass();
@@ -143,23 +143,23 @@ function acc_incidents_feeds_importer_default() {
             'unique' => FALSE,
           ),
           9 => array(
-            'source' => 'Sectors',
-            'target' => 'field_bundles:label',
-            'unique' => FALSE,
-          ),
-          10 => array(
             'source' => 'Type of impact',
             'target' => 'field_acc_impacts:field_acc_impact_type:label',
             'unique' => FALSE,
           ),
-          11 => array(
+          10 => array(
             'source' => 'Impact Value',
             'target' => 'field_acc_impacts:field_acc_impact_value',
             'unique' => FALSE,
           ),
-          12 => array(
+          11 => array(
             'source' => 'Description',
             'target' => 'body:et:en',
+            'unique' => FALSE,
+          ),
+          12 => array(
+            'source' => 'Sectors',
+            'target' => 'field_sectors:label',
             'unique' => FALSE,
           ),
         ),
@@ -177,6 +177,68 @@ function acc_incidents_feeds_importer_default() {
     'process_in_background' => 0,
   );
   $export['acc_csv_incident'] = $feeds_importer;
+
+  $feeds_importer = new stdClass();
+  $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */
+  $feeds_importer->api_version = 1;
+  $feeds_importer->id = 'acc_csv_responsible_actor';
+  $feeds_importer->config = array(
+    'name' => 'CSV Access Responsible Actor',
+    'description' => 'To import terms for Responsible Actor taxonomy for Humanitarian Access Module',
+    'fetcher' => array(
+      'plugin_key' => 'FeedsFileFetcher',
+      'config' => array(
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
+      ),
+    ),
+    'parser' => array(
+      'plugin_key' => 'FeedsCSVParser',
+      'config' => array(
+        'delimiter' => ',',
+        'no_headers' => 0,
+      ),
+    ),
+    'processor' => array(
+      'plugin_key' => 'FeedsTermProcessor',
+      'config' => array(
+        'vocabulary' => 0,
+        'mappings' => array(
+          0 => array(
+            'source' => 'Name',
+            'target' => 'name',
+            'unique' => FALSE,
+          ),
+          1 => array(
+            'source' => 'Type',
+            'target' => 'field_organization_type:label',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Description',
+            'target' => 'description',
+            'unique' => FALSE,
+          ),
+        ),
+        'update_existing' => '0',
+        'input_format' => 'plain_text',
+        'skip_hash_check' => 0,
+        'bundle' => 'acc_responsible_actors',
+      ),
+    ),
+    'content_type' => '',
+    'update' => 0,
+    'import_period' => '-1',
+    'expire_period' => 3600,
+    'import_on_create' => 1,
+    'process_in_background' => 0,
+  );
+  $export['acc_csv_responsible_actor'] = $feeds_importer;
 
   $feeds_importer = new stdClass();
   $feeds_importer->disabled = FALSE; /* Edit this to true to make a default feeds_importer disabled initially */

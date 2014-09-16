@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.views_default.inc
+ * acc_incident.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function acc_incidents_views_default_views() {
+function acc_incident_views_default_views() {
   $export = array();
 
   $view = new view();
@@ -33,19 +33,20 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_plugin'] = 'visualization';
   $handler->display->display_options['style_options']['type'] = 'bar';
   $handler->display->display_options['style_options']['fields'] = array(
-    'field_bundles' => array(
+    'field_acc_impact_type' => array(
       'enabled' => 0,
+      'sort' => '0',
     ),
-    'nid' => array(
+    'field_acc_impact_value' => array(
       'enabled' => 1,
-      'sort' => 'DESC',
+      'sort' => '0',
     ),
   );
   $handler->display->display_options['style_options']['yAxis'] = array(
-    'title' => 'Number of incidents',
+    'title' => 'Number of units affected',
   );
   $handler->display->display_options['style_options']['xAxis'] = array(
-    'labelField' => 'field_bundles',
+    'labelField' => 'field_acc_impact_type',
     'invert' => 0,
   );
   $handler->display->display_options['row_plugin'] = 'fields';
@@ -54,6 +55,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
   $handler->display->display_options['fields']['nid']['separator'] = '';
   /* Sort criterion: Content: Post date */
   $handler->display->display_options['sorts']['created']['id'] = 'created';
@@ -187,22 +189,238 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['defaults']['title'] = FALSE;
   $handler->display->display_options['title'] = 'Incidents by sector';
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Content: Clusters/Sectors */
-  $handler->display->display_options['fields']['field_bundles']['id'] = 'field_bundles';
-  $handler->display->display_options['fields']['field_bundles']['table'] = 'og_membership';
-  $handler->display->display_options['fields']['field_bundles']['field'] = 'field_bundles';
-  $handler->display->display_options['fields']['field_bundles']['settings'] = array(
-    'link' => 0,
-  );
-  $handler->display->display_options['fields']['field_bundles']['group_column'] = 'entity_id';
-  $handler->display->display_options['fields']['field_bundles']['delta_offset'] = '0';
   /* Field: COUNT(Content: Nid) */
   $handler->display->display_options['fields']['nid']['id'] = 'nid';
   $handler->display->display_options['fields']['nid']['table'] = 'node';
   $handler->display->display_options['fields']['nid']['field'] = 'nid';
   $handler->display->display_options['fields']['nid']['group_type'] = 'count';
   $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
+  /* Field: Field: Global Clusters */
+  $handler->display->display_options['fields']['field_sectors']['id'] = 'field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['table'] = 'field_data_field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['field'] = 'field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['label'] = 'Sectors';
+  $handler->display->display_options['fields']['field_sectors']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_sectors']['delta_offset'] = '0';
   $handler->display->display_options['block_description'] = 'Incident by sector';
+
+  /* Display: XLS By Acc Constraint */
+  $handler = $view->new_display('views_data_export', 'XLS By Acc Constraint', 'views_data_export_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'By Acc Constraint ';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Entity Reference: Referenced Entity */
+  $handler->display->display_options['relationships']['field_acc_type_target_id']['id'] = 'field_acc_type_target_id';
+  $handler->display->display_options['relationships']['field_acc_type_target_id']['table'] = 'field_data_field_acc_type';
+  $handler->display->display_options['relationships']['field_acc_type_target_id']['field'] = 'field_acc_type_target_id';
+  /* Relationship: Taxonomy term: Parent term */
+  $handler->display->display_options['relationships']['parent']['id'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['table'] = 'taxonomy_term_hierarchy';
+  $handler->display->display_options['relationships']['parent']['field'] = 'parent';
+  $handler->display->display_options['relationships']['parent']['relationship'] = 'field_acc_type_target_id';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Field: Taxonomy term: Name */
+  $handler->display->display_options['fields']['name']['id'] = 'name';
+  $handler->display->display_options['fields']['name']['table'] = 'taxonomy_term_data';
+  $handler->display->display_options['fields']['name']['field'] = 'name';
+  $handler->display->display_options['fields']['name']['relationship'] = 'parent';
+  $handler->display->display_options['fields']['name']['label'] = 'Access Constraint';
+  $handler->display->display_options['path'] = 'access/incidents_by_acc_const';
+  $handler->display->display_options['displays'] = array(
+    'graph_by_acc_constr' => 'graph_by_acc_constr',
+    'default' => 0,
+    'graph_by_type' => 0,
+    'block_2' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: XLS By Sector */
+  $handler = $view->new_display('views_data_export', 'XLS By Sector', 'views_data_export_2');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'By Sector';
+  $handler->display->display_options['pager']['type'] = 'none';
+  $handler->display->display_options['pager']['options']['offset'] = '0';
+  $handler->display->display_options['style_plugin'] = 'views_data_export_xls';
+  $handler->display->display_options['style_options']['provide_file'] = 1;
+  $handler->display->display_options['style_options']['parent_sort'] = 0;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Field: Field: Global Clusters */
+  $handler->display->display_options['fields']['field_sectors']['id'] = 'field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['table'] = 'field_data_field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['field'] = 'field_sectors';
+  $handler->display->display_options['fields']['field_sectors']['label'] = 'Sectors';
+  $handler->display->display_options['fields']['field_sectors']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_sectors']['delta_offset'] = '0';
+  $handler->display->display_options['path'] = 'access/incidents_by_sector';
+  $handler->display->display_options['displays'] = array(
+    'block_2' => 'block_2',
+    'default' => 0,
+    'graph_by_type' => 0,
+    'graph_by_acc_constr' => 0,
+  );
+  $handler->display->display_options['sitename_title'] = 0;
+
+  /* Display: By Location */
+  $handler = $view->new_display('block', 'By Location', 'block_1');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'By Location';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = 'Number of incident';
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Field: Content: Locations */
+  $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['table'] = 'field_data_field_locations';
+  $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
+  $handler->display->display_options['fields']['field_locations']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_locations']['delta_offset'] = '0';
+  $handler->display->display_options['block_description'] = 'Incidents By Location';
+
+  /* Display: By Responsible Actor */
+  $handler = $view->new_display('block', 'By Responsible Actor', 'block_3');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'By Responsible Actor';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'visualization';
+  $handler->display->display_options['style_options']['type'] = 'bar';
+  $handler->display->display_options['style_options']['fields'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'sort' => 'DESC',
+    ),
+    'field_responsible_organization_t' => array(
+      'enabled' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['yAxis'] = array(
+    'title' => 'Number of incidents',
+  );
+  $handler->display->display_options['style_options']['xAxis'] = array(
+    'labelField' => 'field_responsible_organization_t',
+    'invert' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Field: Content: Responsible Organization Type */
+  $handler->display->display_options['fields']['field_responsible_organization_t']['id'] = 'field_responsible_organization_t';
+  $handler->display->display_options['fields']['field_responsible_organization_t']['table'] = 'field_data_field_responsible_organization_t';
+  $handler->display->display_options['fields']['field_responsible_organization_t']['field'] = 'field_responsible_organization_t';
+  $handler->display->display_options['fields']['field_responsible_organization_t']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_responsible_organization_t']['delta_offset'] = '0';
+  $handler->display->display_options['block_description'] = 'By Responsible Actor';
+
+  /* Display: By Aff Org */
+  $handler = $view->new_display('block', 'By Aff Org', 'block_4');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'By Affected Organization';
+  $handler->display->display_options['defaults']['style_plugin'] = FALSE;
+  $handler->display->display_options['style_plugin'] = 'visualization';
+  $handler->display->display_options['style_options']['type'] = 'bar';
+  $handler->display->display_options['style_options']['fields'] = array(
+    'nid' => array(
+      'enabled' => 1,
+      'sort' => 'DESC',
+    ),
+    'field_affected_organization_type' => array(
+      'enabled' => 0,
+    ),
+  );
+  $handler->display->display_options['style_options']['yAxis'] = array(
+    'title' => 'Number of incidents',
+  );
+  $handler->display->display_options['style_options']['xAxis'] = array(
+    'labelField' => 'field_affected_organization_type',
+    'invert' => 0,
+  );
+  $handler->display->display_options['defaults']['style_options'] = FALSE;
+  $handler->display->display_options['defaults']['row_plugin'] = FALSE;
+  $handler->display->display_options['row_plugin'] = 'fields';
+  $handler->display->display_options['defaults']['row_options'] = FALSE;
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: COUNT(Content: Nid) */
+  $handler->display->display_options['fields']['nid']['id'] = 'nid';
+  $handler->display->display_options['fields']['nid']['table'] = 'node';
+  $handler->display->display_options['fields']['nid']['field'] = 'nid';
+  $handler->display->display_options['fields']['nid']['group_type'] = 'count';
+  $handler->display->display_options['fields']['nid']['label'] = 'Number of incidents';
+  $handler->display->display_options['fields']['nid']['separator'] = '';
+  /* Field: Content: Affected Organization Type */
+  $handler->display->display_options['fields']['field_affected_organization_type']['id'] = 'field_affected_organization_type';
+  $handler->display->display_options['fields']['field_affected_organization_type']['table'] = 'field_data_field_affected_organization_type';
+  $handler->display->display_options['fields']['field_affected_organization_type']['field'] = 'field_affected_organization_type';
+  $handler->display->display_options['fields']['field_affected_organization_type']['settings'] = array(
+    'link' => 0,
+  );
+  $handler->display->display_options['fields']['field_affected_organization_type']['delta_offset'] = '0';
+  $handler->display->display_options['block_description'] = 'By Aff Org';
+
+  /* Display: By Impacts */
+  $handler = $view->new_display('block', 'By Impacts', 'block_5');
+  $handler->display->display_options['defaults']['title'] = FALSE;
+  $handler->display->display_options['title'] = 'By Impacts';
+  $handler->display->display_options['defaults']['relationships'] = FALSE;
+  /* Relationship: Content: Impacts (field_acc_impacts) */
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['id'] = 'field_acc_impacts_value';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['table'] = 'field_data_field_acc_impacts';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['field'] = 'field_acc_impacts_value';
+  $handler->display->display_options['relationships']['field_acc_impacts_value']['delta'] = '-1';
+  $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Field collection item: Impacts */
+  $handler->display->display_options['fields']['field_acc_impact_type']['id'] = 'field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['table'] = 'field_data_field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['field'] = 'field_acc_impact_type';
+  $handler->display->display_options['fields']['field_acc_impact_type']['relationship'] = 'field_acc_impacts_value';
+  /* Field: Field collection item: Value */
+  $handler->display->display_options['fields']['field_acc_impact_value']['id'] = 'field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['table'] = 'field_data_field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['field'] = 'field_acc_impact_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['relationship'] = 'field_acc_impacts_value';
+  $handler->display->display_options['fields']['field_acc_impact_value']['label'] = 'Sum';
+  $handler->display->display_options['fields']['field_acc_impact_value']['settings'] = array(
+    'thousand_separator' => ' ',
+    'prefix_suffix' => 1,
+  );
   $translatables['acc_incident_graphs'] = array(
     t('Master'),
     t('By Types'),
@@ -212,9 +430,8 @@ function acc_incidents_views_default_views() {
     t('Sort by'),
     t('Asc'),
     t('Desc'),
-    t('Nid'),
-    t('By Type'),
     t('Number of incidents'),
+    t('By Type'),
     t('Type'),
     t('Incidents Graph by Type'),
     t('XLS By Type'),
@@ -225,8 +442,24 @@ function acc_incidents_views_default_views() {
     t('Access Constraint'),
     t('By Sector'),
     t('Incidents by sector'),
-    t('Clusters/Sectors'),
+    t('Sectors'),
     t('Incident by sector'),
+    t('XLS By Acc Constraint'),
+    t('By Acc Constraint '),
+    t('XLS By Sector'),
+    t('By Location'),
+    t('Number of incident'),
+    t('Locations'),
+    t('Incidents By Location'),
+    t('By Responsible Actor'),
+    t('Responsible Organization Type'),
+    t('By Aff Org'),
+    t('By Affected Organization'),
+    t('Affected Organization Type'),
+    t('By Impacts'),
+    t('field collection item from field_acc_impacts'),
+    t('Impacts'),
+    t('Sum'),
   );
   $export['acc_incident_graphs'] = $view;
 

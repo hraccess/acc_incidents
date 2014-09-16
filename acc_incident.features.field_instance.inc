@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.features.field_instance.inc
+ * acc_incident.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function acc_incidents_field_default_field_instances() {
+function acc_incident_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'field_collection_item-field_acc_impacts-field_acc_impact_type'
@@ -144,6 +144,7 @@ function acc_incidents_field_default_field_instances() {
   // Exported field_instance: 'node-acc_incident-field_acc_attach_file'
   $field_instances['node-acc_incident-field_acc_attach_file'] = array(
     'bundle' => 'acc_incident',
+    'default_value' => array(),
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -181,7 +182,7 @@ function acc_incidents_field_default_field_instances() {
     ),
     'widget' => array(
       'active' => 1,
-      'module' => 'media',
+      'module' => 'file',
       'settings' => array(
         'allowed_schemes' => array(
           'private' => 'private',
@@ -198,8 +199,9 @@ function acc_incidents_field_default_field_instances() {
           'media_default--media_browser_my_files' => 0,
           'upload' => 'upload',
         ),
+        'progress_indicator' => 'throbber',
       ),
-      'type' => 'media_generic',
+      'type' => 'file_generic',
       'weight' => 10,
     ),
   );
@@ -806,7 +808,7 @@ function acc_incidents_field_default_field_instances() {
   $field_instances['node-acc_incident-og_group_ref'] = array(
     'bundle' => 'acc_incident',
     'default_value' => NULL,
-    'default_value_function' => '',
+    'default_value_function' => 'entityreference_prepopulate_field_default_value',
     'deleted' => 0,
     'description' => '',
     'display' => array(
@@ -847,7 +849,15 @@ function acc_incidents_field_default_field_instances() {
           'status' => TRUE,
         ),
         'prepopulate' => array(
-          'status' => 0,
+          'action' => 'none',
+          'action_on_edit' => 0,
+          'fallback' => 'none',
+          'providers' => array(
+            'og_context' => 0,
+            'url' => 1,
+          ),
+          'skip_perm' => 0,
+          'status' => 1,
         ),
       ),
       'entity_translation_sync' => FALSE,
@@ -871,6 +881,48 @@ function acc_incidents_field_default_field_instances() {
       'settings' => array(),
       'type' => 'og_complex',
       'weight' => 13,
+    ),
+  );
+
+  // Exported field_instance: 'taxonomy_term-acc_responsible_actors-field_organization_type'
+  $field_instances['taxonomy_term-acc_responsible_actors-field_organization_type'] = array(
+    'bundle' => 'acc_responsible_actors',
+    'default_value' => NULL,
+    'default_value_function' => '',
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'module' => 'entityreference',
+        'settings' => array(
+          'link' => FALSE,
+        ),
+        'type' => 'entityreference_label',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'field_organization_type',
+    'label' => 'Type',
+    'required' => 0,
+    'settings' => array(
+      'behaviors' => array(
+        'prepopulate' => array(
+          'status' => 0,
+        ),
+      ),
+      'entity_translation_sync' => FALSE,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'active' => 1,
+      'module' => 'options',
+      'settings' => array(
+        'apply_chosen' => '',
+      ),
+      'type' => 'options_select',
+      'weight' => 1,
     ),
   );
 

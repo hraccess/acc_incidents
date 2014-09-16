@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.strongarm.inc
+ * acc_incident.strongarm.inc
  */
 
 /**
  * Implements hook_strongarm().
  */
-function acc_incidents_strongarm() {
+function acc_incident_strongarm() {
   $export = array();
 
   $strongarm = new stdClass();

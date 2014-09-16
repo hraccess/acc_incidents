@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.features.taxonomy.inc
+ * acc_incident.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function acc_incidents_taxonomy_default_vocabularies() {
+function acc_incident_taxonomy_default_vocabularies() {
   return array(
     'acc_impact_types' => array(
       'name' => 'Access Impact Types',
@@ -21,6 +21,14 @@ function acc_incidents_taxonomy_default_vocabularies() {
       'name' => 'Access Type',
       'machine_name' => 'acc_incident_types',
       'description' => '',
+      'hierarchy' => 0,
+      'module' => 'taxonomy',
+      'weight' => 0,
+    ),
+    'acc_responsible_actors' => array(
+      'name' => 'Access Responsible Actors',
+      'machine_name' => 'acc_responsible_actors',
+      'description' => 'A separate taxonomy ',
       'hierarchy' => 0,
       'module' => 'taxonomy',
       'weight' => 0,

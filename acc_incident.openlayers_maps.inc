@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incidents.openlayers_maps.inc
+ * acc_incident.openlayers_maps.inc
  */
 
 /**
  * Implements hook_openlayers_maps().
  */
-function acc_incidents_openlayers_maps() {
+function acc_incident_openlayers_maps() {
   $export = array();
 
   $openlayers_maps = new stdClass();
