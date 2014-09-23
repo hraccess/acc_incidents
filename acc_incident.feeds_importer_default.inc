@@ -162,6 +162,11 @@ function acc_incident_feeds_importer_default() {
             'target' => 'field_sectors:label',
             'unique' => FALSE,
           ),
+          13 => array(
+            'source' => 'Groups audience',
+            'target' => 'og_group_ref:label',
+            'unique' => FALSE,
+          ),
         ),
         'update_existing' => '0',
         'input_format' => 'plain_text',
