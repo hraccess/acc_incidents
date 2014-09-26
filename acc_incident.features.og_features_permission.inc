@@ -76,7 +76,6 @@ function acc_incident_og_features_default_permissions() {
   // Exported og permission: 'node:hr_operation:access revisions options of acc_incident content'
   $permissions['node:hr_operation:access revisions options of acc_incident content'] = array(
     'roles' => array(
-      'access-editor' => 'access-editor',
       'access-manager' => 'access-manager',
       'manager' => 'manager',
     ),
@@ -133,7 +132,6 @@ function acc_incident_og_features_default_permissions() {
   // Exported og permission: 'node:hr_operation:view any unpublished acc_incident content'
   $permissions['node:hr_operation:view any unpublished acc_incident content'] = array(
     'roles' => array(
-      'access-editor' => 'access-editor',
       'access-manager' => 'access-manager',
       'manager' => 'manager',
     ),
