@@ -28,59 +28,59 @@ function acc_incident_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'facetapi-J2JMN70I18WlrnhGNCnWM4QtA4wG6U4Y' => array(
-          'module' => 'facetapi',
-          'delta' => 'J2JMN70I18WlrnhGNCnWM4QtA4wG6U4Y',
+        'current_search-hr_current_search' => array(
+          'module' => 'current_search',
+          'delta' => 'hr_current_search',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
-        'facetapi-9ue2gd0P70KkewXSxkuQUU1Pv0oRRaYn' => array(
+        'facetapi-rqLn4lR9uHW01HHmt0z0ey019ia3C4wF' => array(
           'module' => 'facetapi',
-          'delta' => '9ue2gd0P70KkewXSxkuQUU1Pv0oRRaYn',
+          'delta' => 'rqLn4lR9uHW01HHmt0z0ey019ia3C4wF',
           'region' => 'sidebar_first',
           'weight' => '-9',
         ),
-        'facetapi-Mr0B15bSiepOvJtZbHylJlwcGWzmSeSv' => array(
+        'facetapi-Tjs9NXxZSebDxkhlJjgXCd3olaAJkXWl' => array(
           'module' => 'facetapi',
-          'delta' => 'Mr0B15bSiepOvJtZbHylJlwcGWzmSeSv',
+          'delta' => 'Tjs9NXxZSebDxkhlJjgXCd3olaAJkXWl',
           'region' => 'sidebar_first',
           'weight' => '-8',
         ),
-        'facetapi-F1CiCc1Ry0NeapgWln06pCPPML2WugMh' => array(
+        'facetapi-FeT1cPJ9qLvCLY6svdGdSIiJWrS0KmeG' => array(
           'module' => 'facetapi',
-          'delta' => 'F1CiCc1Ry0NeapgWln06pCPPML2WugMh',
+          'delta' => 'FeT1cPJ9qLvCLY6svdGdSIiJWrS0KmeG',
           'region' => 'sidebar_first',
           'weight' => '-7',
         ),
-        'facetapi-650OMpFHUPiv0OafiKob7TJUhRqTs1py' => array(
+        'facetapi-c5d9XPw6uuFO30vJLSOv1r0IoBnprcaQ' => array(
           'module' => 'facetapi',
-          'delta' => '650OMpFHUPiv0OafiKob7TJUhRqTs1py',
-          'region' => 'sidebar_first',
-          'weight' => '-6',
-        ),
-        'facetapi-UW8RIqVz39aDhL0I88nzx0C1tAptyJEV' => array(
-          'module' => 'facetapi',
-          'delta' => 'UW8RIqVz39aDhL0I88nzx0C1tAptyJEV',
+          'delta' => 'c5d9XPw6uuFO30vJLSOv1r0IoBnprcaQ',
           'region' => 'sidebar_first',
           'weight' => '-5',
         ),
-        'facetapi-U44yw0wbcDoEFHhcEhyCiC6axMYd1pBd' => array(
+        'facetapi-1ndZWpcD0rZWcvNy1gs5v0yk6Oocw8e6' => array(
           'module' => 'facetapi',
-          'delta' => 'U44yw0wbcDoEFHhcEhyCiC6axMYd1pBd',
+          'delta' => '1ndZWpcD0rZWcvNy1gs5v0yk6Oocw8e6',
           'region' => 'sidebar_first',
           'weight' => '-4',
         ),
-        'facetapi-GUF0nsCIijJFh5JZadxAw5CLTCEDebu2' => array(
+        'facetapi-qR5mxuLQ4hVzdb2YOeX9Ydm5nAoKj141' => array(
           'module' => 'facetapi',
-          'delta' => 'GUF0nsCIijJFh5JZadxAw5CLTCEDebu2',
+          'delta' => 'qR5mxuLQ4hVzdb2YOeX9Ydm5nAoKj141',
           'region' => 'sidebar_first',
           'weight' => '-3',
         ),
-        'facetapi-xvQwI7NV9AlX2s4vcZC9WU1wi6pK6ofZ' => array(
+        'facetapi-1Ie104s0g83EJp0i5Ii0JxuldVWVhstw' => array(
           'module' => 'facetapi',
-          'delta' => 'xvQwI7NV9AlX2s4vcZC9WU1wi6pK6ofZ',
+          'delta' => '1Ie104s0g83EJp0i5Ii0JxuldVWVhstw',
           'region' => 'sidebar_first',
           'weight' => '-2',
+        ),
+        'facetapi-bXKrYplwVKVrTXrTgRKEoABcPBPjdJM4' => array(
+          'module' => 'facetapi',
+          'delta' => 'bXKrYplwVKVrTXrTgRKEoABcPBPjdJM4',
+          'region' => 'sidebar_first',
+          'weight' => '-1',
         ),
       ),
     ),
@@ -180,7 +180,7 @@ function acc_incident_context_default_contexts() {
         'views--exp-acc_incidents-map' => array(
           'module' => 'views',
           'delta' => '-exp-acc_incidents-map',
-          'region' => 'sidebar_first',
+          'region' => 'branding',
           'weight' => '-10',
         ),
       ),
@@ -212,7 +212,7 @@ function acc_incident_context_default_contexts() {
         'views--exp-acc_incidents-table' => array(
           'module' => 'views',
           'delta' => '-exp-acc_incidents-table',
-          'region' => 'sidebar_first',
+          'region' => 'branding',
           'weight' => '-10',
         ),
       ),
