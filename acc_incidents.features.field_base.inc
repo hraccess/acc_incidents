@@ -7,7 +7,7 @@
 /**
  * Implements hook_field_default_field_bases().
  */
-function acc_incident_field_default_field_bases() {
+function acc_incidents_field_default_field_bases() {
   $field_bases = array();
 
   // Exported field_base: 'field_acc_attach_file'

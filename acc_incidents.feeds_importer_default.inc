@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incident.feeds_importer_default.inc
+ * acc_incidents.feeds_importer_default.inc
  */
 
 /**
  * Implements hook_feeds_importer_default().
  */
-function acc_incident_feeds_importer_default() {
+function acc_incidents_feeds_importer_default() {
   $export = array();
 
   $feeds_importer = new stdClass();

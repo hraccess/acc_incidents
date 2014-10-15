@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incident.feeds_tamper_default.inc
+ * acc_incidents.feeds_tamper_default.inc
  */
 
 /**
  * Implements hook_feeds_tamper_default().
  */
-function acc_incident_feeds_tamper_default() {
+function acc_incidents_feeds_tamper_default() {
   $export = array();
 
   $feeds_tamper = new stdClass();

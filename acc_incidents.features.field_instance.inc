@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incident.features.field_instance.inc
+ * acc_incidents.features.field_instance.inc
  */
 
 /**
  * Implements hook_field_default_field_instances().
  */
-function acc_incident_field_default_field_instances() {
+function acc_incidents_field_default_field_instances() {
   $field_instances = array();
 
   // Exported field_instance: 'field_collection_item-field_acc_impacts-field_acc_impact_type'

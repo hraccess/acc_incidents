@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incident.views_default.inc
+ * acc_incidents.views_default.inc
  */
 
 /**
  * Implements hook_views_default_views().
  */
-function acc_incident_views_default_views() {
+function acc_incidents_views_default_views() {
   $export = array();
 
   $view = new view();

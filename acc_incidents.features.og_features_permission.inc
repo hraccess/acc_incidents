@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incident.features.og_features_permission.inc
+ * acc_incidents.features.og_features_permission.inc
  */
 
 /**
  * Implements hook_og_features_default_permissions().
  */
-function acc_incident_og_features_default_permissions() {
+function acc_incidents_og_features_default_permissions() {
   $permissions = array();
 
   // Exported og permission: 'node:hr_bundle:access authoring options of acc_incident content'

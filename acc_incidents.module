@@ -4,14 +4,14 @@
  * Code for the Access Incident feature.
  */
 
-include_once 'acc_incident.features.inc';
+include_once 'acc_incidents.features.inc';
 /**
  * Implements hook_og_features_registry()
  */
-function acc_incident_og_features_registry() {
+function acc_incidents_og_features_registry() {
   $registry = array();
   $feature = new stdClass();
-  $feature->id = 'acc_incident';
+  $feature->id = 'acc_incidents';
   $feature->name = t('Access Incidents');
   $feature->description = t('Humanitarian Access Incidents Content Type, Views, Context, Search Index, Facets, Map');
   $feature->components = array(
@@ -26,7 +26,7 @@ function acc_incident_og_features_registry() {
 /**
  * Implements hook_og_features_toggle($entity, $entity_id, $entity_type, $features)
  */
-function acc_incident_og_features_toggle($entity, $entity_id, $entity_type, $features) {
+function acc_incidents_og_features_toggle($entity, $entity_id, $entity_type, $features) {
   if (isset($features['acc_incident'])) {
     $mlid = og_menu_single_get_link_mlid('node', $entity_id);
     if (empty($features['acc_incident'])) {

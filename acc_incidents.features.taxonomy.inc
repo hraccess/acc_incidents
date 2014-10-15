@@ -1,13 +1,13 @@
 <?php
 /**
  * @file
- * acc_incident.features.taxonomy.inc
+ * acc_incidents.features.taxonomy.inc
  */
 
 /**
  * Implements hook_taxonomy_default_vocabularies().
  */
-function acc_incident_taxonomy_default_vocabularies() {
+function acc_incidents_taxonomy_default_vocabularies() {
   return array(
     'acc_impact_types' => array(
       'name' => 'Access Impact Types',
