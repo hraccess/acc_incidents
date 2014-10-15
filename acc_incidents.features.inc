@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * acc_incident.features.inc
+ * acc_incidents.features.inc
  */
 
 /**
@@ -51,4 +51,3 @@ function acc_incidents_node_info() {
   );
   return $items;
 }
-

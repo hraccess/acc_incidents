@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * acc_incident.features.field_base.inc
+ * acc_incidents.features.field_base.inc
  */
 
 /**

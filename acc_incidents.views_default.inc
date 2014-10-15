@@ -604,7 +604,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_acc_date']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_date']['field'] = 'field_acc_date';
   $handler->display->display_options['fields']['field_acc_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'hr_1',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -756,10 +756,11 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['body']['label'] = 'Description';
   $handler->display->display_options['path'] = 'node/%/access/incidents/xls';
   $handler->display->display_options['displays'] = array(
-    'default' => 'default',
-    'master' => 'master',
     'table' => 'table',
-    'map' => 'map',
+    'default' => 0,
+    'master' => 0,
+    'map' => 0,
+    'graphs' => 0,
   );
 
   /* Display: Map Data */
@@ -791,18 +792,22 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['title']['id'] = 'title';
   $handler->display->display_options['fields']['title']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['title']['field'] = 'title';
+  $handler->display->display_options['fields']['title']['label'] = '';
+  $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 0;
   /* Field: Locations » Geofield: Latitude (indexed) */
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['id'] = 'field_locations_field_geofield_lat';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['field'] = 'field_locations_field_geofield_lat';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['precision'] = '0';
+  $handler->display->display_options['fields']['field_locations_field_geofield_lat']['separator'] = '';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['link_to_entity'] = 0;
   /* Field: Locations » Geofield: Longitude (indexed) */
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['id'] = 'field_locations_field_geofield_lon';
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['field'] = 'field_locations_field_geofield_lon';
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['precision'] = '0';
+  $handler->display->display_options['fields']['field_locations_field_geofield_lon']['separator'] = '';
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['link_to_entity'] = 0;
 
   /* Display: Map */
@@ -873,10 +878,8 @@ function acc_incidents_views_default_views() {
     t('Impact Value'),
     t('Description'),
     t('Map Data'),
-    t('Title'),
     t('Latitude (indexed)'),
     t('.'),
-    t(','),
     t('Longitude (indexed)'),
     t('Map'),
     t('Graphs'),

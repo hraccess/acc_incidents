@@ -1,7 +1,7 @@
 <?php
 /**
  * @file
- * acc_incident.context.inc
+ * acc_incidents.context.inc
  */
 
 /**
