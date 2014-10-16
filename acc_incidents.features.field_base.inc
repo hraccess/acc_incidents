@@ -365,6 +365,7 @@ function acc_incidents_field_default_field_bases() {
         ),
         'target_bundles' => array(
           'acc_responsible_actors' => 'acc_responsible_actors',
+          'hr_organization' => 'hr_organization',
         ),
       ),
       'profile2_private' => FALSE,
