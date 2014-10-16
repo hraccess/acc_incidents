@@ -44,6 +44,21 @@ function acc_incidents_feeds_importer_default() {
             'unique' => FALSE,
           ),
           1 => array(
+            'source' => 'Name:en',
+            'target' => 'name_field:et:en',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Name:fr',
+            'target' => 'name_field:et:fr',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'Name:es',
+            'target' => 'name_field:et:es',
+            'unique' => FALSE,
+          ),
+          4 => array(
             'source' => 'Parent',
             'target' => 'parent',
             'unique' => FALSE,
@@ -215,16 +230,31 @@ function acc_incidents_feeds_importer_default() {
         'vocabulary' => 0,
         'mappings' => array(
           0 => array(
-            'source' => 'Name',
+            'source' => 'Name:en',
             'target' => 'name',
             'unique' => FALSE,
           ),
           1 => array(
+            'source' => 'Name:en',
+            'target' => 'name_field:et:en',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Name:fr',
+            'target' => 'name_field:et:fr',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'Name:es',
+            'target' => 'name_field:et:es',
+            'unique' => FALSE,
+          ),
+          4 => array(
             'source' => 'Type',
             'target' => 'field_organization_type:label',
             'unique' => FALSE,
           ),
-          2 => array(
+          5 => array(
             'source' => 'Description',
             'target' => 'description',
             'unique' => FALSE,
@@ -274,13 +304,28 @@ function acc_incidents_feeds_importer_default() {
         'vocabulary' => 0,
         'mappings' => array(
           0 => array(
-            'source' => 'Parent',
-            'target' => 'parent',
+            'source' => 'Name:en',
+            'target' => 'name',
             'unique' => FALSE,
           ),
           1 => array(
             'source' => 'Name:en',
-            'target' => 'name',
+            'target' => 'name_field:et:en',
+            'unique' => FALSE,
+          ),
+          2 => array(
+            'source' => 'Name:fr',
+            'target' => 'name_field:et:fr',
+            'unique' => FALSE,
+          ),
+          3 => array(
+            'source' => 'Name:es',
+            'target' => 'name_field:et:es',
+            'unique' => FALSE,
+          ),
+          4 => array(
+            'source' => 'Parent',
+            'target' => 'parent',
             'unique' => FALSE,
           ),
         ),
