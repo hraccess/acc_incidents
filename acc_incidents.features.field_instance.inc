@@ -780,7 +780,7 @@ function acc_incidents_field_default_field_instances() {
     ),
     'entity_type' => 'node',
     'field_name' => 'og_group_ref',
-    'label' => 'Groups audience',
+    'label' => 'Space(s)',
     'required' => 1,
     'settings' => array(
       'behaviors' => array(
