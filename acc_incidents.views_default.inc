@@ -599,10 +599,22 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['defaults']['row_options'] = FALSE;
   $handler->display->display_options['exposed_block'] = TRUE;
   $handler->display->display_options['defaults']['fields'] = FALSE;
+  /* Field: Indexed Node: URL */
+  $handler->display->display_options['fields']['url']['id'] = 'url';
+  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['fields']['url']['field'] = 'url';
+  $handler->display->display_options['fields']['url']['label'] = '';
+  $handler->display->display_options['fields']['url']['exclude'] = TRUE;
+  $handler->display->display_options['fields']['url']['alter']['text'] = '<a href="[url]">view</a>';
+  $handler->display->display_options['fields']['url']['element_label_colon'] = FALSE;
+  $handler->display->display_options['fields']['url']['display_as_link'] = FALSE;
+  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
   /* Field: Indexed Node: Date */
   $handler->display->display_options['fields']['field_acc_date']['id'] = 'field_acc_date';
   $handler->display->display_options['fields']['field_acc_date']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_date']['field'] = 'field_acc_date';
+  $handler->display->display_options['fields']['field_acc_date']['alter']['make_link'] = TRUE;
+  $handler->display->display_options['fields']['field_acc_date']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['field_acc_date']['settings'] = array(
     'format_type' => 'hr_1',
     'fromto' => 'both',
@@ -612,19 +624,11 @@ function acc_incidents_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['fields']['field_acc_date']['delta_offset'] = '0';
-  /* Field: Locations: Parent terms (indexed) */
-  $handler->display->display_options['fields']['field_locations_parent']['id'] = 'field_locations_parent';
-  $handler->display->display_options['fields']['field_locations_parent']['table'] = 'search_api_index_acc_search';
-  $handler->display->display_options['fields']['field_locations_parent']['field'] = 'field_locations_parent';
-  $handler->display->display_options['fields']['field_locations_parent']['label'] = 'Admin Level 1';
-  $handler->display->display_options['fields']['field_locations_parent']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_locations_parent']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_locations_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Locations */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
-  $handler->display->display_options['fields']['field_locations']['label'] = 'Admin Level 2';
+  $handler->display->display_options['fields']['field_locations']['label'] = 'Location';
   $handler->display->display_options['fields']['field_locations']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_locations']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_locations']['bypass_access'] = 0;
@@ -635,14 +639,6 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_acc_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_type']['bypass_access'] = 0;
-  /* Field: Indexed Node: URL */
-  $handler->display->display_options['fields']['url']['id'] = 'url';
-  $handler->display->display_options['fields']['url']['table'] = 'search_api_index_acc_search';
-  $handler->display->display_options['fields']['url']['field'] = 'url';
-  $handler->display->display_options['fields']['url']['label'] = 'View';
-  $handler->display->display_options['fields']['url']['alter']['alter_text'] = TRUE;
-  $handler->display->display_options['fields']['url']['alter']['text'] = '<a href="[url]">view</a>';
-  $handler->display->display_options['fields']['url']['link_to_entity'] = 0;
   $handler->display->display_options['path'] = 'node/%/access/incidents/table';
   $handler->display->display_options['menu']['type'] = 'tab';
   $handler->display->display_options['menu']['title'] = 'Table';
@@ -865,6 +861,7 @@ function acc_incidents_views_default_views() {
     t('View'),
     t('<a href="[url]">view</a>'),
     t('Table'),
+    t('Location'),
     t('XLS'),
     t('Access Constraint'),
     t('Incident Type'),
