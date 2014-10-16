@@ -947,7 +947,7 @@ function acc_incidents_field_default_field_instances() {
   );
 
   // Exported field_instance: 'taxonomy_term-acc_incident_types-name_field'
-  $field_instances['taxonomy_term-acc_incident_types_types-name_field'] = array(
+  $field_instances['taxonomy_term-acc_incident_types-name_field'] = array(
     'bundle' => 'acc_incident_types',
     'default_value' => NULL,
     'deleted' => 0,
