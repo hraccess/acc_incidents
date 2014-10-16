@@ -18,12 +18,15 @@ function acc_incidents_feeds_importer_default() {
     'name' => 'CSV Access Impact',
     'description' => 'To import Access Impact Types in csv',
     'fetcher' => array(
-      'plugin_key' => 'FeedsHTTPFetcher',
+      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'auto_detect_feeds' => FALSE,
-        'use_pubsubhubbub' => FALSE,
-        'designated_hub' => '',
-        'request_timeout' => NULL,
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
       ),
     ),
     'parser' => array(
@@ -283,12 +286,15 @@ function acc_incidents_feeds_importer_default() {
     'name' => 'CSV Access Types',
     'description' => 'To import Access Incident Types in csv',
     'fetcher' => array(
-      'plugin_key' => 'FeedsHTTPFetcher',
+      'plugin_key' => 'FeedsFileFetcher',
       'config' => array(
-        'auto_detect_feeds' => FALSE,
-        'use_pubsubhubbub' => FALSE,
-        'designated_hub' => '',
-        'request_timeout' => NULL,
+        'allowed_extensions' => 'txt csv tsv xml opml',
+        'direct' => FALSE,
+        'directory' => 'private://feeds',
+        'allowed_schemes' => array(
+          0 => 'public',
+          1 => 'private',
+        ),
       ),
     ),
     'parser' => array(
