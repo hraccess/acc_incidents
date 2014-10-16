@@ -124,6 +124,7 @@ features[variable][] = menu_parent_acc_incident
 features[variable][] = node_options_acc_incident
 features[variable][] = node_preview_acc_incident
 features[variable][] = node_submitted_acc_incident
+features[variable][] = pathauto_node_acc_incident_pattern
 features[views_view][] = acc_incident_graphs
 features[views_view][] = acc_incidents
 features_exclude[og_features_role][node:hr_operation:access-manager] = node:hr_operation:access-manager

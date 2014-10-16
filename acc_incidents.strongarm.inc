@@ -101,5 +101,12 @@ function acc_incidents_strongarm() {
   $strongarm->value = 0;
   $export['node_submitted_acc_incident'] = $strongarm;
 
+  $strongarm = new stdClass();
+  $strongarm->disabled = FALSE; /* Edit this to true to make a default strongarm disabled initially */
+  $strongarm->api_version = 1;
+  $strongarm->name = 'pathauto_node_acc_incident_pattern';
+  $strongarm->value = '[node:og-group-ref:0:url:path]/access-incident/[node:title]';
+  $export['pathauto_node_acc_incident_pattern'] = $strongarm;
+
   return $export;
 }
