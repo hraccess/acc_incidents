@@ -542,7 +542,7 @@ function acc_incidents_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['fields']['field_acc_date']['delta_offset'] = '0';
-  /* Field: Locations: Parent terms (indexed) */
+  /* Field: Geographical Location (Origin): Parent terms (indexed) */
   $handler->display->display_options['fields']['field_locations_parent']['id'] = 'field_locations_parent';
   $handler->display->display_options['fields']['field_locations_parent']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations_parent']['field'] = 'field_locations_parent';
@@ -550,7 +550,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_locations_parent']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_locations_parent']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_locations_parent']['bypass_access'] = 0;
-  /* Field: Indexed Node: Locations */
+  /* Field: Indexed Node: Geographical Location (Origin) */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
@@ -624,7 +624,7 @@ function acc_incidents_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['fields']['field_acc_date']['delta_offset'] = '0';
-  /* Field: Indexed Node: Locations */
+  /* Field: Indexed Node: Geographical Location (Origin) */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
@@ -671,7 +671,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_acc_type']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_acc_type']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_acc_type']['bypass_access'] = 0;
-  /* Field: Locations: Parent terms (indexed) */
+  /* Field: Geographical Location (Origin): Parent terms (indexed) */
   $handler->display->display_options['fields']['field_locations_parent']['id'] = 'field_locations_parent';
   $handler->display->display_options['fields']['field_locations_parent']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations_parent']['field'] = 'field_locations_parent';
@@ -679,7 +679,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_locations_parent']['link_to_entity'] = 0;
   $handler->display->display_options['fields']['field_locations_parent']['view_mode'] = 'full';
   $handler->display->display_options['fields']['field_locations_parent']['bypass_access'] = 0;
-  /* Field: Indexed Node: Locations */
+  /* Field: Indexed Node: Geographical Location (Origin) */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations']['field'] = 'field_locations';
@@ -791,14 +791,14 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['title']['label'] = '';
   $handler->display->display_options['fields']['title']['element_label_colon'] = FALSE;
   $handler->display->display_options['fields']['title']['link_to_entity'] = 1;
-  /* Field: Locations » Geofield: Latitude (indexed) */
+  /* Field: Geographical Location (Origin) » Geofield: Latitude (indexed) */
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['id'] = 'field_locations_field_geofield_lat';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['field'] = 'field_locations_field_geofield_lat';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['precision'] = '0';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['separator'] = '';
   $handler->display->display_options['fields']['field_locations_field_geofield_lat']['link_to_entity'] = 0;
-  /* Field: Locations » Geofield: Longitude (indexed) */
+  /* Field: Geographical Location (Origin) » Geofield: Longitude (indexed) */
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['id'] = 'field_locations_field_geofield_lon';
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['field'] = 'field_locations_field_geofield_lon';
@@ -865,7 +865,7 @@ function acc_incidents_views_default_views() {
     t('XLS'),
     t('Access Constraint'),
     t('Incident Type'),
-    t('Locations'),
+    t('Geographical Location (Origin)'),
     t('Responsible Organization Type'),
     t('Responsible actor'),
     t('Affected Organization Type'),

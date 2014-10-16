@@ -830,6 +830,43 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-acc_impact_types-name_field'
+  $field_instances['taxonomy_term-acc_impact_types-name_field'] = array(
+    'bundle' => 'acc_impact_types',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 0,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'name_field',
+    'label' => 'Name',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Exported field_instance: 'taxonomy_term-acc_responsible_actors-field_organization_type'
   $field_instances['taxonomy_term-acc_responsible_actors-field_organization_type'] = array(
     'bundle' => 'acc_responsible_actors',
@@ -872,6 +909,43 @@ function acc_incidents_field_default_field_instances() {
     ),
   );
 
+  // Exported field_instance: 'taxonomy_term-acc_responsible_actors-name_field'
+  $field_instances['taxonomy_term-acc_responsible_actors-name_field'] = array(
+    'bundle' => 'acc_responsible_actors',
+    'default_value' => NULL,
+    'deleted' => 0,
+    'description' => '',
+    'display' => array(
+      'default' => array(
+        'label' => 'above',
+        'settings' => array(),
+        'type' => 'hidden',
+        'weight' => 1,
+      ),
+    ),
+    'entity_type' => 'taxonomy_term',
+    'field_name' => 'name_field',
+    'label' => 'Name',
+    'required' => TRUE,
+    'settings' => array(
+      'entity_translation_sync' => FALSE,
+      'hide_label' => array(
+        'entity' => FALSE,
+        'page' => FALSE,
+      ),
+      'text_processing' => 0,
+      'user_register_form' => FALSE,
+    ),
+    'widget' => array(
+      'module' => 'text',
+      'settings' => array(
+        'size' => 60,
+      ),
+      'type' => 'text_textfield',
+      'weight' => -5,
+    ),
+  );
+
   // Translatables
   // Included for use with string extractors like potx.
   t('Affected Organization Type');
@@ -879,12 +953,12 @@ function acc_incidents_field_default_field_instances() {
   t('Attach file');
   t('Body');
   t('Date');
-  t('Groups audience');
   t('Impacts');
   t('Locations');
+  t('Name');
   t('Responsible Organization Type');
   t('Responsible actor');
-  t('Sectors');
+  t('Space(s)');
   t('Type');
   t('Type of affectee');
   t('Value');
