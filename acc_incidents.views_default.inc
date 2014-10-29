@@ -475,7 +475,6 @@ function acc_incidents_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('default', 'Master', 'default');
-  $handler->display->display_options['title'] = 'Access Incidents';
   $handler->display->display_options['use_more_always'] = FALSE;
   $handler->display->display_options['access']['type'] = 'og_context';
   $handler->display->display_options['access']['perm'] = 'create acc_incident content';
@@ -487,7 +486,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['pager']['options']['items_per_page'] = '20';
   $handler->display->display_options['style_plugin'] = 'default';
   $handler->display->display_options['row_plugin'] = 'entity';
-  /* Contextual filter: Indexed Node: Space(s) */
+  /* Contextual filter: Indexed Node: Groups audience */
   $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['arguments']['og_group_ref']['field'] = 'og_group_ref';
@@ -519,8 +518,6 @@ function acc_incidents_views_default_views() {
 
   /* Display: Master */
   $handler = $view->new_display('page', 'Master', 'master');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Access Incidents';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'openlayers_map';
   $handler->display->display_options['style_options']['map'] = 'acc_incidents';
@@ -577,8 +574,6 @@ function acc_incidents_views_default_views() {
 
   /* Display: Table */
   $handler = $view->new_display('page', 'Table', 'table');
-  $handler->display->display_options['defaults']['title'] = FALSE;
-  $handler->display->display_options['title'] = 'Access Incidents';
   $handler->display->display_options['defaults']['style_plugin'] = FALSE;
   $handler->display->display_options['style_plugin'] = 'table';
   $handler->display->display_options['style_options']['columns'] = array(
@@ -838,7 +833,6 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['menu']['context_only_inline'] = 0;
   $translatables['acc_incidents'] = array(
     t('Master'),
-    t('Access Incidents'),
     t('more'),
     t('Apply'),
     t('Reset'),
