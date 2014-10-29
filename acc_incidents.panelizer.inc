@@ -199,7 +199,7 @@ function acc_incidents_panelizer_defaults() {
       'delta_offset' => '0',
       'delta_reversed' => FALSE,
       'formatter_settings' => array(
-        'format_type' => 'long',
+        'format_type' => 'hr_1',
         'fromto' => 'both',
         'multiple_from' => '',
         'multiple_number' => '',
