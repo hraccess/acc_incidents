@@ -1,8 +1,7 @@
-name = Access Incident
-description = Humanitarian Access Incidents Content Type, Views, Context, Search Index, Facets, Map
+name = Access Incidents
+description = Humanitarian Access Incidents component
 core = 7.x
 package = Humanitarian Access
-version = 7.x-2.0
 project = acc_incidents
 dependencies[] = acc_search
 dependencies[] = acc_users
