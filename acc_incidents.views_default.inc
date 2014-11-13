@@ -531,7 +531,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_acc_date']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_date']['field'] = 'field_acc_date';
   $handler->display->display_options['fields']['field_acc_date']['settings'] = array(
-    'format_type' => 'short',
+    'format_type' => 'hr_2',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
@@ -611,7 +611,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_acc_date']['alter']['make_link'] = TRUE;
   $handler->display->display_options['fields']['field_acc_date']['alter']['path'] = '[url]';
   $handler->display->display_options['fields']['field_acc_date']['settings'] = array(
-    'format_type' => 'hr_1',
+    'format_type' => 'hr_2',
     'fromto' => 'both',
     'multiple_number' => '',
     'multiple_from' => '',
