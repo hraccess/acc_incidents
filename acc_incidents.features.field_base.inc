@@ -77,7 +77,7 @@ function acc_incidents_field_default_field_bases() {
       'profile2_private' => FALSE,
       'repeat' => 1,
       'timezone_db' => '',
-      'todate' => '',
+      'todate' => 'optional',
       'tz_handling' => 'none',
     ),
     'translatable' => 0,
