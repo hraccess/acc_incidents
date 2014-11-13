@@ -28,9 +28,9 @@ function acc_incidents_context_default_contexts() {
   $context->reactions = array(
     'block' => array(
       'blocks' => array(
-        'current_search-hr_current_search' => array(
+        'current_search-acc_current_search' => array(
           'module' => 'current_search',
-          'delta' => 'hr_current_search',
+          'delta' => 'acc_current_search',
           'region' => 'sidebar_first',
           'weight' => '-10',
         ),
