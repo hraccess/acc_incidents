@@ -491,7 +491,7 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['sorts']['field_acc_date_value']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['sorts']['field_acc_date_value']['field'] = 'field_acc_date_value';
   $handler->display->display_options['sorts']['field_acc_date_value']['order'] = 'DESC';
-  /* Contextual filter: Indexed Node: Groups audience */
+  /* Contextual filter: Indexed Node: Space(s) */
   $handler->display->display_options['arguments']['og_group_ref']['id'] = 'og_group_ref';
   $handler->display->display_options['arguments']['og_group_ref']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['arguments']['og_group_ref']['field'] = 'og_group_ref';
@@ -797,6 +797,38 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['precision'] = '0';
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['separator'] = '';
   $handler->display->display_options['fields']['field_locations_field_geofield_lon']['link_to_entity'] = 0;
+  $handler->display->display_options['defaults']['filter_groups'] = FALSE;
+  $handler->display->display_options['defaults']['filters'] = FALSE;
+  /* Filter criterion: Search: Fulltext search */
+  $handler->display->display_options['filters']['search_api_views_fulltext']['id'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['field'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['exposed'] = TRUE;
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator_id'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['label'] = 'Search Access Incidents';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['operator'] = 'search_api_views_fulltext_op';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['identifier'] = 'search_api_views_fulltext';
+  $handler->display->display_options['filters']['search_api_views_fulltext']['expose']['remember_roles'] = array(
+    2 => '2',
+    1 => 0,
+    30037204 => 0,
+    200153887 => 0,
+    218860149 => 0,
+    188284353 => 0,
+    235660466 => 0,
+    229782242 => 0,
+    147444660 => 0,
+  );
+  /* Filter criterion: Country/Region » Geofield: Latitude (indexed) */
+  $handler->display->display_options['filters']['field_locations_field_geofield_lat']['id'] = 'field_locations_field_geofield_lat';
+  $handler->display->display_options['filters']['field_locations_field_geofield_lat']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['field_locations_field_geofield_lat']['field'] = 'field_locations_field_geofield_lat';
+  $handler->display->display_options['filters']['field_locations_field_geofield_lat']['operator'] = 'not empty';
+  /* Filter criterion: Country/Region » Geofield: Longitude (indexed) */
+  $handler->display->display_options['filters']['field_locations_field_geofield_lon']['id'] = 'field_locations_field_geofield_lon';
+  $handler->display->display_options['filters']['field_locations_field_geofield_lon']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['field_locations_field_geofield_lon']['field'] = 'field_locations_field_geofield_lon';
+  $handler->display->display_options['filters']['field_locations_field_geofield_lon']['operator'] = 'not empty';
 
   /* Display: Map */
   $handler = $view->new_display('page', 'Map', 'map');
@@ -854,7 +886,6 @@ function acc_incidents_views_default_views() {
     t('Table'),
     t('Location'),
     t('XLS'),
-    t('Access Constraint'),
     t('Incident Type'),
     t('Country/Region'),
     t('Responsible Organization Type'),
