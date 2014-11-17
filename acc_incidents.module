@@ -34,7 +34,7 @@ function acc_incidents_og_features_toggle($entity, $entity_id, $entity_type, $fe
     }
     else {
       // See if menu link already exists
-      $menu_link = hr_core_menu_link_exists('node/'.$entity_id.'/access/incidents', OG_MENU_SINGLE_MENU_NAME);
+      $menu_link = menu_link_get_preferred('node/'.$entity_id.'/access/incidents', OG_MENU_SINGLE_MENU_NAME);
       if (empty($menu_link)) {
         $menu_link = array(
           'link_path' => 'node/'.$entity_id.'/access/incidents',
