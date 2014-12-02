@@ -47,5 +47,17 @@ function acc_incidents_og_features_toggle($entity, $entity_id, $entity_type, $fe
       }
     }
   }
-
 }
+
+/**
+ * Implements hook_init()
+ * Raises the memory limit on the node/%/access/incidents page
+ * TODO: fix this hack by improving access performance
+ */
+function acc_incidents_init() {
+  $path = current_path();
+  if (strstr($path, 'access/incidents') !== FALSE) {
+    ini_set('memory_limit', '512M');
+  }
+}
+
