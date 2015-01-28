@@ -62,6 +62,15 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['sorts']['created']['table'] = 'node';
   $handler->display->display_options['sorts']['created']['field'] = 'created';
   $handler->display->display_options['sorts']['created']['order'] = 'DESC';
+  /* Contextual filter: Content: Space(s) (og_group_ref) */
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['id'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['table'] = 'og_membership';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['field'] = 'og_group_ref_target_id';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_action'] = 'default';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['default_argument_type'] = 'og_context';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['number_of_records'] = '0';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary']['format'] = 'default_summary';
+  $handler->display->display_options['arguments']['og_group_ref_target_id']['summary_options']['items_per_page'] = '25';
   /* Filter criterion: Content: Published */
   $handler->display->display_options['filters']['status']['id'] = 'status';
   $handler->display->display_options['filters']['status']['table'] = 'node';
@@ -431,6 +440,7 @@ function acc_incidents_views_default_views() {
     t('Asc'),
     t('Desc'),
     t('Number of incidents'),
+    t('All'),
     t('By Type'),
     t('Type'),
     t('Incidents Graph by Type'),
@@ -520,6 +530,13 @@ function acc_incidents_views_default_views() {
     229782242 => 0,
     147444660 => 0,
   );
+  /* Filter criterion: Indexed Node: Content type */
+  $handler->display->display_options['filters']['type']['id'] = 'type';
+  $handler->display->display_options['filters']['type']['table'] = 'search_api_index_acc_search';
+  $handler->display->display_options['filters']['type']['field'] = 'type';
+  $handler->display->display_options['filters']['type']['value'] = array(
+    'acc_incident' => 'acc_incident',
+  );
 
   /* Display: Master */
   $handler = $view->new_display('page', 'Master', 'master');
@@ -544,14 +561,11 @@ function acc_incidents_views_default_views() {
     'show_repeat_rule' => 'show',
   );
   $handler->display->display_options['fields']['field_acc_date']['delta_offset'] = '0';
-  /* Field: Locations: Parent terms (indexed) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_locations_parent']['id'] = 'field_locations_parent';
   $handler->display->display_options['fields']['field_locations_parent']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations_parent']['field'] = 'field_locations_parent';
   $handler->display->display_options['fields']['field_locations_parent']['label'] = 'Admin Level 1';
-  $handler->display->display_options['fields']['field_locations_parent']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_locations_parent']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_locations_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Locations */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
@@ -655,14 +669,11 @@ function acc_incidents_views_default_views() {
   $handler->display->display_options['style_options']['provide_file'] = 1;
   $handler->display->display_options['style_options']['parent_sort'] = 0;
   $handler->display->display_options['defaults']['fields'] = FALSE;
-  /* Field: Type: Parent terms (indexed) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_acc_type_parent']['id'] = 'field_acc_type_parent';
   $handler->display->display_options['fields']['field_acc_type_parent']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_acc_type_parent']['field'] = 'field_acc_type_parent';
   $handler->display->display_options['fields']['field_acc_type_parent']['label'] = 'Access Constraint';
-  $handler->display->display_options['fields']['field_acc_type_parent']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_acc_type_parent']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_acc_type_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Type */
   $handler->display->display_options['fields']['field_acc_type']['id'] = 'field_acc_type';
   $handler->display->display_options['fields']['field_acc_type']['table'] = 'search_api_index_acc_search';
@@ -683,14 +694,11 @@ function acc_incidents_views_default_views() {
     'multiple_to' => '',
     'show_repeat_rule' => 'show',
   );
-  /* Field: Locations: Parent terms (indexed) */
+  /* Field: Broken/missing handler */
   $handler->display->display_options['fields']['field_locations_parent']['id'] = 'field_locations_parent';
   $handler->display->display_options['fields']['field_locations_parent']['table'] = 'search_api_index_acc_search';
   $handler->display->display_options['fields']['field_locations_parent']['field'] = 'field_locations_parent';
   $handler->display->display_options['fields']['field_locations_parent']['label'] = 'Admin Level 1';
-  $handler->display->display_options['fields']['field_locations_parent']['link_to_entity'] = 0;
-  $handler->display->display_options['fields']['field_locations_parent']['view_mode'] = 'full';
-  $handler->display->display_options['fields']['field_locations_parent']['bypass_access'] = 0;
   /* Field: Indexed Node: Locations */
   $handler->display->display_options['fields']['field_locations']['id'] = 'field_locations';
   $handler->display->display_options['fields']['field_locations']['table'] = 'search_api_index_acc_search';
@@ -869,7 +877,6 @@ function acc_incidents_views_default_views() {
 
   /* Display: Graphs */
   $handler = $view->new_display('page', 'Graphs', 'graphs');
-  $handler->display->display_options['enabled'] = FALSE;
   $handler->display->display_options['defaults']['pager'] = FALSE;
   $handler->display->display_options['pager']['type'] = 'some';
   $handler->display->display_options['pager']['options']['items_per_page'] = '0';
